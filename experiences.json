@@ -1,0 +1,57 @@
+[
+  {
+    "company": "IDIP Tecnologia",
+    "position": "Full Stack Developer",
+    "period": "Oct 2022 – Present",
+    "location": "Software House",
+    "type": "Current",
+    "description": "Led development teams and architected scalable solutions in a fast-paced software house environment, managing multiple concurrent projects while coordinating junior developers and delivering enterprise-grade applications.",
+    "highlights": [
+      "Managed 2-3 concurrent projects in a fast-paced software house environment",
+      "Coordinated 4 junior developers across multiple projects, providing technical guidance and code reviews",
+      "Architected system solutions by planning microservices and evaluating technical limitations and compatibilities",
+      "Built microservices architecture on AWS for B2B loan concessions using Cognito authentication, SNS, and SQS communication between Lambdas",
+      "Implemented Infrastructure as Code with Serverless Framework, managing deployment pipelines and service architecture",
+      "Developed serverless applications utilizing SQS, S3 events, and Lambda with CloudFormation and Terraform",
+      "Integrated multiple payment APIs (Asaas, Cielo, Stripe, Itaú, Mercado Livre, Parcelex) and antifraud systems (CAF)",
+      "Migrated databases from Firebase to PostgreSQL and MongoDB with zero downtime",
+      "Reduced AWS costs through service optimization and automated EC2 instance management via Lambda and Slack integration",
+      "Created dynamic CI/CD pipelines using GitLab, CodePipeline, and GitHub Actions",
+      "Implemented comprehensive testing strategies with Vitest and Jest, including Testcontainers for integration tests",
+      "Rebuilt PWA application from scratch using React.js, managing cross-browser compatibility and native API integration",
+      "Developed SEO-optimized landing pages with Next.js and real-time dashboards using WebHooks",
+      "Implemented GraphQL integration with Hasura in microservices architecture"
+    ],
+    "technologies": ["Node.js", "React", "Next.js", "AWS Lambda", "S3", "DynamoDB", "Cognito", "SNS", "SQS", "PostgreSQL", "MongoDB", "Serverless Framework", "CloudFormation", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Vitest", "Jest", "GraphQL", "Hasura"]
+  },
+  {
+    "company": "Skule Tecnologia",
+    "position": "Intern Mentor",
+    "period": "Feb 2023 – Aug 2023",
+    "location": "Remote",
+    "type": "Contract",
+    "description": "Mentored junior developers and facilitated knowledge transfer while conducting technical sessions focused on best practices.",
+    "highlights": [
+      "Mentored 6 interns across multiple Node.js and Next.js projects",
+      "Facilitated pull request reviews and conflict resolution",
+      "Conducted English-focused technical sessions on coding best practices"
+    ],
+    "technologies": ["Node.js", "Next.js", "Code Review", "Mentoring"]
+  },
+  {
+    "company": "Advanced Digital",
+    "position": "Frontend Developer",
+    "period": "Feb 2022 – Oct 2022",
+    "location": "Remote",
+    "type": "Previous",
+    "description": "Developed modern frontend applications and mobile solutions while integrating with various payment systems and APIs.",
+    "highlights": [
+      "Developed frontends using React.js and Redux",
+      "Integrated with Cielo and Mercado Livre APIs using custom React Hooks",
+      "Created two MVPs in Flutter (Dart) using GetX",
+      "Developed web scrapers in Node.js",
+      "Styled applications with SCSS and Bootstrap"
+    ],
+    "technologies": ["React.js", "Redux", "Flutter", "Dart", "Node.js", "SCSS"]
+  }
+]

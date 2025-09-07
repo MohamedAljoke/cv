@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Travel Journal",
+    "description": "A full-stack serverless application for image storage and management, built entirely on AWS. Implements scalable image upload using S3 pre-signed URLs to bypass API Gateway limitations, with automated backup and processing pipeline.",
+    "technologies": [
+      "AWS Lambda",
+      "S3",
+      "DynamoDB",
+      "Cognito",
+      "CloudFront",
+      "SQS",
+      "Node.js",
+      "Golang",
+      "React",
+      "Serverless Framework v4"
+    ],
+    "github": "https://github.com/MohamedAljoke/travel-journal-v2",
+    "demo": "https://www.loom.com/share/1f6a4cbaf4ad457bb44ab347971a0df2",
+    "achievements": [
+      "Serverless Framework v4 monorepo deployment",
+      "DynamoDB metadata storage",
+      "SQS error handling",
+      "Multi-language Lambda functions"
+    ]
+  },
+  {
+    "name": "Mail Sender",
+    "description": "A containerized microservices application demonstrating advanced AWS networking and infrastructure patterns. Built with proper VPC architecture using isolated public and private subnets, with services deployed exclusively on ECS Fargate.",
+    "technologies": [
+      "AWS VPC",
+      "ECS Fargate",
+      "ALB",
+      "NAT Gateway",
+      "RabbitMQ",
+      "Node.js",
+      "Golang",
+      "Terraform",
+      "Docker"
+    ],
+    "github": "https://github.com/MohamedAljoke/mail-sender",
+    "demo": "https://www.loom.com/share/f9ab6f55084540c5a0ad010af3fbef89",
+    "achievements": [
+      "Multi-tier VPC design with NAT Gateway",
+      "Application Load Balancer routing",
+      "ECS service orchestration",
+      "RabbitMQ message queue integration",
+      "Infrastructure as Code best practices"
+    ]
+  }
+]
