@@ -46,5 +46,24 @@
       "RabbitMQ message queue integration",
       "Infrastructure as Code best practices"
     ]
+  },
+  {
+    "name": "Scrap IFix Go",
+    "description": "A web scraper built with Golang for extracting and processing financial data. Demonstrates concurrent scraping patterns, data extraction techniques, and financial data processing capabilities.",
+    "technologies": [
+      "Golang",
+      "Web Scraping",
+      "Concurrent Programming",
+      "Financial Data Processing"
+    ],
+    "github": "https://github.com/MohamedAljoke/scrap_ifix_go",
+    "demo": "https://youtu.be/iRbsHPSSTvo?si=xC74MInLjt8UYbgH",
+    "achievements": [
+      "Concurrent web scraping implementation",
+      "Financial data extraction and processing",
+      "High test coverage implementation",
+      "Golang performance optimization",
+      "Real-time data collection system"
+    ]
   }
 ]
