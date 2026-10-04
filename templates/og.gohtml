@@ -1,0 +1,26 @@
+{{define "og"}}<!doctype html>
+<html lang="{{.Lang}}">
+<head>
+<meta charset="utf-8">
+<title>og</title>
+<link rel="stylesheet" href="{{.Prefix}}assets/css/fonts.css">
+<link rel="stylesheet" href="{{.Prefix}}assets/css/og.css">
+</head>
+<body>
+  <div class="og">
+    <div class="og-top">
+      <span class="og-mark">MA</span>
+      <span class="og-url">{{host .Self}}</span>
+    </div>
+    <div>
+      <h1>{{.R.Profile.Name}}</h1>
+      <p class="og-headline">{{.T .R.Profile.Headline}}</p>
+    </div>
+    <ul class="og-chips">
+      {{- range .R.Profile.Focus}}<li class="accent">{{$.T .}}</li>{{end}}
+      {{- range .R.Profile.CoreStack}}<li>{{.}}</li>{{end}}
+    </ul>
+  </div>
+</body>
+</html>
+{{end}}

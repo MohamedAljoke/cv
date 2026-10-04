@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "skills.schema.json",
+  "title": "Technical skills, grouped",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "items": {
+      "description": "Skill groups. Every skill here should also appear in an experience or project bullet: AI screeners score unbacked skills lower.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "label": { "$ref": "common.schema.json#/$defs/ltext" },
+          "skills": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/ltext" }, "minItems": 1 },
+          "hidden": { "type": "boolean" },
+          "pdf": { "type": "boolean" },
+          "web": { "type": "boolean" }
+        },
+        "required": ["id", "label", "skills"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["items"],
+  "additionalProperties": false
+}

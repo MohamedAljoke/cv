@@ -1,0 +1,26 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the "last updated" date comes from git history
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Data framework tests
+        run: go test ./...
+      - name: Re-render the site and check the committed PDFs
+        run: go run ./cmd/build -pdf=false
+      - name: Generated HTML must be committed
+        run: |
+          git diff --exit-code -- index.html pt/ resume/ resume.json || {
+            echo "::error::Generated files are stale. Run 'make build' and commit the result."
+            exit 1
+          }

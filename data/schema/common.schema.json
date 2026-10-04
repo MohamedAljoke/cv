@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Shared building blocks for the resume data",
+  "$defs": {
+    "ltext": {
+      "description": "Localized text: a plain string (same in every language) or one entry per language.",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string", "minLength": 1 },
+            "pt": { "type": "string", "minLength": 1 }
+          },
+          "required": ["en", "pt"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "id": {
+      "description": "Unique slug, used for anchors and to reference the item.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "month": {
+      "description": "Year and month, YYYY-MM.",
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "url": { "type": "string", "pattern": "^(https?://|mailto:)" },
+    "visibility": {
+      "description": "hidden: drop everywhere. pdf/web: false drops it from that output only (default true).",
+      "type": "object",
+      "properties": {
+        "hidden": { "type": "boolean" },
+        "pdf": { "type": "boolean" },
+        "web": { "type": "boolean" }
+      }
+    },
+    "note": {
+      "description": "Private note for yourself (for example a TODO). Never rendered.",
+      "type": "string"
+    },
+    "bullet": {
+      "description": "A bullet point: localized text, or an object with text plus visibility flags.",
+      "oneOf": [
+        { "$ref": "#/$defs/ltext" },
+        {
+          "type": "object",
+          "properties": {
+            "text": { "$ref": "#/$defs/ltext" },
+            "hidden": { "type": "boolean" },
+            "pdf": { "type": "boolean" },
+            "web": { "type": "boolean" },
+            "note": { "$ref": "#/$defs/note" }
+          },
+          "required": ["text"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "stack": {
+      "description": "Technologies, shown as chips on the web and as a 'Tech' line in the PDF.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}

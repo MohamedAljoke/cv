@@ -1,0 +1,66 @@
+{
+  "$schema": "./schema/skills.schema.json",
+  "items": [
+    {
+      "id": "languages",
+      "label": { "en": "Languages", "pt": "Linguagens" },
+      "skills": ["Go (Golang)", "TypeScript", "JavaScript", "Node.js", "Java", "Python", "SQL"]
+    },
+    {
+      "id": "backend",
+      "label": { "en": "Backend & architecture", "pt": "Backend e arquitetura" },
+      "skills": [
+        "REST APIs",
+        "GraphQL",
+        { "en": "Microservices", "pt": "Microsserviços" },
+        { "en": "Event-driven architecture", "pt": "Arquitetura orientada a eventos" },
+        { "en": "Domain events", "pt": "Eventos de domínio" },
+        { "en": "Transactional outbox", "pt": "Transactional outbox" },
+        { "en": "Asynchronous processing", "pt": "Processamento assíncrono" },
+        "Fiber",
+        "NestJS",
+        "Express",
+        "Fastify"
+      ]
+    },
+    {
+      "id": "aws",
+      "label": { "en": "Cloud (AWS)", "pt": "Cloud (AWS)" },
+      "skills": ["Lambda", "ECS Fargate", "SNS", "SQS (FIFO)", "S3", "DynamoDB", "Cognito", "Secrets Manager", "API Gateway", "CloudFront", "VPC", "CloudFormation"]
+    },
+    {
+      "id": "devops",
+      "label": { "en": "Infrastructure & DevOps", "pt": "Infraestrutura e DevOps" },
+      "skills": ["Terraform", "Serverless Framework", "Docker", "GitHub Actions", "GitLab CI", "AWS CodePipeline", "CI/CD"]
+    },
+    {
+      "id": "data",
+      "label": { "en": "Databases & messaging", "pt": "Bancos de dados e mensageria" },
+      "skills": ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "RabbitMQ", "SNS/SQS"]
+    },
+    {
+      "id": "fintech",
+      "label": { "en": "Fintech & compliance", "pt": "Fintech e compliance" },
+      "skills": [
+        "KYC",
+        { "en": "AML / sanctions screening", "pt": "PLD/AML e listas de sanções" },
+        { "en": "Risk scoring", "pt": "Score de risco" },
+        { "en": "Antifraud", "pt": "Antifraude" },
+        { "en": "Customer onboarding", "pt": "Onboarding de clientes" },
+        "Banking as a Service (BaaS)",
+        { "en": "Credit", "pt": "Crédito" },
+        { "en": "Payment integrations", "pt": "Integrações de pagamento" }
+      ]
+    },
+    {
+      "id": "testing",
+      "label": { "en": "Testing & observability", "pt": "Testes e observabilidade" },
+      "skills": ["Go testing", "Jest", "Vitest", "Testcontainers", "Sentry"]
+    },
+    {
+      "id": "frontend",
+      "label": { "en": "Frontend", "pt": "Frontend" },
+      "skills": ["React", "Next.js", "Redux", "PWA"]
+    }
+  ]
+}

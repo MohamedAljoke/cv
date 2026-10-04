@@ -1,0 +1,64 @@
+{
+  "$schema": "./schema/profile.schema.json",
+  "name": "Mohamed Ibrahim Aljoke",
+  "headline": {
+    "en": "Backend Software Engineer | Go · Node.js · TypeScript · AWS",
+    "pt": "Engenheiro de Software Backend | Go · Node.js · TypeScript · AWS"
+  },
+  "location": {
+    "en": "Brasília, Brazil · Open to remote",
+    "pt": "Brasília, DF · Aberto a remoto"
+  },
+  "email": "mohammed.maljoke@gmail.com",
+  "phone": { "value": "+55 61 98170-0760", "web": false },
+  "links": [
+    { "kind": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/mohamed-aljoke-a23217186/" },
+    { "kind": "github", "label": "GitHub", "url": "https://github.com/MohamedAljoke" },
+    { "kind": "website", "label": { "en": "Portfolio", "pt": "Portfólio" }, "url": "https://mohamedaljoke.github.io/cv/" },
+    { "kind": "credly", "label": "Credly", "url": "https://www.credly.com/users/mohamed-aljoke", "pdf": false }
+  ],
+  "summary": {
+    "en": "Backend software engineer with 4+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
+    "pt": "Engenheiro de software backend com mais de 4 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance, onboarding de clientes para Banking as a Service (BaaS) e integrações de crédito e pagamentos. Trabalho principalmente com Go, Node.js/TypeScript e AWS (Lambda, ECS, SNS/SQS, S3), projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate, com experiência em transformar requisitos de compliance em regras de domínio e em mentoria de desenvolvedores juniores."
+  },
+  "focus": [
+    { "en": "KYC & compliance", "pt": "KYC e compliance" },
+    "Banking as a Service",
+    { "en": "Event-driven systems", "pt": "Sistemas orientados a eventos" },
+    { "en": "Credit & payments", "pt": "Crédito e pagamentos" }
+  ],
+  "coreStack": ["Go", "Node.js", "TypeScript", "AWS", "Terraform", "PostgreSQL"],
+  "education": [
+    {
+      "id": "udf-mechanical-engineering",
+      "school": "UDF Centro Universitário",
+      "degree": {
+        "en": "Bachelor of Engineering (B.Eng.), Mechanical Engineering",
+        "pt": "Bacharelado em Engenharia Mecânica"
+      },
+      "location": { "en": "Brasília, Brazil", "pt": "Brasília, DF" },
+      "startYear": 2017,
+      "endYear": 2022,
+      "detail": {
+        "en": "Moved into software during the degree, through a development internship.",
+        "pt": "Migrei para software durante a graduação, a partir de um estágio em desenvolvimento."
+      },
+      "pdf": true
+    }
+  ],
+  "certifications": [
+    {
+      "id": "aws-saa",
+      "name": "AWS Certified Solutions Architect – Associate",
+      "issuer": "Amazon Web Services",
+      "url": "https://www.credly.com/badges/61f0854b-e2eb-4a3b-8482-d57409e1cc6b/public_url",
+      "badge": "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
+      "note": "TODO: add \"date\": \"YYYY-MM\" (issue date, shown on the Credly badge)."
+    }
+  ],
+  "languages": [
+    { "name": { "en": "Portuguese", "pt": "Português" }, "level": { "en": "Native", "pt": "Nativo" } },
+    { "name": { "en": "English", "pt": "Inglês" }, "level": { "en": "Fluent", "pt": "Fluente" } },
+    { "name": { "en": "Arabic", "pt": "Árabe" }, "level": { "en": "Native", "pt": "Nativo" } }
+  ]
+}

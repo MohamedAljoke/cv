@@ -1,0 +1,52 @@
+/* 1200×630 social preview card (screenshotted at build time). */
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background: #101513;
+  color: #f3f7f5;
+}
+.og {
+  box-sizing: border-box;
+  height: 630px;
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(800px 420px at 100% 0%, rgb(59 195 160 / 0.22), transparent 60%),
+    linear-gradient(160deg, #18201e, #101513);
+  border-left: 14px solid #3bc3a0;
+}
+.og-top { display: flex; align-items: center; justify-content: space-between; }
+.og-mark {
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 10px;
+  background: #3bc3a0; color: #0d211b;
+  font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 30px;
+}
+.og-url { color: #aebbb5; font-size: 26px; }
+h1 {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 92px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.og-headline {
+  margin: 18px 0 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #3bc3a0;
+}
+.og-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.og-chips li {
+  padding: 8px 16px;
+  border: 1px solid #34413c;
+  border-radius: 8px;
+  background: #202a27;
+  font-size: 24px;
+  font-weight: 500;
+}
+.og-chips li.accent { background: #163a31; border-color: transparent; color: #b9eedd; }

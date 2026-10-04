@@ -1,0 +1,52 @@
+{
+  "$schema": "./schema/projects.schema.json",
+  "items": [
+    {
+      "id": "travel-journal",
+      "name": "Travel Journal",
+      "summary": {
+        "en": "Serverless image journal on AWS: uploads go straight to S3 via pre-signed URLs, Cognito authentication, Node.js REST APIs on Lambda and a Go Lambda for image processing.",
+        "pt": "Diário de imagens serverless na AWS: uploads direto para o S3 via pre-signed URLs, autenticação com Cognito, APIs REST em Node.js no Lambda e um Lambda em Go para processar imagens."
+      },
+      "highlights": [
+        { "en": "Monorepo deployed with Serverless Framework v4", "pt": "Monorepo com deploy via Serverless Framework v4" },
+        { "en": "DynamoDB metadata store and SQS error handling", "pt": "Metadados no DynamoDB e tratamento de erros com SQS" },
+        { "en": "React frontend served through CloudFront", "pt": "Frontend em React distribuído via CloudFront" }
+      ],
+      "stack": ["Go", "Node.js", "React", "AWS Lambda", "S3", "DynamoDB", "Cognito", "CloudFront", "SQS", "Serverless Framework"],
+      "repo": "https://github.com/MohamedAljoke/travel-journal-v2",
+      "demo": "https://www.loom.com/share/1f6a4cbaf4ad457bb44ab347971a0df2",
+      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+    },
+    {
+      "id": "mail-sender",
+      "name": "Mail Sender",
+      "summary": {
+        "en": "Microservices on AWS ECS Fargate: a Node.js API publishes jobs to RabbitMQ and a Go worker sends the emails, in a multi-tier VPC (private subnets, NAT Gateway, ALB) provisioned with Terraform.",
+        "pt": "Microsserviços no AWS ECS Fargate: uma API em Node.js publica jobs no RabbitMQ e um worker em Go envia os e-mails, em uma VPC multicamada (subnets privadas, NAT Gateway, ALB) provisionada com Terraform."
+      },
+      "highlights": [
+        { "en": "Infrastructure as code with Terraform", "pt": "Infraestrutura como código com Terraform" },
+        { "en": "Asynchronous processing with RabbitMQ", "pt": "Processamento assíncrono com RabbitMQ" }
+      ],
+      "stack": ["Go", "Node.js", "RabbitMQ", "AWS ECS Fargate", "VPC", "ALB", "Terraform", "Docker"],
+      "repo": "https://github.com/MohamedAljoke/mail-sender",
+      "demo": "https://www.loom.com/share/f9ab6f55084540c5a0ad010af3fbef89",
+      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+    },
+    {
+      "id": "scrap-ifix-go",
+      "name": "Scrap IFix Go",
+      "summary": {
+        "en": "Go scraper for the IFIX real-estate fund index: fetches the fund list from the B3 API, scrapes dividends and prices in parallel goroutines, fans the results in over a channel and exports metrics to CSV.",
+        "pt": "Scraper em Go dos fundos imobiliários do índice IFIX: busca a lista na API da B3, coleta dividendos e preços em goroutines paralelas, agrega os resultados por channel e exporta métricas em CSV."
+      },
+      "highlights": [
+        { "en": "Fan-out with goroutines, fan-in through a channel", "pt": "Fan-out com goroutines e fan-in por channel" },
+        { "en": "Unit tests with coverage", "pt": "Testes unitários com cobertura" }
+      ],
+      "stack": ["Go", "Goroutines", "Channels", "CSV"],
+      "repo": "https://github.com/MohamedAljoke/scrap_ifix_go"
+    }
+  ]
+}

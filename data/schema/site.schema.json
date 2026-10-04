@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "site.schema.json",
+  "title": "Build settings: languages, section order, PDF names, ATS checks, UI labels",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "baseUrl": { "$ref": "common.schema.json#/$defs/url", "description": "Public URL of the site, ending with /." },
+    "languages": {
+      "type": "array",
+      "items": { "enum": ["en", "pt"] },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "First one is the default language (served at the site root)."
+    },
+    "sections": {
+      "description": "Which sections appear, in which order, on each output.",
+      "type": "object",
+      "properties": {
+        "web": { "$ref": "#/$defs/sectionList" },
+        "pdf": { "$ref": "#/$defs/sectionList" }
+      },
+      "required": ["web", "pdf"],
+      "additionalProperties": false
+    },
+    "pdf": {
+      "type": "object",
+      "properties": {
+        "fileName": { "$ref": "common.schema.json#/$defs/ltext", "description": "File name, without .pdf." },
+        "title": { "$ref": "common.schema.json#/$defs/ltext", "description": "PDF document title (shown in viewers and ATS)." },
+        "maxPages": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["fileName", "title", "maxPages"],
+      "additionalProperties": false
+    },
+    "ats": {
+      "type": "object",
+      "properties": {
+        "keywords": {
+          "description": "Words the PDF text must contain, per language. The build fails if one is missing.",
+          "type": "object",
+          "properties": {
+            "en": { "type": "array", "items": { "type": "string" } },
+            "pt": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": ["keywords"],
+      "additionalProperties": false
+    },
+    "labels": {
+      "description": "UI text and section headings. Use standard headings: ATS maps them to fields.",
+      "type": "object",
+      "additionalProperties": { "$ref": "common.schema.json#/$defs/ltext" }
+    }
+  },
+  "required": ["baseUrl", "languages", "sections", "pdf", "ats", "labels"],
+  "additionalProperties": false,
+  "$defs": {
+    "sectionList": {
+      "type": "array",
+      "items": { "enum": ["summary", "experience", "projects", "skills", "education", "certifications", "languages"] },
+      "uniqueItems": true
+    }
+  }
+}

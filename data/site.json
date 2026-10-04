@@ -1,0 +1,74 @@
+{
+  "$schema": "./schema/site.schema.json",
+  "baseUrl": "https://mohamedaljoke.github.io/cv/",
+  "languages": ["en", "pt"],
+  "sections": {
+    "web": ["experience", "projects", "skills", "education", "certifications", "languages"],
+    "pdf": ["summary", "experience", "skills", "projects", "education", "certifications", "languages"]
+  },
+  "pdf": {
+    "fileName": {
+      "en": "Mohamed_Aljoke_Backend_Engineer_EN",
+      "pt": "Mohamed_Aljoke_Engenheiro_Backend_PT"
+    },
+    "title": {
+      "en": "Mohamed Aljoke – Backend Software Engineer – Resume",
+      "pt": "Mohamed Aljoke – Engenheiro de Software Backend – Currículo"
+    },
+    "maxPages": 2
+  },
+  "ats": {
+    "keywords": {
+      "en": [
+        "Backend Software Engineer", "Go", "Node.js", "TypeScript", "AWS", "Lambda", "ECS", "SNS", "SQS",
+        "Terraform", "PostgreSQL", "microservices", "event-driven", "outbox", "KYC", "compliance",
+        "risk", "onboarding", "Banking as a Service", "CI/CD"
+      ],
+      "pt": [
+        "Engenheiro de Software Backend", "Go", "Node.js", "TypeScript", "AWS", "Lambda", "ECS", "SNS", "SQS",
+        "Terraform", "PostgreSQL", "microsserviços", "orientada a eventos", "outbox", "KYC", "compliance",
+        "risco", "onboarding", "Banking as a Service", "CI/CD"
+      ]
+    }
+  },
+  "labels": {
+    "summary": { "en": "Summary", "pt": "Resumo Profissional" },
+    "experience": { "en": "Work Experience", "pt": "Experiência Profissional" },
+    "projects": { "en": "Projects", "pt": "Projetos" },
+    "skills": { "en": "Technical Skills", "pt": "Competências Técnicas" },
+    "education": { "en": "Education", "pt": "Formação Acadêmica" },
+    "certifications": { "en": "Certifications", "pt": "Certificações" },
+    "languages": { "en": "Languages", "pt": "Idiomas" },
+
+    "about": { "en": "About", "pt": "Sobre" },
+    "contact": { "en": "Contact", "pt": "Contato" },
+    "present": { "en": "Present", "pt": "atual" },
+    "tech": { "en": "Tech", "pt": "Tecnologias" },
+    "code": { "en": "Source code", "pt": "Código-fonte" },
+    "credential": { "en": "Verify credential", "pt": "Verificar credencial" },
+    "email": { "en": "Email", "pt": "E-mail" },
+    "phone": { "en": "Phone", "pt": "Telefone" },
+    "availability": { "en": "Open to backend roles · remote or Brasília", "pt": "Aberto a vagas backend · remoto ou Brasília" },
+    "pdf_en": { "en": "Resume (English, PDF)", "pt": "Currículo em inglês (PDF)" },
+    "pdf_pt": { "en": "Resume (Portuguese, PDF)", "pt": "Currículo em português (PDF)" },
+    "downloads": { "en": "Download the resume", "pt": "Baixe o currículo" },
+    "other_language": { "en": "Português", "pt": "English" },
+    "other_language_hint": { "en": "Ler em português", "pt": "Read in English" },
+    "skip": { "en": "Skip to content", "pt": "Pular para o conteúdo" },
+    "theme": { "en": "Switch light/dark theme", "pt": "Alternar tema claro/escuro" },
+    "updated": { "en": "Last updated", "pt": "Atualizado em" },
+    "contact_title": { "en": "Let's talk", "pt": "Vamos conversar" },
+    "contact_text": {
+      "en": "The fastest way to reach me is email or LinkedIn. Both resume versions are available as PDF.",
+      "pt": "A forma mais rápida de falar comigo é por e-mail ou LinkedIn. As duas versões do currículo estão disponíveis em PDF."
+    },
+    "meta_description": {
+      "en": "Mohamed Aljoke – Backend Software Engineer (Go, Node.js, TypeScript, AWS). Fintech: KYC and compliance engines, Banking as a Service onboarding, event-driven systems. Resume in English and Portuguese.",
+      "pt": "Mohamed Aljoke – Engenheiro de Software Backend (Go, Node.js, TypeScript, AWS). Fintech: motores de KYC e compliance, onboarding de Banking as a Service, sistemas orientados a eventos. Currículo em português e inglês."
+    },
+    "yr": { "en": "yr", "pt": "ano" },
+    "yrs": { "en": "yrs", "pt": "anos" },
+    "mo": { "en": "mo", "pt": "mês" },
+    "mos": { "en": "mos", "pt": "meses" }
+  }
+}

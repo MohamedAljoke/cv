@@ -1,0 +1,289 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "email": "mohammed.maljoke@gmail.com",
+    "label": "Backend Software Engineer | Go · Node.js · TypeScript · AWS",
+    "location": {
+      "city": "Brasília",
+      "countryCode": "BR",
+      "region": "DF"
+    },
+    "name": "Mohamed Ibrahim Aljoke",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/mohamed-aljoke-a23217186/"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/MohamedAljoke"
+      },
+      {
+        "network": "Credly",
+        "url": "https://www.credly.com/users/mohamed-aljoke"
+      }
+    ],
+    "summary": "Backend software engineer with 4+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
+    "url": "https://mohamedaljoke.github.io/cv/"
+  },
+  "certificates": [
+    {
+      "issuer": "Amazon Web Services",
+      "name": "AWS Certified Solutions Architect – Associate",
+      "url": "https://www.credly.com/badges/61f0854b-e2eb-4a3b-8482-d57409e1cc6b/public_url"
+    }
+  ],
+  "education": [
+    {
+      "endDate": "2022",
+      "institution": "UDF Centro Universitário",
+      "startDate": "2017",
+      "studyType": "Bachelor of Engineering (B.Eng.), Mechanical Engineering"
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native",
+      "language": "Portuguese"
+    },
+    {
+      "fluency": "Fluent",
+      "language": "English"
+    },
+    {
+      "fluency": "Native",
+      "language": "Arabic"
+    }
+  ],
+  "meta": {
+    "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
+    "lastModified": "2026-10-04"
+  },
+  "projects": [
+    {
+      "description": "Serverless image journal on AWS: uploads go straight to S3 via pre-signed URLs, Cognito authentication, Node.js REST APIs on Lambda and a Go Lambda for image processing.",
+      "highlights": [
+        "Monorepo deployed with Serverless Framework v4",
+        "DynamoDB metadata store and SQS error handling",
+        "React frontend served through CloudFront"
+      ],
+      "keywords": [
+        "Go",
+        "Node.js",
+        "React",
+        "AWS Lambda",
+        "S3",
+        "DynamoDB",
+        "Cognito",
+        "CloudFront",
+        "SQS",
+        "Serverless Framework"
+      ],
+      "name": "Travel Journal",
+      "url": "https://github.com/MohamedAljoke/travel-journal-v2"
+    },
+    {
+      "description": "Microservices on AWS ECS Fargate: a Node.js API publishes jobs to RabbitMQ and a Go worker sends the emails, in a multi-tier VPC (private subnets, NAT Gateway, ALB) provisioned with Terraform.",
+      "highlights": [
+        "Infrastructure as code with Terraform",
+        "Asynchronous processing with RabbitMQ"
+      ],
+      "keywords": [
+        "Go",
+        "Node.js",
+        "RabbitMQ",
+        "AWS ECS Fargate",
+        "VPC",
+        "ALB",
+        "Terraform",
+        "Docker"
+      ],
+      "name": "Mail Sender",
+      "url": "https://github.com/MohamedAljoke/mail-sender"
+    },
+    {
+      "description": "Go scraper for the IFIX real-estate fund index: fetches the fund list from the B3 API, scrapes dividends and prices in parallel goroutines, fans the results in over a channel and exports metrics to CSV.",
+      "highlights": [
+        "Fan-out with goroutines, fan-in through a channel",
+        "Unit tests with coverage"
+      ],
+      "keywords": [
+        "Go",
+        "Goroutines",
+        "Channels",
+        "CSV"
+      ],
+      "name": "Scrap IFix Go",
+      "url": "https://github.com/MohamedAljoke/scrap_ifix_go"
+    }
+  ],
+  "skills": [
+    {
+      "keywords": [
+        "Go (Golang)",
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "Java",
+        "Python",
+        "SQL"
+      ],
+      "name": "Languages"
+    },
+    {
+      "keywords": [
+        "REST APIs",
+        "GraphQL",
+        "Microservices",
+        "Event-driven architecture",
+        "Domain events",
+        "Transactional outbox",
+        "Asynchronous processing",
+        "Fiber",
+        "NestJS",
+        "Express",
+        "Fastify"
+      ],
+      "name": "Backend \u0026 architecture"
+    },
+    {
+      "keywords": [
+        "Lambda",
+        "ECS Fargate",
+        "SNS",
+        "SQS (FIFO)",
+        "S3",
+        "DynamoDB",
+        "Cognito",
+        "Secrets Manager",
+        "API Gateway",
+        "CloudFront",
+        "VPC",
+        "CloudFormation"
+      ],
+      "name": "Cloud (AWS)"
+    },
+    {
+      "keywords": [
+        "Terraform",
+        "Serverless Framework",
+        "Docker",
+        "GitHub Actions",
+        "GitLab CI",
+        "AWS CodePipeline",
+        "CI/CD"
+      ],
+      "name": "Infrastructure \u0026 DevOps"
+    },
+    {
+      "keywords": [
+        "PostgreSQL",
+        "MongoDB",
+        "DynamoDB",
+        "Redis",
+        "RabbitMQ",
+        "SNS/SQS"
+      ],
+      "name": "Databases \u0026 messaging"
+    },
+    {
+      "keywords": [
+        "KYC",
+        "AML / sanctions screening",
+        "Risk scoring",
+        "Antifraud",
+        "Customer onboarding",
+        "Banking as a Service (BaaS)",
+        "Credit",
+        "Payment integrations"
+      ],
+      "name": "Fintech \u0026 compliance"
+    },
+    {
+      "keywords": [
+        "Go testing",
+        "Jest",
+        "Vitest",
+        "Testcontainers",
+        "Sentry"
+      ],
+      "name": "Testing \u0026 observability"
+    },
+    {
+      "keywords": [
+        "React",
+        "Next.js",
+        "Redux",
+        "PWA"
+      ],
+      "name": "Frontend"
+    }
+  ],
+  "work": [
+    {
+      "highlights": [
+        "Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.",
+        "Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.",
+        "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
+        "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
+        "Process account and customer events with AWS SNS and SQS FIFO queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+        "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory: multipart streaming straight to Amazon S3, size-limited readers and streaming SHA-256 hashing.",
+        "Diagnosed Fiber and Sentry middleware that consumed the streamed request body before the handler, and fixed the upload path.",
+        "Built internal bulk-processing tooling to safely reprocess operational workflows at scale."
+      ],
+      "name": "Transfeera",
+      "position": "Software Engineer",
+      "startDate": "2025-11",
+      "summary": "Brazilian fintech: payments and Banking as a Service",
+      "url": "https://transfeera.com"
+    },
+    {
+      "endDate": "2025-11",
+      "highlights": [
+        "Migrated a B2B credit-granting platform from a monolith to microservices on AWS ECS and Lambda, integrating CAF antifraud, Parcelex and Vindi, with API-to-API authentication through Amazon Cognito and Secrets Manager.",
+        "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
+        "Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.",
+        "Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.",
+        "Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.",
+        "Reduced AWS costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
+        "Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.",
+        "Built a notification client with a webhook system for asynchronous communication between services, improving reliability and traceability.",
+        "Contributed to migrating a healthcare management platform from Ruby on Rails to React and Java.",
+        "Built SEO-optimized landing pages with Next.js, real-time dashboards fed by webhooks, and a GraphQL layer with Hasura."
+      ],
+      "location": "Brasília, Brazil · Remote",
+      "name": "IDIP Tecnologia",
+      "position": "Full Stack Developer",
+      "startDate": "2022-10",
+      "summary": "Software house building products for fintech, healthcare and industry clients",
+      "url": ""
+    },
+    {
+      "endDate": "2023-07",
+      "highlights": [
+        "Mentored 6 programming interns on Node.js, Next.js and React projects: reviewed pull requests, resolved merge conflicts and guided code improvements.",
+        "Ran technical sessions in English on clean architecture and coding best practices."
+      ],
+      "location": "Remote",
+      "name": "Skule Tecnologia",
+      "position": "Education Mentor",
+      "startDate": "2023-03",
+      "summary": "",
+      "url": ""
+    },
+    {
+      "endDate": "2022-10",
+      "highlights": [
+        "Maintained and extended a React and Redux e-commerce app with a Node.js backend, and migrated a ticket-selling UI from PHP to React.",
+        "Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.",
+        "Helped launch two mobile MVPs in Flutter (Dart, GetX)."
+      ],
+      "location": "Brasília, Brazil",
+      "name": "Advanced Digital",
+      "position": "Frontend Developer",
+      "startDate": "2022-02",
+      "summary": "",
+      "url": ""
+    }
+  ]
+}

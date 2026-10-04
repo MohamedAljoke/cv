@@ -1,0 +1,265 @@
+{{define "site"}}<!doctype html>
+<html lang="{{if eq .Lang "pt"}}pt-BR{{else}}en{{end}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.DocTitle}}</title>
+<meta name="description" content="{{.L "meta_description"}}">
+<meta name="author" content="{{.R.Profile.Name}}">
+<link rel="canonical" href="{{.Self}}">
+{{- range .Alts}}
+<link rel="alternate" hreflang="{{if eq .Lang "pt"}}pt-BR{{else}}{{.Lang}}{{end}}" href="{{.Href}}">{{end}}
+<link rel="alternate" hreflang="x-default" href="{{(index .Alts 0).Href}}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="{{.DocTitle}}">
+<meta property="og:description" content="{{.L "meta_description"}}">
+<meta property="og:url" content="{{.Self}}">
+<meta property="og:image" content="{{.OGImage}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{if eq .Lang "pt"}}pt_BR{{else}}en_US{{end}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101513" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{.Prefix}}assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{.Prefix}}assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{.Prefix}}assets/fonts/barlow-semi-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{.Prefix}}assets/css/fonts.css">
+<link rel="stylesheet" href="{{.Prefix}}assets/css/site.css">
+<link rel="alternate" type="application/json" href="{{.Prefix}}resume.json" title="JSON Resume">
+<script>
+  // Apply the saved theme before first paint (no flash). Storage can be blocked.
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script type="application/ld+json">{{.JSONLD}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{.L "skip"}}</a>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="#top" aria-label="{{.R.Profile.Name}}"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name">{{.R.Profile.Name}}</span></a>
+    <nav class="nav" aria-label="{{.L "about"}}">
+      <ul>
+        {{- range .Sections}}{{if or (eq . "experience") (eq . "projects") (eq . "skills")}}
+        <li><a href="#{{.}}">{{$.L .}}</a></li>{{end}}{{end}}
+        <li><a href="#contact">{{.L "contact"}}</a></li>
+      </ul>
+    </nav>
+    <div class="topbar-actions">
+      {{- with .Other}}
+      <a class="btn btn-ghost btn-sm" href="{{.Href}}" hreflang="{{.Lang}}" lang="{{if eq .Lang "pt"}}pt-BR{{else}}en{{end}}" title="{{$.L "other_language_hint"}}">{{icon "globe"}}<span>{{$.L "other_language"}}</span></a>{{end}}
+      <button class="btn btn-ghost btn-sm btn-icon" type="button" id="theme-toggle" aria-label="{{.L "theme"}}" title="{{.L "theme"}}">{{icon "moon"}}{{icon "sun"}}</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="name">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="pill"><span class="dot" aria-hidden="true"></span>{{.L "availability"}}</p>
+        <h1 id="name">{{.R.Profile.Name}}</h1>
+        <p class="headline">{{.T .R.Profile.Headline}}</p>
+        <p class="location">{{icon "pin"}}<span>{{.T .R.Profile.Location}}</span></p>
+        <p class="lead">{{.T .R.Profile.Summary}}</p>
+        <div class="actions">
+          {{- range .PDFs}}{{if eq .Lang $.Lang}}
+          <a class="btn btn-primary" href="{{.Href}}" download="{{.File}}">{{icon "download"}}<span>{{.Label}}</span></a>{{end}}{{end}}
+          {{- range .PDFs}}{{if ne .Lang $.Lang}}
+          <a class="btn btn-secondary" href="{{.Href}}" download="{{.File}}">{{icon "download"}}<span>{{.Label}}</span></a>{{end}}{{end}}
+        </div>
+        <ul class="links">
+          <li><a href="mailto:{{.R.Profile.Email}}">{{icon "mail"}}<span>{{.R.Profile.Email}}</span></a></li>
+          {{- range .R.Profile.Links}}{{if ne .Kind "website"}}
+          <li><a href="{{.URL}}" rel="me noopener" target="_blank">{{icon .Kind}}<span>{{$.T .Label}}</span></a></li>{{end}}{{end}}
+        </ul>
+      </div>
+
+      <aside class="glance card" aria-label="{{.L "about"}}">
+        {{- with .Current}}
+        <div class="glance-row">
+          <p class="glance-label">{{icon "briefcase"}}<span>{{$.Dates .}}</span></p>
+          <p class="glance-value"><strong>{{$.T .Title}}</strong> · {{.Company}}</p>
+          {{- with $.T .Blurb}}<p class="glance-sub">{{.}}</p>{{end}}
+        </div>{{end}}
+        {{- with .R.Profile.Focus}}
+        <div class="glance-row">
+          <ul class="chips chips-accent">{{range .}}<li>{{$.T .}}</li>{{end}}</ul>
+        </div>{{end}}
+        {{- with .R.Profile.CoreStack}}
+        <div class="glance-row">
+          <ul class="chips">{{range .}}<li>{{.}}</li>{{end}}</ul>
+        </div>{{end}}
+        {{- range .R.Profile.Certifications}}
+        <div class="glance-row glance-cert">
+          {{- with .Badge}}<img src="{{.}}" alt="" width="56" height="56" loading="lazy" decoding="async">{{end}}
+          <p><strong>{{.Name}}</strong><br><span class="glance-sub">{{.Issuer}}</span></p>
+        </div>{{end}}
+      </aside>
+    </div>
+  </section>
+
+  {{- range .Blocks}}
+  {{- if eq (len .) 1}}{{template "site-section" (dict $ (index . 0))}}
+  {{- else}}
+  <div class="container compact-row">
+    {{- range .}}{{template "site-section" (dict $ .)}}{{end}}
+  </div>
+  {{- end}}
+  {{- end}}
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="card contact-card">
+        <div>
+          <h2 id="contact-title">{{.L "contact_title"}}</h2>
+          <p>{{.L "contact_text"}}</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:{{.R.Profile.Email}}">{{icon "mail"}}<span>{{.R.Profile.Email}}</span></a>
+          {{- with .R.Profile.Phone}}
+          <a class="btn btn-secondary" href="tel:{{.Value}}">{{icon "phone"}}<span>{{.Value}}</span></a>{{end}}
+          {{- range .R.Profile.Links}}{{if eq .Kind "linkedin"}}
+          <a class="btn btn-secondary" href="{{.URL}}" rel="me noopener" target="_blank">{{icon "linkedin"}}<span>LinkedIn</span></a>{{end}}{{end}}
+          {{- range .PDFs}}
+          <a class="btn btn-ghost" href="{{.Href}}" download="{{.File}}">{{icon "download"}}<span>{{.Label}}</span></a>{{end}}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© {{slice .Updated 0 4}} {{.R.Profile.Name}}</p>
+    <p>{{.L "updated"}}: <time datetime="{{.Updated}}">{{.Month (slice .Updated 0 7)}}</time> · <a href="https://github.com/MohamedAljoke/cv">{{icon "code"}}<span>Go + JSON</span></a></p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("theme-toggle");
+    function current() {
+      return root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
+{{end}}
+
+{{define "site-section"}}{{$p := .P}}{{$s := .S}}
+{{- if and (eq $s "summary") $p.R.Profile.Summary}}
+  <section class="section" id="summary" aria-labelledby="h-summary">
+    <div class="container"><h2 id="h-summary">{{$p.L "summary"}}</h2><p class="lead">{{$p.T $p.R.Profile.Summary}}</p></div>
+  </section>
+{{- else if and (eq $s "experience") $p.R.Experience}}
+  <section class="section" id="experience" aria-labelledby="h-experience">
+    <div class="container">
+      <h2 id="h-experience">{{$p.L "experience"}}</h2>
+      <ol class="timeline">
+      {{- range $p.R.Experience}}
+        <li class="job" id="job-{{.ID}}">
+          <div class="job-head">
+            <div>
+              <h3>{{$p.T .Title}}</h3>
+              <p class="job-org">{{if .CompanyURL}}<a href="{{.CompanyURL}}" target="_blank" rel="noopener">{{.Company}}</a>{{else}}{{.Company}}{{end}}{{with $p.T .Blurb}} <span class="muted">· {{.}}</span>{{end}}</p>
+            </div>
+            <p class="job-when"><time datetime="{{.Start}}">{{$p.Dates .}}</time><span class="muted">{{$p.Duration .}}{{with $p.T .Location}} · {{.}}{{end}}</span></p>
+          </div>
+          {{- if .Groups}}
+          <div class="groups">
+          {{- range .Groups}}
+            <div class="group">
+              <h4>{{$p.T .Title}}</h4>
+              <ul class="bullets">{{range .Bullets}}<li>{{$p.T .Text}}</li>{{end}}</ul>
+            </div>
+          {{- end}}
+          </div>
+          {{- end}}
+          {{- with .Bullets}}<ul class="bullets">{{range .}}<li>{{$p.T .Text}}</li>{{end}}</ul>{{end}}
+          {{- with .Stack}}<ul class="chips" aria-label="{{$p.L "tech"}}">{{range .}}<li>{{.}}</li>{{end}}</ul>{{end}}
+        </li>
+      {{- end}}
+      </ol>
+    </div>
+  </section>
+{{- else if and (eq $s "projects") $p.R.Projects}}
+  <section class="section section-alt" id="projects" aria-labelledby="h-projects">
+    <div class="container">
+      <h2 id="h-projects">{{$p.L "projects"}}</h2>
+      <div class="grid grid-3">
+      {{- range $p.R.Projects}}
+        <article class="card project" id="project-{{.ID}}">
+          <h3>{{.Name}}</h3>
+          <p>{{$p.T .Summary}}</p>
+          {{- with .Highlights}}<ul class="bullets bullets-sm">{{range .}}<li>{{$p.T .Text}}</li>{{end}}</ul>{{end}}
+          {{- with .Stack}}<ul class="chips" aria-label="{{$p.L "tech"}}">{{range .}}<li>{{.}}</li>{{end}}</ul>{{end}}
+          <p class="card-links">
+            {{- with .Repo}}<a href="{{.}}" target="_blank" rel="noopener">{{icon "github"}}<span>{{$p.L "code"}}</span></a>{{end}}
+            {{- if .Demo}}<a href="{{.Demo}}" target="_blank" rel="noopener">{{icon "play"}}<span>{{$p.T .DemoLabel}}</span></a>{{end}}
+          </p>
+        </article>
+      {{- end}}
+      </div>
+    </div>
+  </section>
+{{- else if and (eq $s "skills") $p.R.Skills}}
+  <section class="section" id="skills" aria-labelledby="h-skills">
+    <div class="container">
+      <h2 id="h-skills">{{$p.L "skills"}}</h2>
+      <div class="grid grid-skills">
+      {{- range $p.R.Skills}}
+        <div class="skill-group">
+          <h3>{{$p.T .Label}}</h3>
+          <ul class="chips">{{range $p.Skills .}}<li>{{.}}</li>{{end}}</ul>
+        </div>
+      {{- end}}
+      </div>
+    </div>
+  </section>
+{{- else if and (eq $s "education") $p.R.Profile.Education}}
+  <section class="compact" id="education" aria-labelledby="h-education">
+    <h2 id="h-education">{{$p.L "education"}}</h2>
+    {{- range $p.R.Profile.Education}}
+    <div class="card">
+      <h3>{{$p.T .Degree}}</h3>
+      <p>{{.School}}</p>
+      <p class="muted">{{years .}}{{with $p.T .Location}} · {{.}}{{end}}</p>
+      {{- with $p.T .Detail}}<p class="muted small">{{.}}</p>{{end}}
+    </div>
+    {{- end}}
+  </section>
+{{- else if and (eq $s "certifications") $p.R.Profile.Certifications}}
+  <section class="compact" id="certifications" aria-labelledby="h-certifications">
+    <h2 id="h-certifications">{{$p.L "certifications"}}</h2>
+    {{- range $p.R.Profile.Certifications}}
+    <div class="card cert">
+      {{- with .Badge}}<img src="{{.}}" alt="" width="72" height="72" loading="lazy" decoding="async">{{end}}
+      <div>
+        <h3>{{.Name}}</h3>
+        <p class="muted">{{.Issuer}}{{with .Date}} · {{$p.Month .}}{{end}}</p>
+        {{- with .URL}}<p><a href="{{.}}" target="_blank" rel="noopener">{{icon "external"}}<span>{{$p.L "credential"}}</span></a></p>{{end}}
+      </div>
+    </div>
+    {{- end}}
+  </section>
+{{- else if and (eq $s "languages") $p.R.Profile.Languages}}
+  <section class="compact" id="languages" aria-labelledby="h-languages">
+    <h2 id="h-languages">{{$p.L "languages"}}</h2>
+    <div class="card">
+      <ul class="lang-list">
+      {{- range $p.R.Profile.Languages}}
+        <li><strong>{{$p.T .Name}}</strong><span class="muted">{{$p.T .Level}}</span></li>
+      {{- end}}
+      </ul>
+    </div>
+  </section>
+{{- end}}
+{{- end}}

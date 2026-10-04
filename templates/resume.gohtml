@@ -1,0 +1,109 @@
+{{define "resume"}}<!doctype html>
+<html lang="{{if eq .Lang "pt"}}pt-BR{{else}}en{{end}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.DocTitle}}</title>
+<meta name="author" content="{{.R.Profile.Name}}">
+<meta name="description" content="{{.T .R.Profile.Headline}}">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="{{.Prefix}}assets/css/fonts.css">
+<link rel="stylesheet" href="{{.Prefix}}assets/css/resume.css">
+</head>
+<body>
+<main class="sheet">
+  <header class="head">
+    <h1>{{.R.Profile.Name}}</h1>
+    <p class="headline">{{.T .R.Profile.Headline}}</p>
+    <p class="contact">
+      <span>{{.T .R.Profile.Location}}</span>
+      <span><a href="mailto:{{.R.Profile.Email}}">{{.R.Profile.Email}}</a></span>
+      {{- with .R.Profile.Phone}}
+      <span>{{.Value}}</span>{{end}}
+    </p>
+    <p class="contact">
+      {{- range .R.Profile.Links}}
+      <span><a href="{{.URL}}">{{host .URL}}</a></span>{{end}}
+    </p>
+  </header>
+{{range .Sections}}{{template "resume-section" (dict $ .)}}{{end}}
+</main>
+</body>
+</html>
+{{end}}
+
+{{define "resume-section"}}{{$p := .P}}{{$s := .S}}
+{{- if eq $s "summary"}}
+  <section class="section">
+    <h2>{{$p.L "summary"}}</h2>
+    <p class="summary">{{$p.T $p.R.Profile.Summary}}</p>
+  </section>
+{{- else if and (eq $s "experience") $p.R.Experience}}
+  <section class="section">
+    <h2>{{$p.L "experience"}}</h2>
+    {{- range $p.R.Experience}}
+    <article class="job">
+      <div class="role">
+        <h3><span class="title">{{$p.T .Title}}</span> <span class="sep">·</span> <span class="org">{{.Company}}</span></h3>
+        <p class="when">{{$p.Dates .}}{{with $p.T .Location}} <span class="sep">·</span> {{.}}{{end}}</p>
+      </div>
+      {{- with $p.T .Blurb}}<p class="blurb">{{.}}</p>{{end}}
+      {{- range .Groups}}
+      <p class="group">{{$p.T .Title}}</p>
+      <ul>{{range .Bullets}}<li>{{$p.T .Text}}</li>{{end}}</ul>
+      {{- end}}
+      {{- with .Bullets}}<ul>{{range .}}<li>{{$p.T .Text}}</li>{{end}}</ul>{{end}}
+      {{- with .Stack}}<p class="tech"><strong>{{$p.L "tech"}}:</strong> {{join . ", "}}</p>{{end}}
+    </article>
+    {{- end}}
+  </section>
+{{- else if and (eq $s "skills") $p.R.Skills}}
+  <section class="section">
+    <h2>{{$p.L "skills"}}</h2>
+    <div class="skills">
+    {{- range $p.R.Skills}}
+      <p><strong>{{$p.T .Label}}:</strong> {{join ($p.Skills .) ", "}}</p>
+    {{- end}}
+    </div>
+  </section>
+{{- else if and (eq $s "projects") $p.R.Projects}}
+  <section class="section">
+    <h2>{{$p.L "projects"}}</h2>
+    {{- range $p.R.Projects}}
+    <article class="project">
+      <div class="role">
+        <h3>{{.Name}}</h3>
+        {{- with .Repo}}<p class="when"><a href="{{.}}">{{host .}}</a></p>{{end}}
+      </div>
+      <p>{{$p.T .Summary}}</p>
+      {{- with .Stack}}<p class="tech"><strong>{{$p.L "tech"}}:</strong> {{join . ", "}}</p>{{end}}
+    </article>
+    {{- end}}
+  </section>
+{{- else if and (eq $s "education") $p.R.Profile.Education}}
+  <section class="section">
+    <h2>{{$p.L "education"}}</h2>
+    {{- range $p.R.Profile.Education}}
+    <div class="role">
+      <h3><span class="title">{{$p.T .Degree}}</span></h3>
+      <p class="when">{{years .}}</p>
+    </div>
+    <p class="school"><span class="org">{{.School}}</span>{{with $p.T .Location}} <span class="sep">·</span> {{.}}{{end}}</p>
+    {{- end}}
+  </section>
+{{- else if and (eq $s "certifications") $p.R.Profile.Certifications}}
+  <section class="section">
+    <h2>{{$p.L "certifications"}}</h2>
+    <ul class="plain">
+    {{- range $p.R.Profile.Certifications}}
+      <li><strong>{{.Name}}</strong> <span class="sep">·</span> {{.Issuer}}{{with .Date}} ({{$p.Month .}}){{end}}</li>
+    {{- end}}
+    </ul>
+  </section>
+{{- else if and (eq $s "languages") $p.R.Profile.Languages}}
+  <section class="section">
+    <h2>{{$p.L "languages"}}</h2>
+    <p>{{range $i, $l := $p.R.Profile.Languages}}{{if $i}} <span class="sep">·</span> {{end}}<strong>{{$p.T $l.Name}}</strong> ({{$p.T $l.Level}}){{end}}</p>
+  </section>
+{{- end}}
+{{- end}}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Aljoke – Engenheiro de Software Backend – Currículo</title>
+<meta name="author" content="Mohamed Ibrahim Aljoke">
+<meta name="description" content="Engenheiro de Software Backend | Go · Node.js · TypeScript · AWS">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/resume.css">
+</head>
+<body>
+<main class="sheet">
+  <header class="head">
+    <h1>Mohamed Ibrahim Aljoke</h1>
+    <p class="headline">Engenheiro de Software Backend | Go · Node.js · TypeScript · AWS</p>
+    <p class="contact">
+      <span>Brasília, DF · Aberto a remoto</span>
+      <span><a href="mailto:mohammed.maljoke@gmail.com">mohammed.maljoke@gmail.com</a></span>
+      <span>&#43;55 61 98170-0760</span>
+    </p>
+    <p class="contact">
+      <span><a href="https://www.linkedin.com/in/mohamed-aljoke-a23217186/">linkedin.com/in/mohamed-aljoke-a23217186</a></span>
+      <span><a href="https://github.com/MohamedAljoke">github.com/MohamedAljoke</a></span>
+      <span><a href="https://mohamedaljoke.github.io/cv/">mohamedaljoke.github.io/cv</a></span>
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>Resumo Profissional</h2>
+    <p class="summary">Engenheiro de software backend com mais de 4 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance, onboarding de clientes para Banking as a Service (BaaS) e integrações de crédito e pagamentos. Trabalho principalmente com Go, Node.js/TypeScript e AWS (Lambda, ECS, SNS/SQS, S3), projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate, com experiência em transformar requisitos de compliance em regras de domínio e em mentoria de desenvolvedores juniores.</p>
+  </section>
+  <section class="section">
+    <h2>Experiência Profissional</h2>
+    <article class="job">
+      <div class="role">
+        <h3><span class="title">Engenheiro de Software</span> <span class="sep">·</span> <span class="org">Transfeera</span></h3>
+        <p class="when">nov 2025 – atual</p>
+      </div><p class="blurb">Fintech brasileira de pagamentos e Banking as a Service</p>
+      <p class="group">Motor de KYC e compliance</p>
+      <ul><li>Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio.</li><li>Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats.</li></ul>
+      <p class="group">Motor de enriquecimento</p>
+      <ul><li>Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final.</li></ul>
+      <p class="group">Onboarding de Banking as a Service (BaaS)</p>
+      <ul><li>Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processo eventos de contas e clientes com AWS SNS e filas SQS FIFO, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li></ul>
+      <p class="group">Plataforma e ferramentas</p>
+      <ul><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória: multipart direto para o Amazon S3, readers com limite de tamanho e SHA-256 em streaming.</li><li>Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança.</li></ul><p class="tech"><strong>Tecnologias:</strong> Go, Fiber, fasthttp, AWS SNS, AWS SQS (FIFO), Amazon S3, Sentry</p>
+    </article>
+    <article class="job">
+      <div class="role">
+        <h3><span class="title">Desenvolvedor Full Stack</span> <span class="sep">·</span> <span class="org">IDIP Tecnologia</span></h3>
+        <p class="when">out 2022 – nov 2025 <span class="sep">·</span> Brasília, DF · Remoto</p>
+      </div><p class="blurb">Software house com produtos para clientes de fintech, saúde e indústria</p><ul><li>Migrei uma plataforma B2B de concessão de crédito de um monólito para microsserviços em AWS ECS e Lambda, integrando CAF antifraude, Parcelex e Vindi, com autenticação API-a-API via Amazon Cognito e Secrets Manager.</li><li>Construí uma plataforma B2B de envio de documentos via WhatsApp com AWS Lambda, eventos do S3 e SQS (contornando limites do API Gateway), com chatbot e dashboard administrativo em React.</li><li>Coordenei 4 desenvolvedores juniores em 2–3 projetos simultâneos: orientação técnica, code review e planejamento de arquitetura de microsserviços.</li><li>Provisionei infraestrutura como código com Terraform, Serverless Framework e CloudFormation e criei pipelines de CI/CD no GitHub Actions, GitLab CI e AWS CodePipeline, com testes de integração usando Jest, Vitest e Testcontainers.</li><li>Integrei provedores de pagamento (Stripe, Asaas, Cielo, Itaú, Mercado Livre) e migrei dados do Firebase para PostgreSQL e MongoDB sem downtime.</li><li>Reduzi custos de AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack.</li><li>Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache.</li></ul><p class="tech"><strong>Tecnologias:</strong> Node.js, TypeScript, Python, Java, React, Next.js, AWS Lambda, AWS ECS, SQS, SNS, S3, DynamoDB, Cognito, PostgreSQL, MongoDB, Redis, Terraform, Serverless Framework, Docker, GraphQL, Hasura, Jest, Testcontainers</p>
+    </article>
+    <article class="job">
+      <div class="role">
+        <h3><span class="title">Mentor Educacional</span> <span class="sep">·</span> <span class="org">Skule Tecnologia</span></h3>
+        <p class="when">mar 2023 – jul 2023 <span class="sep">·</span> Remoto</p>
+      </div><ul><li>Mentorei 6 estagiários de programação em projetos Node.js, Next.js e React: revisão de pull requests, resolução de conflitos de merge e orientação para melhorias de código.</li><li>Conduzi sessões técnicas em inglês sobre clean architecture e boas práticas de código.</li></ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <h3><span class="title">Desenvolvedor Frontend</span> <span class="sep">·</span> <span class="org">Advanced Digital</span></h3>
+        <p class="when">fev 2022 – out 2022 <span class="sep">·</span> Brasília, DF</p>
+      </div><ul><li>Mantive e evoluí um e-commerce em React e Redux com backend em Node.js e migrei uma interface de venda de ingressos de PHP para React.</li><li>Integrei as APIs da Cielo e do Mercado Livre com hooks React customizados e criei web scrapers em Node.js.</li><li>Ajudei a lançar dois MVPs mobile em Flutter (Dart, GetX).</li></ul><p class="tech"><strong>Tecnologias:</strong> React, Redux, Node.js, Flutter, Dart, SCSS</p>
+    </article>
+  </section>
+  <section class="section">
+    <h2>Competências Técnicas</h2>
+    <div class="skills">
+      <p><strong>Linguagens:</strong> Go (Golang), TypeScript, JavaScript, Node.js, Java, Python, SQL</p>
+      <p><strong>Backend e arquitetura:</strong> REST APIs, GraphQL, Microsserviços, Arquitetura orientada a eventos, Eventos de domínio, Transactional outbox, Processamento assíncrono, Fiber, NestJS, Express, Fastify</p>
+      <p><strong>Cloud (AWS):</strong> Lambda, ECS Fargate, SNS, SQS (FIFO), S3, DynamoDB, Cognito, Secrets Manager, API Gateway, CloudFront, VPC, CloudFormation</p>
+      <p><strong>Infraestrutura e DevOps:</strong> Terraform, Serverless Framework, Docker, GitHub Actions, GitLab CI, AWS CodePipeline, CI/CD</p>
+      <p><strong>Bancos de dados e mensageria:</strong> PostgreSQL, MongoDB, DynamoDB, Redis, RabbitMQ, SNS/SQS</p>
+      <p><strong>Fintech e compliance:</strong> KYC, PLD/AML e listas de sanções, Score de risco, Antifraude, Onboarding de clientes, Banking as a Service (BaaS), Crédito, Integrações de pagamento</p>
+      <p><strong>Testes e observabilidade:</strong> Go testing, Jest, Vitest, Testcontainers, Sentry</p>
+      <p><strong>Frontend:</strong> React, Next.js, Redux, PWA</p>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Projetos</h2>
+    <article class="project">
+      <div class="role">
+        <h3>Travel Journal</h3><p class="when"><a href="https://github.com/MohamedAljoke/travel-journal-v2">github.com/MohamedAljoke/travel-journal-v2</a></p>
+      </div>
+      <p>Diário de imagens serverless na AWS: uploads direto para o S3 via pre-signed URLs, autenticação com Cognito, APIs REST em Node.js no Lambda e um Lambda em Go para processar imagens.</p><p class="tech"><strong>Tecnologias:</strong> Go, Node.js, React, AWS Lambda, S3, DynamoDB, Cognito, CloudFront, SQS, Serverless Framework</p>
+    </article>
+    <article class="project">
+      <div class="role">
+        <h3>Mail Sender</h3><p class="when"><a href="https://github.com/MohamedAljoke/mail-sender">github.com/MohamedAljoke/mail-sender</a></p>
+      </div>
+      <p>Microsserviços no AWS ECS Fargate: uma API em Node.js publica jobs no RabbitMQ e um worker em Go envia os e-mails, em uma VPC multicamada (subnets privadas, NAT Gateway, ALB) provisionada com Terraform.</p><p class="tech"><strong>Tecnologias:</strong> Go, Node.js, RabbitMQ, AWS ECS Fargate, VPC, ALB, Terraform, Docker</p>
+    </article>
+    <article class="project">
+      <div class="role">
+        <h3>Scrap IFix Go</h3><p class="when"><a href="https://github.com/MohamedAljoke/scrap_ifix_go">github.com/MohamedAljoke/scrap_ifix_go</a></p>
+      </div>
+      <p>Scraper em Go dos fundos imobiliários do índice IFIX: busca a lista na API da B3, coleta dividendos e preços em goroutines paralelas, agrega os resultados por channel e exporta métricas em CSV.</p><p class="tech"><strong>Tecnologias:</strong> Go, Goroutines, Channels, CSV</p>
+    </article>
+  </section>
+  <section class="section">
+    <h2>Formação Acadêmica</h2>
+    <div class="role">
+      <h3><span class="title">Bacharelado em Engenharia Mecânica</span></h3>
+      <p class="when">2017 – 2022</p>
+    </div>
+    <p class="school"><span class="org">UDF Centro Universitário</span> <span class="sep">·</span> Brasília, DF</p>
+  </section>
+  <section class="section">
+    <h2>Certificações</h2>
+    <ul class="plain">
+      <li><strong>AWS Certified Solutions Architect – Associate</strong> <span class="sep">·</span> Amazon Web Services</li>
+    </ul>
+  </section>
+  <section class="section">
+    <h2>Idiomas</h2>
+    <p><strong>Português</strong> (Nativo) <span class="sep">·</span> <strong>Inglês</strong> (Fluente) <span class="sep">·</span> <strong>Árabe</strong> (Nativo)</p>
+  </section>
+</main>
+</body>
+</html>

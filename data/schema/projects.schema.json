@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "projects.schema.json",
+  "title": "Personal projects",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "items": {
+      "description": "Projects. Array order is display order.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/project" }
+    }
+  },
+  "required": ["items"],
+  "additionalProperties": false,
+  "$defs": {
+    "project": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "summary": { "$ref": "common.schema.json#/$defs/ltext" },
+        "highlights": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/bullet" } },
+        "stack": { "$ref": "common.schema.json#/$defs/stack" },
+        "repo": { "$ref": "common.schema.json#/$defs/url" },
+        "demo": { "$ref": "common.schema.json#/$defs/url" },
+        "demoLabel": {
+          "description": "Text for the demo link, e.g. 'Video walkthrough'.",
+          "$ref": "common.schema.json#/$defs/ltext"
+        },
+        "hidden": { "type": "boolean" },
+        "pdf": { "type": "boolean", "description": "Include in the PDF (default true)." },
+        "web": { "type": "boolean" },
+        "note": { "$ref": "common.schema.json#/$defs/note" }
+      },
+      "required": ["id", "name", "summary"],
+      "additionalProperties": false
+    }
+  }
+}

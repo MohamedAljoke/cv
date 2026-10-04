@@ -1,0 +1,167 @@
+/* Printable resume (source of the PDFs). Rules for ATS parsers:
+   one column, real text only (no images, icons or tables), standard headings,
+   links printed as their URL text. Colors come from the dyosmos tokens. */
+:root {
+  --fg: #17201d;
+  --muted: #52605b;
+  --border: #d7dfdb;
+  --primary: #147d64;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-head: "Barlow Semi Condensed", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@page {
+  size: A4;
+  margin: 11.5mm 15mm 11mm;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 9.6pt;
+  line-height: 1.38;
+  text-rendering: optimizeLegibility;
+}
+
+/* On screen the page reads like a sheet of paper. */
+@media screen {
+  body { background: #e9efec; padding: 24px 12px; }
+  .sheet {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 13mm 15mm;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(23 32 29 / 0.12);
+  }
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, p, ul { margin: 0; }
+
+.head { margin-bottom: 9pt; }
+
+h1 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 23pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.headline {
+  margin-top: 2pt;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 12.5pt;
+  color: var(--primary);
+}
+
+.contact {
+  margin-top: 4pt;
+  color: var(--muted);
+  font-size: 8.9pt;
+}
+.contact + .contact { margin-top: 1pt; }
+.school { color: var(--muted); font-size: 9pt; }
+.school .org { color: var(--primary); font-weight: 600; }
+/* Each item stays on one line so a URL never breaks mid-word. */
+.contact span { white-space: nowrap; }
+.contact span + span::before {
+  content: "|";
+  margin: 0 5pt;
+  color: var(--border);
+}
+
+.section { margin-top: 8pt; }
+
+h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 11.5pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding-bottom: 2pt;
+  margin-bottom: 5pt;
+  border-bottom: 0.8pt solid var(--primary);
+  break-after: avoid;
+}
+
+.summary { text-align: left; }
+
+.job, .project { margin-bottom: 7pt; }
+.job:last-child, .project:last-child { margin-bottom: 0; }
+
+/* Title · Company on the left, dates on the right. DOM order stays
+   title → company → dates, so extracted text reads in that order. */
+.role {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8pt;
+  break-after: avoid;
+}
+h3 {
+  font-size: 10.3pt;
+  font-weight: 600;
+}
+h3 .org { font-weight: 600; color: var(--primary); }
+/* Visible gap around separators so text extractors keep the words apart. */
+.sep { color: var(--muted); font-weight: 400; margin: 0 0.25em; }
+.when {
+  flex: none;
+  color: var(--muted);
+  font-size: 8.9pt;
+  white-space: nowrap;
+}
+
+.blurb {
+  color: var(--muted);
+  font-size: 8.9pt;
+  font-style: italic;
+  break-after: avoid;
+}
+
+.group {
+  margin-top: 3pt;
+  font-weight: 600;
+  font-size: 9.2pt;
+  break-after: avoid;
+}
+
+ul {
+  padding-left: 11pt;
+  margin-top: 2pt;
+}
+li { margin-bottom: 1.1pt; padding-left: 1pt; }
+li::marker { color: var(--primary); }
+
+ul.plain { padding-left: 0; list-style: none; }
+
+.tech {
+  break-before: avoid; /* never orphan a Tech line at the top of a page */
+  margin-top: 2.5pt;
+  color: var(--muted);
+  font-size: 8.7pt;
+}
+.tech strong { color: var(--fg); font-weight: 600; }
+
+.skills p { margin-bottom: 1.6pt; }
+.skills strong { font-weight: 600; }
+
+.project p { margin-top: 1pt; }
+
+/* Keep a heading with the start of what follows it. */
+.job, .project { break-inside: auto; }
+.role, .group, h2 { break-after: avoid; page-break-after: avoid; }
+li { break-inside: avoid; }

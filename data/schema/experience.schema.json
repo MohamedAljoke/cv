@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "experience.schema.json",
+  "title": "Work experience",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "items": {
+      "description": "Jobs, most recent first. Array order is display order.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/job" }
+    }
+  },
+  "required": ["items"],
+  "additionalProperties": false,
+  "$defs": {
+    "group": {
+      "description": "A titled block of bullets inside a job (for example one product or system).",
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "common.schema.json#/$defs/ltext" },
+        "bullets": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/bullet" }, "minItems": 1 },
+        "hidden": { "type": "boolean" },
+        "pdf": { "type": "boolean" },
+        "web": { "type": "boolean" }
+      },
+      "required": ["title", "bullets"],
+      "additionalProperties": false
+    },
+    "job": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "company": { "type": "string", "minLength": 1 },
+        "companyUrl": { "$ref": "common.schema.json#/$defs/url" },
+        "blurb": {
+          "description": "One line about the company, for context.",
+          "$ref": "common.schema.json#/$defs/ltext"
+        },
+        "title": { "$ref": "common.schema.json#/$defs/ltext" },
+        "location": { "$ref": "common.schema.json#/$defs/ltext" },
+        "start": { "$ref": "common.schema.json#/$defs/month" },
+        "end": {
+          "description": "null or missing = current job.",
+          "oneOf": [{ "$ref": "common.schema.json#/$defs/month" }, { "type": "null" }]
+        },
+        "groups": { "type": "array", "items": { "$ref": "#/$defs/group" }, "minItems": 1 },
+        "bullets": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/bullet" }, "minItems": 1 },
+        "stack": { "$ref": "common.schema.json#/$defs/stack" },
+        "hidden": { "type": "boolean" },
+        "pdf": { "type": "boolean" },
+        "web": { "type": "boolean" },
+        "note": { "$ref": "common.schema.json#/$defs/note" }
+      },
+      "required": ["id", "company", "title", "start"],
+      "oneOf": [
+        { "required": ["groups"], "not": { "required": ["bullets"] } },
+        { "required": ["bullets"], "not": { "required": ["groups"] } }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

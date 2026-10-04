@@ -1,0 +1,197 @@
+{
+  "$schema": "./schema/experience.schema.json",
+  "items": [
+    {
+      "id": "transfeera",
+      "company": "Transfeera",
+      "companyUrl": "https://transfeera.com",
+      "blurb": {
+        "en": "Brazilian fintech: payments and Banking as a Service",
+        "pt": "Fintech brasileira de pagamentos e Banking as a Service"
+      },
+      "title": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
+      "start": "2025-11",
+      "end": null,
+      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, providers, latency.",
+      "groups": [
+        {
+          "title": { "en": "KYC & compliance engine", "pt": "Motor de KYC e compliance" },
+          "bullets": [
+            {
+              "en": "Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.",
+              "pt": "Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio."
+            },
+            {
+              "en": "Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.",
+              "pt": "Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats."
+            }
+          ]
+        },
+        {
+          "title": { "en": "Enrichment engine", "pt": "Motor de enriquecimento" },
+          "bullets": [
+            {
+              "en": "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
+              "pt": "Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final."
+            }
+          ]
+        },
+        {
+          "title": { "en": "Banking as a Service (BaaS) onboarding", "pt": "Onboarding de Banking as a Service (BaaS)" },
+          "bullets": [
+            {
+              "en": "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
+              "pt": "Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços."
+            },
+            {
+              "en": "Process account and customer events with AWS SNS and SQS FIFO queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+              "pt": "Processo eventos de contas e clientes com AWS SNS e filas SQS FIFO, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
+            }
+          ]
+        },
+        {
+          "title": { "en": "Platform & tooling", "pt": "Plataforma e ferramentas" },
+          "bullets": [
+            {
+              "en": "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory: multipart streaming straight to Amazon S3, size-limited readers and streaming SHA-256 hashing.",
+              "pt": "Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória: multipart direto para o Amazon S3, readers com limite de tamanho e SHA-256 em streaming."
+            },
+            {
+              "text": {
+                "en": "Diagnosed Fiber and Sentry middleware that consumed the streamed request body before the handler, and fixed the upload path.",
+                "pt": "Diagnostiquei middlewares do Fiber e do Sentry que consumiam o corpo da requisição em streaming antes do handler e corrigi o fluxo de upload."
+              },
+              "pdf": false
+            },
+            {
+              "en": "Built internal bulk-processing tooling to safely reprocess operational workflows at scale.",
+              "pt": "Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança."
+            }
+          ]
+        }
+      ],
+      "stack": ["Go", "Fiber", "fasthttp", "AWS SNS", "AWS SQS (FIFO)", "Amazon S3", "Sentry"]
+    },
+    {
+      "id": "idip",
+      "company": "IDIP Tecnologia",
+      "blurb": {
+        "en": "Software house building products for fintech, healthcare and industry clients",
+        "pt": "Software house com produtos para clientes de fintech, saúde e indústria"
+      },
+      "title": { "en": "Full Stack Developer", "pt": "Desenvolvedor Full Stack" },
+      "location": { "en": "Brasília, Brazil · Remote", "pt": "Brasília, DF · Remoto" },
+      "start": "2022-10",
+      "end": "2025-11",
+      "bullets": [
+        {
+          "en": "Migrated a B2B credit-granting platform from a monolith to microservices on AWS ECS and Lambda, integrating CAF antifraud, Parcelex and Vindi, with API-to-API authentication through Amazon Cognito and Secrets Manager.",
+          "pt": "Migrei uma plataforma B2B de concessão de crédito de um monólito para microsserviços em AWS ECS e Lambda, integrando CAF antifraude, Parcelex e Vindi, com autenticação API-a-API via Amazon Cognito e Secrets Manager."
+        },
+        {
+          "en": "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
+          "pt": "Construí uma plataforma B2B de envio de documentos via WhatsApp com AWS Lambda, eventos do S3 e SQS (contornando limites do API Gateway), com chatbot e dashboard administrativo em React."
+        },
+        {
+          "en": "Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.",
+          "pt": "Coordenei 4 desenvolvedores juniores em 2–3 projetos simultâneos: orientação técnica, code review e planejamento de arquitetura de microsserviços."
+        },
+        {
+          "en": "Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.",
+          "pt": "Provisionei infraestrutura como código com Terraform, Serverless Framework e CloudFormation e criei pipelines de CI/CD no GitHub Actions, GitLab CI e AWS CodePipeline, com testes de integração usando Jest, Vitest e Testcontainers."
+        },
+        {
+          "en": "Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.",
+          "pt": "Integrei provedores de pagamento (Stripe, Asaas, Cielo, Itaú, Mercado Livre) e migrei dados do Firebase para PostgreSQL e MongoDB sem downtime."
+        },
+        {
+          "en": "Reduced AWS costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
+          "pt": "Reduzi custos de AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack."
+        },
+        {
+          "en": "Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.",
+          "pt": "Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache."
+        },
+        {
+          "text": {
+            "en": "Built a notification client with a webhook system for asynchronous communication between services, improving reliability and traceability.",
+            "pt": "Desenvolvi um cliente de notificações com sistema de webhooks para comunicação assíncrona entre serviços, melhorando confiabilidade e rastreabilidade."
+          },
+          "pdf": false
+        },
+        {
+          "text": {
+            "en": "Contributed to migrating a healthcare management platform from Ruby on Rails to React and Java.",
+            "pt": "Contribuí na migração de uma plataforma de gestão de saúde de Ruby on Rails para React e Java."
+          },
+          "pdf": false
+        },
+        {
+          "text": {
+            "en": "Built SEO-optimized landing pages with Next.js, real-time dashboards fed by webhooks, and a GraphQL layer with Hasura.",
+            "pt": "Criei landing pages otimizadas para SEO com Next.js, dashboards em tempo real alimentados por webhooks e uma camada GraphQL com Hasura."
+          },
+          "pdf": false
+        }
+      ],
+      "stack": ["Node.js", "TypeScript", "Python", "Java", "React", "Next.js", "AWS Lambda", "AWS ECS", "SQS", "SNS", "S3", "DynamoDB", "Cognito", "PostgreSQL", "MongoDB", "Redis", "Terraform", "Serverless Framework", "Docker", "GraphQL", "Hasura", "Jest", "Testcontainers"]
+    },
+    {
+      "id": "skule",
+      "company": "Skule Tecnologia",
+      "title": { "en": "Education Mentor", "pt": "Mentor Educacional" },
+      "location": { "en": "Remote", "pt": "Remoto" },
+      "start": "2023-03",
+      "end": "2023-07",
+      "bullets": [
+        {
+          "en": "Mentored 6 programming interns on Node.js, Next.js and React projects: reviewed pull requests, resolved merge conflicts and guided code improvements.",
+          "pt": "Mentorei 6 estagiários de programação em projetos Node.js, Next.js e React: revisão de pull requests, resolução de conflitos de merge e orientação para melhorias de código."
+        },
+        {
+          "en": "Ran technical sessions in English on clean architecture and coding best practices.",
+          "pt": "Conduzi sessões técnicas em inglês sobre clean architecture e boas práticas de código."
+        }
+      ]
+    },
+    {
+      "id": "advanced-digital",
+      "company": "Advanced Digital",
+      "title": { "en": "Frontend Developer", "pt": "Desenvolvedor Frontend" },
+      "location": { "en": "Brasília, Brazil", "pt": "Brasília, DF" },
+      "start": "2022-02",
+      "end": "2022-10",
+      "bullets": [
+        {
+          "en": "Maintained and extended a React and Redux e-commerce app with a Node.js backend, and migrated a ticket-selling UI from PHP to React.",
+          "pt": "Mantive e evoluí um e-commerce em React e Redux com backend em Node.js e migrei uma interface de venda de ingressos de PHP para React."
+        },
+        {
+          "en": "Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.",
+          "pt": "Integrei as APIs da Cielo e do Mercado Livre com hooks React customizados e criei web scrapers em Node.js."
+        },
+        {
+          "en": "Helped launch two mobile MVPs in Flutter (Dart, GetX).",
+          "pt": "Ajudei a lançar dois MVPs mobile em Flutter (Dart, GetX)."
+        }
+      ],
+      "stack": ["React", "Redux", "Node.js", "Flutter", "Dart", "SCSS"]
+    },
+    {
+      "id": "rco-engenharia",
+      "company": "RCO Engenharia",
+      "title": { "en": "Engineering Assistant", "pt": "Assistente de Engenharia" },
+      "location": { "en": "Brazil", "pt": "Brasil" },
+      "start": "2021-04",
+      "end": "2021-12",
+      "hidden": true,
+      "note": "Pre-software role, kept for reference. Set hidden to false to show it.",
+      "bullets": [
+        {
+          "en": "Connected the administrative team with field technicians, reporting their activities and directing them to the sites that needed service.",
+          "pt": "Fiz a ligação entre o setor administrativo e os técnicos em campo, relatando suas atividades e direcionando-os aos locais que precisavam de atendimento."
+        }
+      ]
+    }
+  ]
+}

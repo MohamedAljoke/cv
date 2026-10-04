@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "profile.schema.json",
+  "title": "Who you are: header, summary, education, certifications, languages",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": { "type": "string", "description": "Full name, as on your ID and LinkedIn." },
+    "headline": {
+      "description": "Target title + core stack. ATS matches the job title against this first.",
+      "$ref": "common.schema.json#/$defs/ltext"
+    },
+    "location": { "$ref": "common.schema.json#/$defs/ltext" },
+    "email": { "type": "string", "format": "email" },
+    "phone": {
+      "type": "object",
+      "properties": {
+        "value": { "type": "string" },
+        "web": { "type": "boolean", "description": "Show on the public website too (default false: PDF only)." }
+      },
+      "required": ["value"],
+      "additionalProperties": false
+    },
+    "links": {
+      "description": "Printed as full URL text in the PDF (parsers read text, not hyperlinks).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": { "enum": ["linkedin", "github", "credly", "website"] },
+          "label": { "$ref": "common.schema.json#/$defs/ltext" },
+          "url": { "$ref": "common.schema.json#/$defs/url" },
+          "hidden": { "type": "boolean" },
+          "pdf": { "type": "boolean" },
+          "web": { "type": "boolean" }
+        },
+        "required": ["kind", "label", "url"],
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "description": "2–4 sentences: role, years, domain, core stack, one differentiator.",
+      "$ref": "common.schema.json#/$defs/ltext"
+    },
+    "focus": {
+      "description": "Domains you want to be hired for (web 'at a glance' card).",
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/ltext" }
+    },
+    "coreStack": {
+      "description": "The 5–8 technologies a recruiter should see first (web 'at a glance' card).",
+      "$ref": "common.schema.json#/$defs/stack"
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "school": { "type": "string" },
+          "degree": { "$ref": "common.schema.json#/$defs/ltext" },
+          "location": { "$ref": "common.schema.json#/$defs/ltext" },
+          "startYear": { "type": "integer" },
+          "endYear": { "type": "integer" },
+          "detail": { "$ref": "common.schema.json#/$defs/ltext" },
+          "hidden": { "type": "boolean" },
+          "pdf": { "type": "boolean" },
+          "web": { "type": "boolean" }
+        },
+        "required": ["id", "school", "degree"],
+        "additionalProperties": false
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "name": { "type": "string" },
+          "issuer": { "type": "string" },
+          "date": { "$ref": "common.schema.json#/$defs/month" },
+          "url": { "$ref": "common.schema.json#/$defs/url" },
+          "badge": { "$ref": "common.schema.json#/$defs/url", "description": "Badge image URL (web only)." },
+          "hidden": { "type": "boolean" },
+          "pdf": { "type": "boolean" },
+          "web": { "type": "boolean" },
+          "note": { "$ref": "common.schema.json#/$defs/note" }
+        },
+        "required": ["id", "name", "issuer"],
+        "additionalProperties": false
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "$ref": "common.schema.json#/$defs/ltext" },
+          "level": { "$ref": "common.schema.json#/$defs/ltext" }
+        },
+        "required": ["name", "level"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["name", "headline", "email", "summary"],
+  "additionalProperties": false
+}
