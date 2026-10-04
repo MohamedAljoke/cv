@@ -18,8 +18,8 @@
     { "kind": "credly", "label": "Credly", "url": "https://www.credly.com/users/mohamed-aljoke", "pdf": false }
   ],
   "summary": {
-    "en": "Backend software engineer with 4+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
-    "pt": "Engenheiro de software backend com mais de 4 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance, onboarding de clientes para Banking as a Service (BaaS) e integrações de crédito e pagamentos. Trabalho principalmente com Go, Node.js/TypeScript e AWS (Lambda, ECS, SNS/SQS, S3), projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate, com experiência em transformar requisitos de compliance em regras de domínio e em mentoria de desenvolvedores juniores."
+    "en": "Backend software engineer with 5+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
+    "pt": "Engenheiro de software backend com mais de 5 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance, onboarding de clientes para Banking as a Service (BaaS) e integrações de crédito e pagamentos. Trabalho principalmente com Go, Node.js/TypeScript e AWS (Lambda, ECS, SNS/SQS, S3), projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate, com experiência em transformar requisitos de compliance em regras de domínio e em mentoria de desenvolvedores juniores."
   },
   "focus": [
     { "en": "KYC & compliance", "pt": "KYC e compliance" },
@@ -53,7 +53,7 @@
       "issuer": "Amazon Web Services",
       "url": "https://www.credly.com/badges/61f0854b-e2eb-4a3b-8482-d57409e1cc6b/public_url",
       "badge": "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
-      "note": "TODO: add \"date\": \"YYYY-MM\" (issue date, shown on the Credly badge)."
+      "date": "2024-09"
     }
   ],
   "languages": [

@@ -23,11 +23,12 @@
         "url": "https://www.credly.com/users/mohamed-aljoke"
       }
     ],
-    "summary": "Backend software engineer with 4+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
+    "summary": "Backend software engineer with 5+ years of experience building distributed systems for fintech: KYC and compliance engines, customer onboarding for Banking as a Service (BaaS), and credit and payment integrations. I work mainly with Go, Node.js/TypeScript and AWS (Lambda, ECS, SNS/SQS, S3), designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate, used to turning compliance requirements into domain rules and to mentoring junior developers.",
     "url": "https://mohamedaljoke.github.io/cv/"
   },
   "certificates": [
     {
+      "date": "2024-09",
       "issuer": "Amazon Web Services",
       "name": "AWS Certified Solutions Architect – Associate",
       "url": "https://www.credly.com/badges/61f0854b-e2eb-4a3b-8482-d57409e1cc6b/public_url"
