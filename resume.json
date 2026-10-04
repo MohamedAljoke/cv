@@ -146,8 +146,9 @@
       "keywords": [
         "Lambda",
         "ECS Fargate",
+        "EKS",
         "SNS",
-        "SQS (FIFO)",
+        "SQS",
         "S3",
         "DynamoDB",
         "Cognito",
@@ -177,6 +178,7 @@
         "MongoDB",
         "DynamoDB",
         "Redis",
+        "Kafka",
         "RabbitMQ",
         "SNS/SQS"
       ],

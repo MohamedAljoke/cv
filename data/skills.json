@@ -26,7 +26,7 @@
     {
       "id": "aws",
       "label": { "en": "Cloud (AWS)", "pt": "Cloud (AWS)" },
-      "skills": ["Lambda", "ECS Fargate", "SNS", "SQS (FIFO)", "S3", "DynamoDB", "Cognito", "Secrets Manager", "API Gateway", "CloudFront", "VPC", "CloudFormation"]
+      "skills": ["Lambda", "ECS Fargate", "EKS", "SNS", "SQS", "S3", "DynamoDB", "Cognito", "Secrets Manager", "API Gateway", "CloudFront", "VPC", "CloudFormation"]
     },
     {
       "id": "devops",
@@ -36,7 +36,7 @@
     {
       "id": "data",
       "label": { "en": "Databases & messaging", "pt": "Bancos de dados e mensageria" },
-      "skills": ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "RabbitMQ", "SNS/SQS"]
+      "skills": ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Kafka", "RabbitMQ", "SNS/SQS"]
     },
     {
       "id": "fintech",

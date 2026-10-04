@@ -71,8 +71,9 @@
     "Fastify",
     "Lambda",
     "ECS Fargate",
+    "EKS",
     "SNS",
-    "SQS (FIFO)",
+    "SQS",
     "S3",
     "DynamoDB",
     "Cognito",
@@ -92,6 +93,7 @@
     "MongoDB",
     "DynamoDB",
     "Redis",
+    "Kafka",
     "RabbitMQ",
     "SNS/SQS",
     "KYC",
@@ -217,7 +219,7 @@
               <h4>Platform &amp; tooling</h4>
               <ul class="bullets"><li>Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory: multipart streaming straight to Amazon S3, size-limited readers and streaming SHA-256 hashing.</li><li>Diagnosed Fiber and Sentry middleware that consumed the streamed request body before the handler, and fixed the upload path.</li><li>Built internal bulk-processing tooling to safely reprocess operational workflows at scale.</li></ul>
             </div>
-          </div><ul class="chips" aria-label="Tech"><li>Go</li><li>Fiber</li><li>fasthttp</li><li>AWS SNS</li><li>AWS SQS (FIFO)</li><li>Amazon S3</li><li>Sentry</li></ul>
+          </div><ul class="chips" aria-label="Tech"><li>Go</li><li>Fiber</li><li>fasthttp</li><li>AWS SNS</li><li>AWS SQS</li><li>Amazon S3</li><li>Sentry</li></ul>
         </li>
         <li class="job" id="job-idip">
           <div class="job-head">
@@ -288,7 +290,7 @@
         </div>
         <div class="skill-group">
           <h3>Cloud (AWS)</h3>
-          <ul class="chips"><li>Lambda</li><li>ECS Fargate</li><li>SNS</li><li>SQS (FIFO)</li><li>S3</li><li>DynamoDB</li><li>Cognito</li><li>Secrets Manager</li><li>API Gateway</li><li>CloudFront</li><li>VPC</li><li>CloudFormation</li></ul>
+          <ul class="chips"><li>Lambda</li><li>ECS Fargate</li><li>EKS</li><li>SNS</li><li>SQS</li><li>S3</li><li>DynamoDB</li><li>Cognito</li><li>Secrets Manager</li><li>API Gateway</li><li>CloudFront</li><li>VPC</li><li>CloudFormation</li></ul>
         </div>
         <div class="skill-group">
           <h3>Infrastructure &amp; DevOps</h3>
@@ -296,7 +298,7 @@
         </div>
         <div class="skill-group">
           <h3>Databases &amp; messaging</h3>
-          <ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>DynamoDB</li><li>Redis</li><li>RabbitMQ</li><li>SNS/SQS</li></ul>
+          <ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>DynamoDB</li><li>Redis</li><li>Kafka</li><li>RabbitMQ</li><li>SNS/SQS</li></ul>
         </div>
         <div class="skill-group">
           <h3>Fintech &amp; compliance</h3>

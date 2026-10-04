@@ -70,7 +70,7 @@
           ]
         }
       ],
-      "stack": ["Go", "Fiber", "fasthttp", "AWS SNS", "AWS SQS (FIFO)", "Amazon S3", "Sentry"]
+      "stack": ["Go", "Fiber", "fasthttp", "AWS SNS", "AWS SQS", "Amazon S3", "Sentry"]
     },
     {
       "id": "idip",
