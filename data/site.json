@@ -54,7 +54,6 @@
     "other_language": { "en": "Português", "pt": "English" },
     "other_language_hint": { "en": "Ler em português", "pt": "Read in English" },
     "skip": { "en": "Skip to content", "pt": "Pular para o conteúdo" },
-    "theme": { "en": "Switch light/dark theme", "pt": "Alternar tema claro/escuro" },
     "updated": { "en": "Last updated", "pt": "Atualizado em" },
     "contact_title": { "en": "Let's talk", "pt": "Vamos conversar" },
     "contact_text": {

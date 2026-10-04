@@ -16,8 +16,6 @@ var icons = map[string]string{
 	"external":  `<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>`,
 	"play":      `<circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/>`,
 	"code":      `<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>`,
-	"sun":       `<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.1-17.1 1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>`,
-	"moon":      `<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>`,
 	"globe":     `<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`,
 	"briefcase": `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
 	"shield":    `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>`,

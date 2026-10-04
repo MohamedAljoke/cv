@@ -19,18 +19,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="{{if eq .Lang "pt"}}pt_BR{{else}}en_US{{end}}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4f7f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101513" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f7f5">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="{{.Prefix}}assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="{{.Prefix}}assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{.Prefix}}assets/fonts/barlow-semi-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{.Prefix}}assets/css/fonts.css">
 <link rel="stylesheet" href="{{.Prefix}}assets/css/site.css">
 <link rel="alternate" type="application/json" href="{{.Prefix}}resume.json" title="JSON Resume">
-<script>
-  // Apply the saved theme before first paint (no flash). Storage can be blocked.
-  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
-</script>
 <script type="application/ld+json">{{.JSONLD}}</script>
 </head>
 <body>
@@ -49,7 +45,6 @@
     <div class="topbar-actions">
       {{- with .Other}}
       <a class="btn btn-ghost btn-sm" href="{{.Href}}" hreflang="{{.Lang}}" lang="{{if eq .Lang "pt"}}pt-BR{{else}}en{{end}}" title="{{$.L "other_language_hint"}}">{{icon "globe"}}<span>{{$.L "other_language"}}</span></a>{{end}}
-      <button class="btn btn-ghost btn-sm btn-icon" type="button" id="theme-toggle" aria-label="{{.L "theme"}}" title="{{.L "theme"}}">{{icon "moon"}}{{icon "sun"}}</button>
     </div>
   </div>
 </header>
@@ -136,19 +131,6 @@
   </div>
 </footer>
 
-<script>
-  (function () {
-    var root = document.documentElement, btn = document.getElementById("theme-toggle");
-    function current() {
-      return root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    }
-    btn.addEventListener("click", function () {
-      var next = current() === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      try { localStorage.setItem("theme", next); } catch (e) {}
-    });
-  })();
-</script>
 </body>
 </html>
 {{end}}

@@ -1,4 +1,4 @@
-/* Portfolio site. Tokens follow the dyosmos design system
+/* Portfolio site (light theme only). Tokens follow the dyosmos design system
    (applications/web/src/styles.css + applications/marketing global.css):
    primitive colors → semantic tokens → components. Components never use
    literal colors. */
@@ -39,48 +39,6 @@
   --section-space: clamp(3rem, 7vw, 5rem);
 
   color-scheme: light;
-}
-
-/* Dark tokens: desaturated tonal variants, not inverted colors. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --canvas: #101513;
-    --surface: #18201e;
-    --surface-muted: #202a27;
-    --fg: #f3f7f5;
-    --fg-muted: #aebbb5;
-    --fg-subtle: #94a39c;
-    --border: #34413c;
-    --border-strong: #52625b;
-    --primary: #3bc3a0;
-    --primary-hover: #5fd3b4;
-    --on-primary: #0d211b;
-    --accent-soft: #163a31;
-    --accent-soft-fg: #b9eedd;
-    --ring: rgb(59 195 160 / 0.4);
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --canvas: #101513;
-  --surface: #18201e;
-  --surface-muted: #202a27;
-  --fg: #f3f7f5;
-  --fg-muted: #aebbb5;
-  --fg-subtle: #94a39c;
-  --border: #34413c;
-  --border-strong: #52625b;
-  --primary: #3bc3a0;
-  --primary-hover: #5fd3b4;
-  --on-primary: #0d211b;
-  --accent-soft: #163a31;
-  --accent-soft-fg: #b9eedd;
-  --ring: rgb(59 195 160 / 0.4);
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
-  color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -171,15 +129,6 @@ a:hover { color: var(--primary-hover); }
 .btn-ghost:hover { background: var(--surface-muted); color: var(--fg); }
 .btn-sm { min-height: 40px; padding: var(--s1) var(--s3); font-size: 0.9rem; }
 .btn-icon { width: 44px; padding: 0; }
-
-/* Theme toggle shows the icon of the theme you would switch to. */
-#theme-toggle .icon:nth-of-type(2) { display: none; }
-:root[data-theme="dark"] #theme-toggle .icon:nth-of-type(1) { display: none; }
-:root[data-theme="dark"] #theme-toggle .icon:nth-of-type(2) { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) #theme-toggle .icon:nth-of-type(1) { display: none; }
-  :root:not([data-theme="light"]) #theme-toggle .icon:nth-of-type(2) { display: block; }
-}
 
 /* ---------- Top bar ---------- */
 .topbar {

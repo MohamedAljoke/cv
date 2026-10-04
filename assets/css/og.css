@@ -1,9 +1,9 @@
-/* 1200×630 social preview card (screenshotted at build time). */
+/* 1200×630 social preview card (screenshotted at build time). Light theme. */
 html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
 body {
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  background: #101513;
-  color: #f3f7f5;
+  background: #f4f7f5;
+  color: #17201d;
 }
 .og {
   box-sizing: border-box;
@@ -13,18 +13,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background:
-    radial-gradient(800px 420px at 100% 0%, rgb(59 195 160 / 0.22), transparent 60%),
-    linear-gradient(160deg, #18201e, #101513);
-  border-left: 14px solid #3bc3a0;
+    radial-gradient(800px 420px at 100% 0%, rgb(20 125 100 / 0.12), transparent 60%),
+    linear-gradient(160deg, #ffffff, #f4f7f5);
+  border-left: 14px solid #147d64;
 }
 .og-top { display: flex; align-items: center; justify-content: space-between; }
 .og-mark {
   display: grid; place-items: center;
   width: 64px; height: 64px; border-radius: 10px;
-  background: #3bc3a0; color: #0d211b;
+  background: #147d64; color: #ffffff;
   font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 30px;
 }
-.og-url { color: #aebbb5; font-size: 26px; }
+.og-url { color: #52605b; font-size: 26px; }
 h1 {
   margin: 0;
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -38,15 +38,15 @@ h1 {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
   font-size: 40px;
-  color: #3bc3a0;
+  color: #147d64;
 }
 .og-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .og-chips li {
   padding: 8px 16px;
-  border: 1px solid #34413c;
+  border: 1px solid #d7dfdb;
   border-radius: 8px;
-  background: #202a27;
+  background: #e9efec;
   font-size: 24px;
   font-weight: 500;
 }
-.og-chips li.accent { background: #163a31; border-color: transparent; color: #b9eedd; }
+.og-chips li.accent { background: #d6f1e8; border-color: transparent; color: #0d332b; }

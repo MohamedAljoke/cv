@@ -67,5 +67,5 @@ Design choices that keep parsers happy:
 
 ## Design
 
-- Tokens, type and accessibility rules come from the dyosmos design system: teal `#147d64` on slate, IBM Plex Sans with Barlow Semi Condensed, light and dark themes, 44px touch targets, visible focus rings, `prefers-reduced-motion`.
+- Tokens, type and accessibility rules come from the dyosmos design system: teal `#147d64` on slate, IBM Plex Sans with Barlow Semi Condensed, light theme, 44px touch targets, visible focus rings, `prefers-reduced-motion`.
 - Fonts are self-hosted (SIL OFL, see `assets/fonts/LICENSE-*`).
