@@ -149,6 +149,7 @@ li { margin-bottom: 1.1pt; padding-left: 1pt; }
 li::marker { color: var(--primary); }
 
 ul.plain { padding-left: 0; list-style: none; }
+a.cert-link strong { font-weight: 600; }
 
 .tech {
   break-before: avoid; /* never orphan a Tech line at the top of a page */

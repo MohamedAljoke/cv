@@ -23,7 +23,7 @@
     </p>
     <p class="contact">
       {{- range .R.Profile.Links}}
-      <span><a class="link" href="{{.URL}}">{{$.T .Label}}</a></span>{{end}}
+      <span><a class="link" href="{{.URL}}" target="_blank" rel="noopener">{{$.T .Label}}</a></span>{{end}}
     </p>
   </header>
 {{range .Sections}}{{template "resume-section" (dict $ .)}}{{end}}
@@ -73,7 +73,7 @@
     <article class="project">
       <div class="role">
         <h3>{{.Name}}</h3>
-        {{- with .Repo}}<p class="when"><a class="link" href="{{.}}">GitHub</a></p>{{end}}
+        {{- with .Repo}}<p class="when"><a class="link" href="{{.}}" target="_blank" rel="noopener">GitHub</a></p>{{end}}
       </div>
       <p>{{$p.T .Summary}}</p>
       {{- with .Stack}}<p class="tech"><strong>{{$p.L "tech"}}:</strong> {{join . ", "}}</p>{{end}}
@@ -96,7 +96,7 @@
     <h2>{{$p.L "certifications"}}</h2>
     <ul class="plain">
     {{- range $p.R.Profile.Certifications}}
-      <li><strong>{{.Name}}</strong> <span class="sep">·</span> {{.Issuer}}{{with .Date}} ({{$p.Month .}}){{end}}</li>
+      <li>{{if .URL}}<a class="link cert-link" href="{{.URL}}" target="_blank" rel="noopener"><strong>{{.Name}}</strong></a>{{else}}<strong>{{.Name}}</strong>{{end}} <span class="sep">·</span> {{.Issuer}}{{with .Date}} ({{$p.Month .}}){{end}}</li>
     {{- end}}
     </ul>
   </section>
