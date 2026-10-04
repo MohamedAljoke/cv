@@ -11,7 +11,6 @@ import (
 
 	"github.com/ledongthuc/pdf"
 
-	"cv/internal/render"
 	"cv/internal/resume"
 )
 
@@ -97,6 +96,25 @@ func Extract(path string) (lines []string, pages int, title string, err error) {
 	return lines, pages, title, nil
 }
 
+// Links returns the targets of every clickable link (URI annotation) in the PDF.
+func Links(path string) (map[string]bool, error) {
+	f, rd, err := pdf.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	out := map[string]bool{}
+	for i := 1; i <= rd.NumPage(); i++ {
+		annots := rd.Page(i).V.Key("Annots")
+		for j := 0; j < annots.Len(); j++ {
+			if uri := annots.Index(j).Key("A").Key("URI").Text(); uri != "" {
+				out[uri] = true
+			}
+		}
+	}
+	return out, nil
+}
+
 var spaces = regexp.MustCompile(`\s+`)
 
 func norm(s string) string { return strings.ToLower(spaces.ReplaceAllString(s, " ")) }
@@ -144,10 +162,23 @@ func Check(path, lang string, r resume.Resume) Report {
 		}
 	}
 
-	// Contact details must be plain text, not just hyperlinks.
+	// Name and email must be plain text; profile links are clickable labels,
+	// so check the label text and the link target inside the PDF.
 	must := []string{p.Profile.Name, p.Profile.Email}
+	links, err := Links(path)
+	if err != nil {
+		rep.Problems = append(rep.Problems, "cannot read links: "+err.Error())
+	}
 	for _, l := range p.Profile.Links {
-		must = append(must, render.Host(l.URL))
+		must = append(must, l.Label.In(lang))
+		if !links[l.URL] {
+			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", l.URL))
+		}
+	}
+	for _, pr := range p.Projects {
+		if pr.Repo != "" && !links[pr.Repo] {
+			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", pr.Repo))
+		}
 	}
 	for _, j := range p.Experience {
 		must = append(must, j.Company, j.Title.In(lang))
@@ -185,7 +216,7 @@ func Check(path, lang string, r resume.Resume) Report {
 			rep.Notes = append(rep.Notes, note)
 		}
 	}
-	rep.Notes = append(rep.Notes, fmt.Sprintf("title %q", title))
+	rep.Notes = append(rep.Notes, fmt.Sprintf("title %q, %d clickable links", title, len(links)))
 	return rep
 }
 

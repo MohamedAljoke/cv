@@ -52,7 +52,8 @@ Go 1.25+. No npm. CI (`.github/workflows/check.yml`) fails if the committed HTML
 It reads each PDF back as plain text, the way a parser does, and fails the build if:
 - the PDF has more than `site.json → pdf.maxPages` pages
 - a section heading isn't on its own line, or headings are out of order
-- the name, email, a link (as text), a company or a job title is missing from the text
+- the name, email, a link label, a company or a job title is missing from the text
+- a profile or project link isn't clickable (checked in the PDF's link annotations)
 - a keyword from `site.json → ats.keywords` is missing
 - the text is fragmented (many one-word lines; old Google Docs exports had this problem)
 
@@ -60,7 +61,7 @@ Design choices that keep parsers happy:
 - one column
 - standard headings ("Work Experience", "Experiência Profissional", …)
 - no tables, icons or images in the PDF
-- URLs printed as text
+- links shown as short clickable labels (LinkedIn, GitHub, Portfolio); the email stays plain text
 - static (non-variable) embedded fonts
 - a tagged PDF with a real document title
 
