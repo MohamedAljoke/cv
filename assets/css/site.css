@@ -257,7 +257,7 @@ a:hover { color: var(--primary-hover); }
 }
 .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px var(--ring); }
 .hero h1 {
-  margin-top: var(--s5);
+  margin-top: 0;
   font-size: clamp(2.6rem, 6.5vw, 4.75rem);
   letter-spacing: -0.03em;
   line-height: 1;

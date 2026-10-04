@@ -48,9 +48,6 @@ func writeJSONResume(r resume.Resume, o Options, path string) error {
 		if j.End != nil {
 			item["endDate"] = *j.End
 		}
-		if loc := p.T(j.Location); loc != "" {
-			item["location"] = loc
-		}
 		work = append(work, item)
 	}
 
@@ -102,7 +99,6 @@ func writeJSONResume(r resume.Resume, o Options, path string) error {
 		"basics": map[string]any{
 			"name": w.Profile.Name, "label": p.T(w.Profile.Headline), "email": w.Profile.Email,
 			"url": website, "summary": p.T(w.Profile.Summary), "profiles": profiles,
-			"location": map[string]string{"city": "Brasília", "region": "DF", "countryCode": "BR"},
 		},
 		"work": work, "projects": projects, "skills": skills, "education": education,
 		"certificates": certs, "languages": langs,

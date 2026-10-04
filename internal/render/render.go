@@ -302,7 +302,6 @@ func personLD(p Page) (template.JS, error) {
 			}
 			return out
 		}(),
-		"address": map[string]string{"@type": "PostalAddress", "addressLocality": "Brasília", "addressCountry": "BR"},
 	}
 	if j := p.Current(); j != nil {
 		org := map[string]string{"@type": "Organization", "name": j.Company}

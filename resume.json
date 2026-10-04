@@ -3,11 +3,6 @@
   "basics": {
     "email": "mohammed.maljoke@gmail.com",
     "label": "Backend Software Engineer | Go · Node.js · TypeScript · AWS",
-    "location": {
-      "city": "Brasília",
-      "countryCode": "BR",
-      "region": "DF"
-    },
     "name": "Mohamed Ibrahim Aljoke",
     "profiles": [
       {
@@ -252,7 +247,6 @@
         "Contributed to migrating a healthcare management platform from Ruby on Rails to React and Java.",
         "Built SEO-optimized landing pages with Next.js, real-time dashboards fed by webhooks, and a GraphQL layer with Hasura."
       ],
-      "location": "Brasília, Brazil · Remote",
       "name": "IDIP Tecnologia",
       "position": "Full Stack Developer",
       "startDate": "2022-10",
@@ -265,7 +259,6 @@
         "Mentored 6 programming interns on Node.js, Next.js and React projects: reviewed pull requests, resolved merge conflicts and guided code improvements.",
         "Ran technical sessions in English on clean architecture and coding best practices."
       ],
-      "location": "Remote",
       "name": "Skule Tecnologia",
       "position": "Education Mentor",
       "startDate": "2023-03",
@@ -279,7 +272,6 @@
         "Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.",
         "Helped launch two mobile MVPs in Flutter (Dart, GetX)."
       ],
-      "location": "Brasília, Brazil",
       "name": "Advanced Digital",
       "position": "Frontend Developer",
       "startDate": "2022-02",

@@ -58,10 +58,8 @@
   <section class="hero" id="top" aria-labelledby="name">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="pill"><span class="dot" aria-hidden="true"></span>{{.L "availability"}}</p>
         <h1 id="name">{{.R.Profile.Name}}</h1>
         <p class="headline">{{.T .R.Profile.Headline}}</p>
-        <p class="location">{{icon "pin"}}<span>{{.T .R.Profile.Location}}</span></p>
         <p class="lead">{{.T .R.Profile.Summary}}</p>
         <div class="actions">
           {{- range .PDFs}}{{if eq .Lang $.Lang}}
@@ -171,7 +169,7 @@
               <h3>{{$p.T .Title}}</h3>
               <p class="job-org">{{if .CompanyURL}}<a href="{{.CompanyURL}}" target="_blank" rel="noopener">{{.Company}}</a>{{else}}{{.Company}}{{end}}{{with $p.T .Blurb}} <span class="muted">· {{.}}</span>{{end}}</p>
             </div>
-            <p class="job-when"><time datetime="{{.Start}}">{{$p.Dates .}}</time><span class="muted">{{$p.Duration .}}{{with $p.T .Location}} · {{.}}{{end}}</span></p>
+            <p class="job-when"><time datetime="{{.Start}}">{{$p.Dates .}}</time><span class="muted">{{$p.Duration .}}</span></p>
           </div>
           {{- if .Groups}}
           <div class="groups">
@@ -231,7 +229,7 @@
     <div class="card">
       <h3>{{$p.T .Degree}}</h3>
       <p>{{.School}}</p>
-      <p class="muted">{{years .}}{{with $p.T .Location}} · {{.}}{{end}}</p>
+      <p class="muted">{{years .}}</p>
       {{- with $p.T .Detail}}<p class="muted small">{{.}}</p>{{end}}
     </div>
     {{- end}}

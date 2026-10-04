@@ -48,7 +48,6 @@
     "credential": { "en": "Verify credential", "pt": "Verificar credencial" },
     "email": { "en": "Email", "pt": "E-mail" },
     "phone": { "en": "Phone", "pt": "Telefone" },
-    "availability": { "en": "Open to backend roles · remote or Brasília", "pt": "Aberto a vagas backend · remoto ou Brasília" },
     "pdf_en": { "en": "Resume (English, PDF)", "pt": "Currículo em inglês (PDF)" },
     "pdf_pt": { "en": "Resume (Portuguese, PDF)", "pt": "Currículo em português (PDF)" },
     "downloads": { "en": "Download the resume", "pt": "Baixe o currículo" },
