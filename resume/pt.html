@@ -43,7 +43,7 @@
       <p class="group">Motor de enriquecimento</p>
       <ul><li>Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final.</li><li>Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e score de risco, com um rate limiter (leaky bucket) antes das APIs dos provedores que enfileira chamadas perto do limite do plano: alto throughput sem erros HTTP 429.</li></ul>
       <p class="group">Onboarding de Banking as a Service (BaaS)</p>
-      <ul><li>Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processo eventos de contas e clientes com AWS SNS e filas SQS FIFO, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li></ul>
+      <ul><li>Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processo eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li></ul>
       <p class="group">Plataforma e ferramentas</p>
       <ul><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3.</li></ul><p class="tech"><strong>Tecnologias:</strong> Go, Fiber, fasthttp, AWS SNS, AWS SQS, Amazon S3, Sentry</p>
     </article>

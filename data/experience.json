@@ -56,8 +56,8 @@
               "pt": "Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços."
             },
             {
-              "en": "Process account and customer events with AWS SNS and SQS FIFO queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
-              "pt": "Processo eventos de contas e clientes com AWS SNS e filas SQS FIFO, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
+              "en": "Process account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+              "pt": "Processo eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
             }
           ]
         },
