@@ -41,11 +41,11 @@
       <p class="group">KYC, compliance e regulatório</p>
       <ul><li>Implemento requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma.</li><li>Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio.</li><li>Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats.</li></ul>
       <p class="group">Motor de enriquecimento</p>
-      <ul><li>Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final.</li></ul>
+      <ul><li>Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final.</li><li>Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e score de risco, com um rate limiter (leaky bucket) antes das APIs dos provedores que enfileira chamadas perto do limite do plano: alto throughput sem erros HTTP 429.</li></ul>
       <p class="group">Onboarding de Banking as a Service (BaaS)</p>
       <ul><li>Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processo eventos de contas e clientes com AWS SNS e filas SQS FIFO, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li></ul>
       <p class="group">Plataforma e ferramentas</p>
-      <ul><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3.</li><li>Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança.</li></ul><p class="tech"><strong>Tecnologias:</strong> Go, Fiber, fasthttp, AWS SNS, AWS SQS, Amazon S3, Sentry</p>
+      <ul><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3.</li></ul><p class="tech"><strong>Tecnologias:</strong> Go, Fiber, fasthttp, AWS SNS, AWS SQS, Amazon S3, Sentry</p>
     </article>
     <article class="job">
       <div class="role">
@@ -70,7 +70,7 @@
     <h2>Competências Técnicas</h2>
     <div class="skills">
       <p><strong>Linguagens:</strong> Go (Golang), TypeScript, JavaScript, Node.js, Java, Python, SQL</p>
-      <p><strong>Backend e arquitetura:</strong> REST APIs, GraphQL, Microsserviços, Arquitetura orientada a eventos, Eventos de domínio, Transactional outbox, Processamento assíncrono, Fiber, NestJS, Express, Fastify</p>
+      <p><strong>Backend e arquitetura:</strong> REST APIs, GraphQL, Microsserviços, Arquitetura orientada a eventos, Eventos de domínio, Transactional outbox, Processamento assíncrono, Rate limiting, Fiber, NestJS, Express, Fastify</p>
       <p><strong>Cloud (AWS):</strong> Lambda, ECS Fargate, EKS, SNS, SQS, S3, DynamoDB, Cognito, Secrets Manager, API Gateway, CloudFront, VPC, CloudFormation</p>
       <p><strong>Infraestrutura e DevOps:</strong> Terraform, Serverless Framework, Docker, GitHub Actions, GitLab CI, AWS CodePipeline, CI/CD</p>
       <p><strong>Bancos de dados e mensageria:</strong> PostgreSQL, MongoDB, DynamoDB, Redis, Kafka, RabbitMQ, SNS/SQS</p>

@@ -17,6 +17,7 @@
         { "en": "Domain events", "pt": "Eventos de domínio" },
         { "en": "Transactional outbox", "pt": "Transactional outbox" },
         { "en": "Asynchronous processing", "pt": "Processamento assíncrono" },
+        "Rate limiting",
         "Fiber",
         "NestJS",
         "Express",

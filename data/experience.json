@@ -41,6 +41,10 @@
             {
               "en": "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
               "pt": "Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final."
+            },
+            {
+              "en": "Built bulk reprocessing to run existing customers through the enrichment and risk-scoring engines, with a leaky-bucket rate limiter in front of the data-provider APIs that queues calls near each plan's quota: fast throughput without HTTP 429 errors.",
+              "pt": "Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e score de risco, com um rate limiter (leaky bucket) antes das APIs dos provedores que enfileira chamadas perto do limite do plano: alto throughput sem erros HTTP 429."
             }
           ]
         },
@@ -63,10 +67,6 @@
             {
               "en": "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3.",
               "pt": "Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3."
-            },
-            {
-              "en": "Built internal bulk-processing tooling to safely reprocess operational workflows at scale.",
-              "pt": "Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança."
             }
           ]
         }

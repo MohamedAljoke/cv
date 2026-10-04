@@ -135,6 +135,7 @@
         "Domain events",
         "Transactional outbox",
         "Asynchronous processing",
+        "Rate limiting",
         "Fiber",
         "NestJS",
         "Express",
@@ -223,10 +224,10 @@
         "Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.",
         "Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.",
         "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
+        "Built bulk reprocessing to run existing customers through the enrichment and risk-scoring engines, with a leaky-bucket rate limiter in front of the data-provider APIs that queues calls near each plan's quota: fast throughput without HTTP 429 errors.",
         "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
         "Process account and customer events with AWS SNS and SQS FIFO queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
-        "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3.",
-        "Built internal bulk-processing tooling to safely reprocess operational workflows at scale."
+        "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3."
       ],
       "name": "Transfeera",
       "position": "Software Engineer",
