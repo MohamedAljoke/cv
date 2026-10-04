@@ -163,6 +163,7 @@
     },
     {
       "keywords": [
+        "Kubernetes",
         "Terraform",
         "Serverless Framework",
         "Docker",
@@ -203,6 +204,7 @@
         "Jest",
         "Vitest",
         "Testcontainers",
+        "Grafana",
         "Sentry"
       ],
       "name": "Testing \u0026 observability"

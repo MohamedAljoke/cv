@@ -32,7 +32,7 @@
     {
       "id": "devops",
       "label": { "en": "Infrastructure & DevOps", "pt": "Infraestrutura e DevOps" },
-      "skills": ["Terraform", "Serverless Framework", "Docker", "GitHub Actions", "GitLab CI", "AWS CodePipeline", "CI/CD"]
+      "skills": ["Kubernetes", "Terraform", "Serverless Framework", "Docker", "GitHub Actions", "GitLab CI", "AWS CodePipeline", "CI/CD"]
     },
     {
       "id": "data",
@@ -55,7 +55,7 @@
     {
       "id": "testing",
       "label": { "en": "Testing & observability", "pt": "Testes e observabilidade" },
-      "skills": ["Go testing", "Jest", "Vitest", "Testcontainers", "Sentry"]
+      "skills": ["Go testing", "Jest", "Vitest", "Testcontainers", "Grafana", "Sentry"]
     },
     {
       "id": "frontend",

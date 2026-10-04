@@ -67,7 +67,7 @@
           ]
         }
       ],
-      "stack": ["Go", "Fiber", "fasthttp", "AWS SNS", "AWS SQS", "Amazon S3", "Sentry"]
+      "stack": ["Go", "Kubernetes", "AWS", "PostgreSQL", "Grafana", "hoop.dev", "Sentry"]
     },
     {
       "id": "idip",
