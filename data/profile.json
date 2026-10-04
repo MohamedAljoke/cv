@@ -23,6 +23,7 @@
   },
   "focus": [
     { "en": "KYC & compliance", "pt": "KYC e compliance" },
+    { "en": "Central Bank (BCB) regulations", "pt": "Regulatório do Banco Central (BCB)" },
     "Banking as a Service",
     { "en": "Event-driven systems", "pt": "Sistemas orientados a eventos" }
   ],
