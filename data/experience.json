@@ -26,12 +26,12 @@
               "pt": "Implemento requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma."
             },
             {
-              "en": "Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.",
-              "pt": "Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio."
+              "en": "Built a rules-based KYC risk-scoring engine with weighted scoring and eligibility checks, turning compliance requirements into domain rules together with the compliance team.",
+              "pt": "Desenvolvi um motor de score de risco de KYC baseado em regras, com pontuação ponderada e checagens de elegibilidade, traduzindo requisitos de compliance em regras de domínio junto ao time de compliance."
             },
             {
-              "en": "Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.",
-              "pt": "Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats."
+              "en": "Integrated multiple external KYC, AML and antifraud data providers into the automated customer onboarding flow.",
+              "pt": "Integrei múltiplos provedores externos de dados de KYC, PLD/AML e antifraude ao fluxo automatizado de onboarding de clientes."
             }
           ]
         },
