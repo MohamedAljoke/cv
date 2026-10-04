@@ -175,7 +175,7 @@
       <aside class="glance card" aria-label="About">
         <div class="glance-row">
           <p class="glance-label"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>Nov 2025 – Present</span></p>
-          <p class="glance-value"><strong>Software Engineer</strong> · Transfeera</p><p class="glance-sub">Brazilian fintech: payments and Banking as a Service</p>
+          <p class="glance-value"><strong>Software Engineer</strong> · Transfeera</p><p class="glance-sub">Brazilian fintech regulated by the Central Bank: payments and Banking as a Service</p><p class="glance-highlight"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Implementing Central Bank of Brazil (BCB) regulatory requirements</span></p>
         </div>
         <div class="glance-row">
           <ul class="chips chips-accent"><li>KYC &amp; compliance</li><li>Banking as a Service</li><li>Event-driven systems</li></ul>
@@ -197,14 +197,14 @@
           <div class="job-head">
             <div>
               <h3>Software Engineer</h3>
-              <p class="job-org"><a href="https://transfeera.com" target="_blank" rel="noopener">Transfeera</a> <span class="muted">· Brazilian fintech: payments and Banking as a Service</span></p>
+              <p class="job-org"><a href="https://transfeera.com" target="_blank" rel="noopener">Transfeera</a> <span class="muted">· Brazilian fintech regulated by the Central Bank: payments and Banking as a Service</span></p>
             </div>
             <p class="job-when"><time datetime="2025-11">Nov 2025 – Present</time><span class="muted">1 yr</span></p>
           </div>
           <div class="groups">
             <div class="group">
-              <h4>KYC &amp; compliance engine</h4>
-              <ul class="bullets"><li>Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.</li><li>Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.</li></ul>
+              <h4>KYC, compliance &amp; regulatory</h4>
+              <ul class="bullets"><li>Implement Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.</li><li>Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.</li><li>Integrated 5 KYC, AML and antifraud data providers into automated customer onboarding: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History and DictStats.</li></ul>
             </div>
             <div class="group">
               <h4>Enrichment engine</h4>
@@ -216,7 +216,7 @@
             </div>
             <div class="group">
               <h4>Platform &amp; tooling</h4>
-              <ul class="bullets"><li>Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory: multipart streaming straight to Amazon S3, size-limited readers and streaming SHA-256 hashing.</li><li>Diagnosed Fiber and Sentry middleware that consumed the streamed request body before the handler, and fixed the upload path.</li><li>Built internal bulk-processing tooling to safely reprocess operational workflows at scale.</li></ul>
+              <ul class="bullets"><li>Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3.</li><li>Built internal bulk-processing tooling to safely reprocess operational workflows at scale.</li></ul>
             </div>
           </div><ul class="chips" aria-label="Tech"><li>Go</li><li>Fiber</li><li>fasthttp</li><li>AWS SNS</li><li>AWS SQS</li><li>Amazon S3</li><li>Sentry</li></ul>
         </li>

@@ -80,6 +80,7 @@
           <p class="glance-label">{{icon "briefcase"}}<span>{{$.Dates .}}</span></p>
           <p class="glance-value"><strong>{{$.T .Title}}</strong> · {{.Company}}</p>
           {{- with $.T .Blurb}}<p class="glance-sub">{{.}}</p>{{end}}
+          {{- with $.T .Highlight}}<p class="glance-highlight">{{icon "shield"}}<span>{{.}}</span></p>{{end}}
         </div>{{end}}
         {{- with .R.Profile.Focus}}
         <div class="glance-row">

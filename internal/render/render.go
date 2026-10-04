@@ -108,10 +108,10 @@ type sectionCtx struct {
 
 var funcs = template.FuncMap{
 	"dict":  func(p Page, s string) sectionCtx { return sectionCtx{p, s} },
-	"join": strings.Join,
-	"host": Host,
+	"join":  strings.Join,
+	"host":  Host,
 	"lower": strings.ToLower,
-	"icon": icon,
+	"icon":  icon,
 	"years": func(e resume.Education) string {
 		switch {
 		case e.StartYear > 0 && e.EndYear > 0:

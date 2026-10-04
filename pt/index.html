@@ -175,7 +175,7 @@
       <aside class="glance card" aria-label="Sobre">
         <div class="glance-row">
           <p class="glance-label"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>nov 2025 – atual</span></p>
-          <p class="glance-value"><strong>Engenheiro de Software</strong> · Transfeera</p><p class="glance-sub">Fintech brasileira de pagamentos e Banking as a Service</p>
+          <p class="glance-value"><strong>Engenheiro de Software</strong> · Transfeera</p><p class="glance-sub">Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service</p><p class="glance-highlight"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Implementação de requisitos regulatórios do Banco Central (BCB)</span></p>
         </div>
         <div class="glance-row">
           <ul class="chips chips-accent"><li>KYC e compliance</li><li>Banking as a Service</li><li>Sistemas orientados a eventos</li></ul>
@@ -197,14 +197,14 @@
           <div class="job-head">
             <div>
               <h3>Engenheiro de Software</h3>
-              <p class="job-org"><a href="https://transfeera.com" target="_blank" rel="noopener">Transfeera</a> <span class="muted">· Fintech brasileira de pagamentos e Banking as a Service</span></p>
+              <p class="job-org"><a href="https://transfeera.com" target="_blank" rel="noopener">Transfeera</a> <span class="muted">· Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service</span></p>
             </div>
             <p class="job-when"><time datetime="2025-11">nov 2025 – atual</time><span class="muted">1 ano</span></p>
           </div>
           <div class="groups">
             <div class="group">
-              <h4>Motor de KYC e compliance</h4>
-              <ul class="bullets"><li>Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio.</li><li>Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats.</li></ul>
+              <h4>KYC, compliance e regulatório</h4>
+              <ul class="bullets"><li>Implemento requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma.</li><li>Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio.</li><li>Integrei 5 provedores de dados de KYC, PLD/AML e antifraude ao onboarding automatizado de clientes: CAF Antifraude, BigDataCorp (BigBoost), BDC Sanctions, CAF Fraud History e DictStats.</li></ul>
             </div>
             <div class="group">
               <h4>Motor de enriquecimento</h4>
@@ -216,7 +216,7 @@
             </div>
             <div class="group">
               <h4>Plataforma e ferramentas</h4>
-              <ul class="bullets"><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória: multipart direto para o Amazon S3, readers com limite de tamanho e SHA-256 em streaming.</li><li>Diagnostiquei middlewares do Fiber e do Sentry que consumiam o corpo da requisição em streaming antes do handler e corrigi o fluxo de upload.</li><li>Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança.</li></ul>
+              <ul class="bullets"><li>Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3.</li><li>Criei ferramentas internas de processamento em lote para reprocessar fluxos operacionais com segurança.</li></ul>
             </div>
           </div><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>Fiber</li><li>fasthttp</li><li>AWS SNS</li><li>AWS SQS</li><li>Amazon S3</li><li>Sentry</li></ul>
         </li>

@@ -37,6 +37,10 @@
           "description": "One line about the company, for context.",
           "$ref": "common.schema.json#/$defs/ltext"
         },
+        "highlight": {
+          "description": "One line shown in the website's 'at a glance' card when this is the current job.",
+          "$ref": "common.schema.json#/$defs/ltext"
+        },
         "title": { "$ref": "common.schema.json#/$defs/ltext" },
         "location": { "$ref": "common.schema.json#/$defs/ltext" },
         "start": { "$ref": "common.schema.json#/$defs/month" },

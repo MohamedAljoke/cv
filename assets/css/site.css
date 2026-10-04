@@ -332,6 +332,20 @@ a:hover { color: var(--primary-hover); }
 }
 .glance-value { margin-top: var(--s1); font-size: 1.1rem; }
 .glance-sub { color: var(--fg-muted); font-size: 0.9rem; }
+.glance-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+  margin-top: var(--s3);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-soft-fg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.glance-highlight .icon { margin-top: 0.1em; }
 .glance-cert { display: flex; align-items: center; gap: var(--s4); line-height: 1.35; }
 .glance-cert img { width: 56px; height: 56px; }
 

@@ -6,8 +6,12 @@
       "company": "Transfeera",
       "companyUrl": "https://transfeera.com",
       "blurb": {
-        "en": "Brazilian fintech: payments and Banking as a Service",
-        "pt": "Fintech brasileira de pagamentos e Banking as a Service"
+        "en": "Brazilian fintech regulated by the Central Bank: payments and Banking as a Service",
+        "pt": "Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service"
+      },
+      "highlight": {
+        "en": "Implementing Central Bank of Brazil (BCB) regulatory requirements",
+        "pt": "Implementação de requisitos regulatórios do Banco Central (BCB)"
       },
       "title": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
       "start": "2025-11",
@@ -15,8 +19,12 @@
       "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, providers, latency.",
       "groups": [
         {
-          "title": { "en": "KYC & compliance engine", "pt": "Motor de KYC e compliance" },
+          "title": { "en": "KYC, compliance & regulatory", "pt": "KYC, compliance e regulatório" },
           "bullets": [
+            {
+              "en": "Implement Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
+              "pt": "Implemento requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma."
+            },
             {
               "en": "Built a rules-based KYC risk-scoring engine (weighted aggregation, risk catalogs, eligibility checks and watchlist mappings), turning compliance requirements into domain rules together with the compliance team.",
               "pt": "Desenvolvi um motor de score de risco de KYC baseado em regras (agregação ponderada, catálogos de risco, checagens de elegibilidade e listas restritivas), traduzindo requisitos de compliance em regras de domínio."
@@ -53,15 +61,8 @@
           "title": { "en": "Platform & tooling", "pt": "Plataforma e ferramentas" },
           "bullets": [
             {
-              "en": "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory: multipart streaming straight to Amazon S3, size-limited readers and streaming SHA-256 hashing.",
-              "pt": "Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória: multipart direto para o Amazon S3, readers com limite de tamanho e SHA-256 em streaming."
-            },
-            {
-              "text": {
-                "en": "Diagnosed Fiber and Sentry middleware that consumed the streamed request body before the handler, and fixed the upload path.",
-                "pt": "Diagnostiquei middlewares do Fiber e do Sentry que consumiam o corpo da requisição em streaming antes do handler e corrigi o fluxo de upload."
-              },
-              "pdf": false
+              "en": "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3.",
+              "pt": "Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3."
             },
             {
               "en": "Built internal bulk-processing tooling to safely reprocess operational workflows at scale.",

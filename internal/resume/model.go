@@ -71,7 +71,7 @@ func (v Vis) Shows(t Target) bool {
 // Bullet is a line of text with its own visibility. In JSON it is either
 // plain localized text or {"text": ..., "pdf": false, ...}.
 type Bullet struct {
-	Text LText `json:"text"`
+	Text LText  `json:"text"`
 	Note string `json:"note"`
 	Vis
 }
@@ -98,6 +98,7 @@ type Job struct {
 	Company    string   `json:"company"`
 	CompanyURL string   `json:"companyUrl"`
 	Blurb      LText    `json:"blurb"`
+	Highlight  LText    `json:"highlight"`
 	Title      LText    `json:"title"`
 	Location   LText    `json:"location"`
 	Start      string   `json:"start"`
