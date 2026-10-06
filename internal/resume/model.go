@@ -123,6 +123,14 @@ type Project struct {
 	Vis
 }
 
+// Link is the project's main link: the repository, or the demo when the code is private.
+func (p Project) Link() string {
+	if p.Repo != "" {
+		return p.Repo
+	}
+	return p.Demo
+}
+
 type SkillGroup struct {
 	ID     string  `json:"id"`
 	Label  LText   `json:"label"`

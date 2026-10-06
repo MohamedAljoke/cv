@@ -2,6 +2,23 @@
   "$schema": "./schema/projects.schema.json",
   "items": [
     {
+      "id": "dyosmos",
+      "name": "Dyosmos",
+      "summary": {
+        "en": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, Terraform on Google Cloud and AWS. Private codebase, shown in a video walkthrough.",
+        "pt": "Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, Terraform no Google Cloud e na AWS. Código privado, apresentado em vídeo."
+      },
+      "highlights": [
+        { "en": "Transactional outbox, idempotent at-least-once consumers and one schema per service", "pt": "Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço" },
+        { "en": "Multi-tenant authorization, Redis rate limiting and optimistic locking", "pt": "Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista" },
+        { "en": "Offline mutation queue with conflict resolution and AI-assisted voice ordering", "pt": "Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA" },
+        { "en": "Containers on a Google Cloud VM with Cloud SQL, provisioned with Terraform", "pt": "Contêineres em uma VM no Google Cloud com Cloud SQL, provisionados com Terraform" }
+      ],
+      "stack": ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "SQS", "S3", "Docker", "Terraform", "Google Cloud"],
+      "demo": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd",
+      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+    },
+    {
       "id": "travel-journal",
       "name": "Travel Journal",
       "summary": {
@@ -31,6 +48,7 @@
       ],
       "stack": ["Go", "Node.js", "RabbitMQ", "AWS ECS Fargate", "VPC", "ALB", "Terraform", "Docker"],
       "repo": "https://github.com/MohamedAljoke/mail-sender",
+      "pdf": false,
       "demo": "https://www.loom.com/share/f9ab6f55084540c5a0ad010af3fbef89",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
@@ -46,7 +64,8 @@
         { "en": "Unit tests with coverage", "pt": "Testes unitários com cobertura" }
       ],
       "stack": ["Go", "Goroutines", "Channels", "CSV"],
-      "repo": "https://github.com/MohamedAljoke/scrap_ifix_go"
+      "repo": "https://github.com/MohamedAljoke/scrap_ifix_go",
+      "pdf": false
     }
   ]
 }

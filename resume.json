@@ -57,6 +57,29 @@
   },
   "projects": [
     {
+      "description": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, Terraform on Google Cloud and AWS. Private codebase, shown in a video walkthrough.",
+      "highlights": [
+        "Transactional outbox, idempotent at-least-once consumers and one schema per service",
+        "Multi-tenant authorization, Redis rate limiting and optimistic locking",
+        "Offline mutation queue with conflict resolution and AI-assisted voice ordering",
+        "Containers on a Google Cloud VM with Cloud SQL, provisioned with Terraform"
+      ],
+      "keywords": [
+        "Go",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "SQS",
+        "S3",
+        "Docker",
+        "Terraform",
+        "Google Cloud"
+      ],
+      "name": "Dyosmos",
+      "url": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd"
+    },
+    {
       "description": "Serverless image journal on AWS: uploads go straight to S3 via pre-signed URLs, Cognito authentication, Node.js REST APIs on Lambda and a Go Lambda for image processing.",
       "highlights": [
         "Monorepo deployed with Serverless Framework v4",

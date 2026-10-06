@@ -73,7 +73,8 @@
     <article class="project">
       <div class="role">
         <h3>{{.Name}}</h3>
-        {{- with .Repo}}<p class="when"><a class="link" href="{{.}}" target="_blank" rel="noopener">GitHub</a></p>{{end}}
+        {{- if .Repo}}<p class="when"><a class="link" href="{{.Repo}}" target="_blank" rel="noopener">GitHub</a></p>
+        {{- else if .Demo}}<p class="when"><a class="link" href="{{.Demo}}" target="_blank" rel="noopener">{{$p.T .DemoLabel}}</a></p>{{end}}
       </div>
       <p>{{$p.T .Summary}}</p>
       {{- with .Stack}}<p class="tech"><strong>{{$p.L "tech"}}:</strong> {{join . ", "}}</p>{{end}}

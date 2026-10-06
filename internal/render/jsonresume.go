@@ -59,7 +59,7 @@ func writeJSONResume(r resume.Resume, o Options, path string) error {
 		}
 		projects = append(projects, map[string]any{
 			"name": pr.Name, "description": p.T(pr.Summary), "highlights": hl,
-			"keywords": pr.Stack, "url": pr.Repo,
+			"keywords": pr.Stack, "url": pr.Link(),
 		})
 	}
 

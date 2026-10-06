@@ -252,6 +252,12 @@
     <div class="container">
       <h2 id="h-projects">Projetos</h2>
       <div class="grid grid-3">
+        <article class="card project" id="project-dyosmos">
+          <h3>Dyosmos</h3>
+          <p>Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, Terraform no Google Cloud e na AWS. Código privado, apresentado em vídeo.</p><ul class="bullets bullets-sm"><li>Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço</li><li>Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista</li><li>Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA</li><li>Contêineres em uma VM no Google Cloud com Cloud SQL, provisionados com Terraform</li></ul><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>SQS</li><li>S3</li><li>Docker</li><li>Terraform</li><li>Google Cloud</li></ul>
+          <p class="card-links"><a href="https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg><span>Vídeo explicativo</span></a>
+          </p>
+        </article>
         <article class="card project" id="project-travel-journal">
           <h3>Travel Journal</h3>
           <p>Diário de imagens serverless na AWS: uploads direto para o S3 via pre-signed URLs, autenticação com Cognito, APIs REST em Node.js no Lambda e um Lambda em Go para processar imagens.</p><ul class="bullets bullets-sm"><li>Monorepo com deploy via Serverless Framework v4</li><li>Metadados no DynamoDB e tratamento de erros com SQS</li><li>Frontend em React distribuído via CloudFront</li></ul><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>Node.js</li><li>React</li><li>AWS Lambda</li><li>S3</li><li>DynamoDB</li><li>Cognito</li><li>CloudFront</li><li>SQS</li><li>Serverless Framework</li></ul>

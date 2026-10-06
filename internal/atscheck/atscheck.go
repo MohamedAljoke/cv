@@ -176,8 +176,8 @@ func Check(path, lang string, r resume.Resume) Report {
 		}
 	}
 	for _, pr := range p.Projects {
-		if pr.Repo != "" && !links[pr.Repo] {
-			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", pr.Repo))
+		if l := pr.Link(); l != "" && !links[l] {
+			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", l))
 		}
 	}
 	for _, c := range p.Profile.Certifications {

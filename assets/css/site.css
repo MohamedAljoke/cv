@@ -398,6 +398,7 @@ a:hover { color: var(--primary-hover); }
 .project h3 { font-size: 1.5rem; }
 .project > p:not(.card-links) { color: var(--fg-muted); }
 .project .bullets { margin-top: 0; }
+.grid-3 > .project:first-child { grid-column: 1 / -1; }
 .card-links { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); margin-top: auto; padding-top: var(--s2); }
 .card-links a, .cert a {
   display: inline-flex;

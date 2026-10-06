@@ -72,7 +72,7 @@ func TestMissingTranslationNamesThePath(t *testing.T) {
 	if err == nil {
 		t.Fatal("expected an error")
 	}
-	for _, want := range []string{"projects.json at /items/0/highlights/0", "missing property 'pt'"} {
+	for _, want := range []string{"projects.json at /items/1/highlights/0", "missing property 'pt'"} {
 		if !strings.Contains(err.Error(), want) {
 			t.Errorf("error should mention %q, got:\n%v", want, err)
 		}
