@@ -19,6 +19,22 @@
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
     {
+      "id": "cka-sim",
+      "name": "CKA Sim",
+      "summary": {
+        "en": "Kubernetes CKA exam simulator in one Go binary: starts a multi-node cluster in Docker, opens a browser terminal into it and auto-grades hands-on tasks.",
+        "pt": "Simulador do exame CKA de Kubernetes em um único binário Go: sobe um cluster multi-nó no Docker, abre um terminal no navegador e corrige tarefas práticas automaticamente."
+      },
+      "highlights": [
+        { "en": "3-node kind cluster with Docker as the only prerequisite; a doctor command checks the machine first", "pt": "Cluster kind com 3 nós e o Docker como único pré-requisito; um comando doctor verifica a máquina antes" },
+        { "en": "Browser terminal (xterm.js over WebSockets) attached to the cluster through the Docker API", "pt": "Terminal no navegador (xterm.js via WebSockets) conectado ao cluster pela API do Docker" },
+        { "en": "Task catalogue of setup, check and solution scripts; a selftest proves each task scores 0 before its solution and full after", "pt": "Catálogo de tarefas com scripts de setup, verificação e solução; um selftest prova que cada tarefa vale 0 antes da solução e nota máxima depois" },
+        { "en": "Timed exam drawn by CKA domain weights and scored against the 66% pass mark", "pt": "Prova cronometrada sorteada pelos pesos dos domínios do CKA e corrigida contra a nota de corte de 66%" }
+      ],
+      "stack": ["Go", "Kubernetes", "kind", "Docker", "TypeScript", "Vite", "xterm.js", "WebSockets", "Bash"],
+      "repo": "https://github.com/MohamedAljoke/cka-sim"
+    },
+    {
       "id": "social-deduction-game",
       "name": "Social Deduction Game",
       "summary": {
@@ -50,6 +66,7 @@
       ],
       "stack": ["Go", "Node.js", "React", "AWS Lambda", "S3", "DynamoDB", "Cognito", "CloudFront", "SQS", "Serverless Framework"],
       "repo": "https://github.com/MohamedAljoke/travel-journal-v2",
+      "pdf": false,
       "demo": "https://www.loom.com/share/1f6a4cbaf4ad457bb44ab347971a0df2",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
