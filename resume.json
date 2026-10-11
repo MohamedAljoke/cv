@@ -53,7 +53,7 @@
   ],
   "meta": {
     "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
-    "lastModified": "2026-10-04"
+    "lastModified": "2026-10-06"
   },
   "projects": [
     {
@@ -78,6 +78,26 @@
       ],
       "name": "Dyosmos",
       "url": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd"
+    },
+    {
+      "description": "Real-time multiplayer game built as a Domain-Driven Design study: rich entities, domain events and SOLID.",
+      "highlights": [
+        "Rich entities and value objects with invariants in the domain, raising typed domain errors and domain events",
+        "SOLID: one handler per ability (open/closed), ports and adapters, swappable Express/Hono HTTP layer",
+        "Architecture fitness tests keep the domain free of infrastructure; Vitest and Playwright E2E in CI",
+        "Optional AI game master on Gemini/OpenRouter with provider failover"
+      ],
+      "keywords": [
+        "TypeScript",
+        "Node.js",
+        "WebSockets",
+        "React",
+        "DDD",
+        "Vitest",
+        "Playwright"
+      ],
+      "name": "Social Deduction Game",
+      "url": "https://github.com/MohamedAljoke/social-deduction-game"
     },
     {
       "description": "Serverless image journal on AWS: uploads go straight to S3 via pre-signed URLs, Cognito authentication, Node.js REST APIs on Lambda and a Go Lambda for image processing.",

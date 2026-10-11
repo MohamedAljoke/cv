@@ -19,6 +19,24 @@
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
     {
+      "id": "social-deduction-game",
+      "name": "Social Deduction Game",
+      "summary": {
+        "en": "Real-time multiplayer game built as a Domain-Driven Design study: rich entities, domain events and SOLID.",
+        "pt": "Jogo multiplayer em tempo real, um estudo de Domain-Driven Design: entidades ricas, eventos de domínio e SOLID."
+      },
+      "highlights": [
+        { "en": "Rich entities and value objects with invariants in the domain, raising typed domain errors and domain events", "pt": "Entidades ricas e value objects com invariantes no domínio, lançando erros de domínio tipados e eventos de domínio" },
+        { "en": "SOLID: one handler per ability (open/closed), ports and adapters, swappable Express/Hono HTTP layer", "pt": "SOLID: um handler por habilidade (aberto/fechado), ports and adapters, camada HTTP intercambiável entre Express e Hono" },
+        { "en": "Architecture fitness tests keep the domain free of infrastructure; Vitest and Playwright E2E in CI", "pt": "Testes de fitness de arquitetura mantêm o domínio livre de infraestrutura; Vitest e Playwright E2E no CI" },
+        { "en": "Optional AI game master on Gemini/OpenRouter with provider failover", "pt": "Mestre de jogo com IA opcional via Gemini/OpenRouter, com failover entre provedores" }
+      ],
+      "stack": ["TypeScript", "Node.js", "WebSockets", "React", "DDD", "Vitest", "Playwright"],
+      "repo": "https://github.com/MohamedAljoke/social-deduction-game",
+      "demo": "https://social-deduction-game-tvek.onrender.com/",
+      "demoLabel": { "en": "Live demo", "pt": "Demo ao vivo" }
+    },
+    {
       "id": "travel-journal",
       "name": "Travel Journal",
       "summary": {
