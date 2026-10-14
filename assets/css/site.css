@@ -427,6 +427,8 @@ a:hover { color: var(--primary-hover); }
 .cert img { width: 72px; height: 72px; }
 .lang-list { list-style: none; padding: 0; display: grid; gap: var(--s3); }
 .lang-list li { display: flex; flex-direction: column; line-height: 1.35; }
+/* Taller hit area (44px) without changing the row height. */
+.lang-list a { display: inline-flex; align-items: center; gap: var(--s1); align-self: flex-start; padding-block: 10px; margin-block: -10px; text-decoration: none; }
 
 /* Contact */
 .contact { padding-top: 0; }

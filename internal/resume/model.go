@@ -168,8 +168,9 @@ type Certification struct {
 }
 
 type Language struct {
-	Name  LText `json:"name"`
-	Level LText `json:"level"`
+	Name  LText  `json:"name"`
+	Level LText  `json:"level"`
+	URL   string `json:"url"`
 }
 
 type Phone struct {

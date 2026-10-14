@@ -49,11 +49,15 @@
     {
       "fluency": "Native",
       "language": "Arabic"
+    },
+    {
+      "fluency": "Basic, JLPT N4",
+      "language": "Japanese"
     }
   ],
   "meta": {
     "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
-    "lastModified": "2026-10-11"
+    "lastModified": "2026-10-14"
   },
   "projects": [
     {

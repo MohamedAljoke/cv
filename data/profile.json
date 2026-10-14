@@ -59,6 +59,11 @@
   "languages": [
     { "name": { "en": "Portuguese", "pt": "Português" }, "level": { "en": "Native", "pt": "Nativo" } },
     { "name": { "en": "English", "pt": "Inglês" }, "level": { "en": "Fluent", "pt": "Fluente" } },
-    { "name": { "en": "Arabic", "pt": "Árabe" }, "level": { "en": "Native", "pt": "Nativo" } }
+    { "name": { "en": "Arabic", "pt": "Árabe" }, "level": { "en": "Native", "pt": "Nativo" } },
+    {
+      "name": { "en": "Japanese", "pt": "Japonês" },
+      "level": { "en": "Basic, JLPT N4", "pt": "Básico, JLPT N4" },
+      "url": "https://mohamedaljoke.github.io/cv/files/Mohamed_Aljoke_JLPT_N4.pdf"
+    }
   ]
 }

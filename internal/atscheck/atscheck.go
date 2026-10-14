@@ -185,6 +185,11 @@ func Check(path, lang string, r resume.Resume) Report {
 			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", c.URL))
 		}
 	}
+	for _, l := range p.Profile.Languages {
+		if l.URL != "" && !links[l.URL] {
+			rep.Problems = append(rep.Problems, fmt.Sprintf("no clickable link to %s", l.URL))
+		}
+	}
 	for _, j := range p.Experience {
 		must = append(must, j.Company, j.Title.In(lang))
 	}

@@ -97,7 +97,8 @@
         "type": "object",
         "properties": {
           "name": { "$ref": "common.schema.json#/$defs/ltext" },
-          "level": { "$ref": "common.schema.json#/$defs/ltext" }
+          "level": { "$ref": "common.schema.json#/$defs/ltext" },
+          "url": { "$ref": "common.schema.json#/$defs/url", "description": "Proof of level, e.g. a certificate PDF. The language name links to it." }
         },
         "required": ["name", "level"],
         "additionalProperties": false

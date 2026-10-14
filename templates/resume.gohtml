@@ -104,7 +104,7 @@
 {{- else if and (eq $s "languages") $p.R.Profile.Languages}}
   <section class="section">
     <h2>{{$p.L "languages"}}</h2>
-    <p>{{range $i, $l := $p.R.Profile.Languages}}{{if $i}} <span class="sep">·</span> {{end}}<strong>{{$p.T $l.Name}}</strong> ({{$p.T $l.Level}}){{end}}</p>
+    <p>{{range $i, $l := $p.R.Profile.Languages}}{{if $i}} <span class="sep">·</span> {{end}}{{if $l.URL}}<a class="link cert-link" href="{{$l.URL}}" target="_blank" rel="noopener"><strong>{{$p.T $l.Name}}</strong></a>{{else}}<strong>{{$p.T $l.Name}}</strong>{{end}} ({{$p.T $l.Level}}){{end}}</p>
   </section>
 {{- end}}
 {{- end}}
