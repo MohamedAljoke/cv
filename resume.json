@@ -57,7 +57,7 @@
   ],
   "meta": {
     "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
-    "lastModified": "2026-10-14"
+    "lastModified": "2026-10-15"
   },
   "projects": [
     {
@@ -300,6 +300,8 @@
         "Built bulk reprocessing to run existing customers through the enrichment and risk-scoring engines, with a leaky-bucket rate limiter in front of the data-provider APIs that queues calls near each plan's quota: fast throughput without HTTP 429 errors.",
         "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
         "Process account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+        "Built Transfeera's engineering wiki: a semantic-search knowledge base on PostgreSQL and pgvector that ingests past ADRs, decisions from GitHub issues and Notion docs, so the reasoning behind technical decisions lives in one searchable place.",
+        "Exposed it through an MCP server so AI coding agents can look up past decisions and record new ones, plus a Slack slash command to log small decisions that don't warrant a full ADR.",
         "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3."
       ],
       "name": "Transfeera",

@@ -12,7 +12,7 @@
       "title": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
       "start": "2025-11",
       "end": null,
-      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, providers, latency.",
+      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, providers, latency. Engineering wiki: how many ADRs/decisions it holds, how many engineers or AI agents use it.",
       "groups": [
         {
           "title": { "en": "KYC, compliance & regulatory", "pt": "KYC, compliance e regulatório" },
@@ -58,16 +58,37 @@
           ]
         },
         {
+          "title": { "en": "Engineering knowledge base for AI agents", "pt": "Base de conhecimento de engenharia para agentes de IA" },
+          "pdf": false,
+          "bullets": [
+            {
+              "en": "Built Transfeera's engineering wiki: a semantic-search knowledge base on PostgreSQL and pgvector that ingests past ADRs, decisions from GitHub issues and Notion docs, so the reasoning behind technical decisions lives in one searchable place.",
+              "pt": "Construí a wiki de engenharia da Transfeera: uma base de conhecimento com busca semântica em PostgreSQL e pgvector que ingere ADRs, decisões registradas em issues do GitHub e documentos do Notion, reunindo o histórico de decisões técnicas em um só lugar pesquisável."
+            },
+            {
+              "en": "Exposed it through an MCP server so AI coding agents can look up past decisions and record new ones, plus a Slack slash command to log small decisions that don't warrant a full ADR.",
+              "pt": "Disponibilizei a base por um servidor MCP para que agentes de IA consultem decisões anteriores e registrem novas, além de um slash command no Slack para registrar pequenas decisões que não justificam um ADR completo."
+            }
+          ]
+        },
+        {
           "title": { "en": "Platform & tooling", "pt": "Plataforma e ferramentas" },
           "bullets": [
             {
               "en": "Designed a streaming upload path in Go (Fiber/fasthttp) for files up to ~20 MiB without loading them into memory, streaming multipart uploads straight to Amazon S3.",
               "pt": "Projetei um upload em streaming em Go (Fiber/fasthttp) para arquivos de até ~20 MiB sem carregá-los em memória, com streaming multipart direto para o Amazon S3."
+            },
+            {
+              "text": {
+                "en": "Built an engineering wiki on pgvector (ADRs, GitHub and Notion decisions) that AI agents query and update through an MCP server, plus a Slack command for small decisions.",
+                "pt": "Construí uma wiki de engenharia em pgvector (ADRs, decisões do GitHub e Notion) que agentes de IA consultam e atualizam via servidor MCP, além de um comando no Slack para decisões menores."
+              },
+              "web": false
             }
           ]
         }
       ],
-      "stack": ["Go", "Kubernetes", "AWS", "PostgreSQL", "Grafana", "hoop.dev", "Sentry"]
+      "stack": ["Go", "Kubernetes", "AWS", "PostgreSQL", "pgvector", "MCP", "Grafana", "hoop.dev", "Sentry"]
     },
     {
       "id": "idip",
