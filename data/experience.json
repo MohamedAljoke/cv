@@ -76,8 +76,15 @@
             },
             {
               "text": {
-                "en": "Proposed and prototyped an engineering wiki on pgvector (ADRs, GitHub and Notion decisions) that AI agents query and update through an MCP server, plus a Slack command for small decisions; under team evaluation.",
-                "pt": "Propus e prototipei uma wiki de engenharia em pgvector (ADRs, decisões do GitHub e Notion) que agentes de IA consultam e atualizam via servidor MCP, além de um comando no Slack para decisões menores; em avaliação pelo time."
+                "en": "Designed it to also hold incidents and production bugs with their root cause, fix and references, so agents can debug faster by recalling what was done before, how and why.",
+                "pt": "Projetei a base para também guardar incidentes e bugs de produção com causa raiz, correção e referências, para que os agentes ajudem a depurar mais rápido lembrando o que já foi feito, como e por quê."
+              },
+              "pdf": false
+            },
+            {
+              "text": {
+                "en": "Proposed and prototyped an engineering wiki on pgvector (ADRs, decisions, incidents and production bugs) that AI agents query and update through an MCP server to debug faster, plus a Slack command; under team evaluation.",
+                "pt": "Propus e prototipei uma wiki de engenharia em pgvector (ADRs, decisões, incidentes e bugs de produção) que agentes de IA consultam e atualizam via servidor MCP para depurar mais rápido, além de um comando no Slack; em avaliação pelo time."
               },
               "web": false
             }
