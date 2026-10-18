@@ -126,62 +126,6 @@
       ],
       "name": "Social Deduction Game",
       "url": "https://github.com/MohamedAljoke/social-deduction-game"
-    },
-    {
-      "description": "Serverless image journal on AWS: uploads go straight to S3 via pre-signed URLs, Cognito authentication, Node.js REST APIs on Lambda and a Go Lambda for image processing.",
-      "highlights": [
-        "Monorepo deployed with Serverless Framework v4",
-        "DynamoDB metadata store and SQS error handling",
-        "React frontend served through CloudFront"
-      ],
-      "keywords": [
-        "Go",
-        "Node.js",
-        "React",
-        "AWS Lambda",
-        "S3",
-        "DynamoDB",
-        "Cognito",
-        "CloudFront",
-        "SQS",
-        "Serverless Framework"
-      ],
-      "name": "Travel Journal",
-      "url": "https://github.com/MohamedAljoke/travel-journal-v2"
-    },
-    {
-      "description": "Microservices on AWS ECS Fargate: a Node.js API publishes jobs to RabbitMQ and a Go worker sends the emails, in a multi-tier VPC (private subnets, NAT Gateway, ALB) provisioned with Terraform.",
-      "highlights": [
-        "Infrastructure as code with Terraform",
-        "Asynchronous processing with RabbitMQ"
-      ],
-      "keywords": [
-        "Go",
-        "Node.js",
-        "RabbitMQ",
-        "AWS ECS Fargate",
-        "VPC",
-        "ALB",
-        "Terraform",
-        "Docker"
-      ],
-      "name": "Mail Sender",
-      "url": "https://github.com/MohamedAljoke/mail-sender"
-    },
-    {
-      "description": "Go scraper for the IFIX real-estate fund index: fetches the fund list from the B3 API, scrapes dividends and prices in parallel goroutines, fans the results in over a channel and exports metrics to CSV.",
-      "highlights": [
-        "Fan-out with goroutines, fan-in through a channel",
-        "Unit tests with coverage"
-      ],
-      "keywords": [
-        "Go",
-        "Goroutines",
-        "Channels",
-        "CSV"
-      ],
-      "name": "Scrap IFix Go",
-      "url": "https://github.com/MohamedAljoke/scrap_ifix_go"
     }
   ],
   "skills": [

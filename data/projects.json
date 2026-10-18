@@ -68,7 +68,7 @@
       ],
       "stack": ["Go", "Node.js", "React", "AWS Lambda", "S3", "DynamoDB", "Cognito", "CloudFront", "SQS", "Serverless Framework"],
       "repo": "https://github.com/MohamedAljoke/travel-journal-v2",
-      "pdf": false,
+      "hidden": true,
       "demo": "https://www.loom.com/share/1f6a4cbaf4ad457bb44ab347971a0df2",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
@@ -85,7 +85,7 @@
       ],
       "stack": ["Go", "Node.js", "RabbitMQ", "AWS ECS Fargate", "VPC", "ALB", "Terraform", "Docker"],
       "repo": "https://github.com/MohamedAljoke/mail-sender",
-      "pdf": false,
+      "hidden": true,
       "demo": "https://www.loom.com/share/f9ab6f55084540c5a0ad010af3fbef89",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },
@@ -102,6 +102,7 @@
       ],
       "stack": ["Go", "Goroutines", "Channels", "CSV"],
       "repo": "https://github.com/MohamedAljoke/scrap_ifix_go",
+      "hidden": true,
       "pdf": false
     }
   ]
