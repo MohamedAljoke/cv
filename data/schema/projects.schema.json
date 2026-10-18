@@ -28,6 +28,7 @@
           "description": "Text for the demo link, e.g. 'Video walkthrough'.",
           "$ref": "common.schema.json#/$defs/ltext"
         },
+        "featured": { "type": "boolean", "description": "Show as the full-width main project card on the site." },
         "hidden": { "type": "boolean" },
         "pdf": { "type": "boolean", "description": "Include in the PDF (default true)." },
         "web": { "type": "boolean" },

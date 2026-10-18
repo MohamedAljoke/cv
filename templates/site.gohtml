@@ -177,6 +177,21 @@
       <h2 id="h-projects">{{$p.L "projects"}}</h2>
       <div class="grid grid-3">
       {{- range $p.R.Projects}}
+        {{- if .Featured}}
+        <article class="card project project-featured" id="project-{{.ID}}">
+          <div class="project-intro">
+            <p class="badge">{{icon "award"}}<span>{{$p.L "featured"}}</span></p>
+            <h3>{{.Name}}</h3>
+            <p>{{$p.T .Summary}}</p>
+            {{- with .Stack}}<ul class="chips chips-accent" aria-label="{{$p.L "tech"}}">{{range .}}<li>{{.}}</li>{{end}}</ul>{{end}}
+            <p class="card-links">
+              {{- with .Repo}}<a class="btn btn-primary" href="{{.}}" target="_blank" rel="noopener">{{icon "github"}}<span>{{$p.L "code"}}</span></a>{{end}}
+              {{- if .Demo}}<a class="btn btn-secondary" href="{{.Demo}}" target="_blank" rel="noopener">{{icon "play"}}<span>{{$p.T .DemoLabel}}</span></a>{{end}}
+            </p>
+          </div>
+          {{- with .Highlights}}<ul class="bullets">{{range .}}<li>{{$p.T .Text}}</li>{{end}}</ul>{{end}}
+        </article>
+        {{- else}}
         <article class="card project" id="project-{{.ID}}">
           <h3>{{.Name}}</h3>
           <p>{{$p.T .Summary}}</p>
@@ -187,6 +202,7 @@
             {{- if .Demo}}<a href="{{.Demo}}" target="_blank" rel="noopener">{{icon "play"}}<span>{{$p.T .DemoLabel}}</span></a>{{end}}
           </p>
         </article>
+        {{- end}}
       {{- end}}
       </div>
     </div>

@@ -45,6 +45,7 @@
     "present": { "en": "Present", "pt": "atual" },
     "tech": { "en": "Tech", "pt": "Tecnologias" },
     "code": { "en": "Source code", "pt": "Código-fonte" },
+    "featured": { "en": "Featured project", "pt": "Projeto principal" },
     "credential": { "en": "Verify credential", "pt": "Verificar credencial" },
     "email": { "en": "Email", "pt": "E-mail" },
     "phone": { "en": "Phone", "pt": "Telefone" },

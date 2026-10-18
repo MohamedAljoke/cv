@@ -398,6 +398,33 @@ a:hover { color: var(--primary-hover); }
 .project h3 { font-size: 1.5rem; }
 .project > p:not(.card-links) { color: var(--fg-muted); }
 .project .bullets { margin-top: 0; }
+.project-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: var(--s5) var(--s10);
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-md);
+}
+.project-featured:hover { border-color: var(--primary-hover); }
+.project-intro { display: flex; flex-direction: column; gap: var(--s3); }
+.project-featured h3 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+.project-featured .bullets { margin: 0; }
+.project-featured .card-links { gap: var(--s3); }
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: var(--s2);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent-soft-fg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 .card-links { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); margin-top: auto; padding-top: var(--s2); }
 .card-links a, .cert a {
   display: inline-flex;
@@ -460,6 +487,7 @@ a:hover { color: var(--primary-hover); }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .groups { grid-template-columns: minmax(0, 1fr); }
+  .project-featured { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .grid-3, .grid-skills, .compact-row { grid-template-columns: minmax(0, 1fr); }

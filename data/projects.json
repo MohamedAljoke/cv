@@ -4,6 +4,7 @@
     {
       "id": "cka-sim",
       "name": "CKA Sim",
+      "featured": true,
       "summary": {
         "en": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks and a timed exam, on Docker or on GKE.",
         "pt": "Plataforma de prática para a prova CKA: um cluster Kubernetes multinó real (kind) por aluno para quebrar e consertar num terminal no navegador, com 203 tarefas de correção automática e prova cronometrada, no Docker ou no GKE."

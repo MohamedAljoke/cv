@@ -119,6 +119,7 @@ type Project struct {
 	Repo       string   `json:"repo"`
 	Demo       string   `json:"demo"`
 	DemoLabel  LText    `json:"demoLabel"`
+	Featured   bool     `json:"featured"`
 	Note       string   `json:"note"`
 	Vis
 }
