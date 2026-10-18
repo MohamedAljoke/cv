@@ -61,13 +61,13 @@
   },
   "projects": [
     {
-      "description": "Practice for the hands-on CKA exam on real kubeadm clusters you can break and fix, reached by ssh from an exam-like host: 203 auto-graded tasks and a timed exam. One command on Docker, or on GKE with a lab per student.",
+      "description": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks and a timed exam, on Docker or on GKE.",
       "highlights": [
-        "Breaks real control planes and nodes (kubelet, etcd, apiserver, CNI), which managed clusters and quizzes can't",
-        "Each task is setup, check, solution and reset scripts; a selftest proves every check scores 0 before the solution and full after",
-        "Go platform talks to each lab only through a Connect agent API, so the same lab image runs as a local container or a GKE pod",
-        "On GKE, a lab pod per student on its own node, from a pool that scales from zero, isolated by RBAC and NetworkPolicy",
-        "Browser terminal (xterm.js, WebSocket to an HTTP/2 stream to a pty) and a timed exam drawn by CKA domain weights"
+        "Go lab agent runs Docker and kind in a privileged container, builds a 3-node cluster and serves a Connect API, so the same image runs locally or as a GKE pod",
+        "On GKE, the platform creates a lab pod per student with client-go, each on its own node from a pool that scales from zero; a NetworkPolicy isolates the labs (tested live)",
+        "Students are identified by token; each one's lab, task state and timed exam are kept apart, and an exam in progress survives a server restart",
+        "Browser terminal: xterm.js over a WebSocket, bridged to a Connect HTTP/2 stream into a pty on the cluster node",
+        "Task engine runs setup, check and solution scripts on the lab's nodes and repairs what a task left broken; a selftest grades each check before and after its solution. GKE in Terraform; e2e tests run the real server binary"
       ],
       "keywords": [
         "Go",
