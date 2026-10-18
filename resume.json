@@ -293,13 +293,13 @@
   "work": [
     {
       "highlights": [
-        "Implement Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
-        "Built a rules-based KYC risk-scoring engine with weighted scoring and eligibility checks, turning compliance requirements into domain rules together with the compliance team.",
-        "Integrated multiple external KYC, AML and antifraud data providers into the automated customer onboarding flow.",
-        "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
-        "Built bulk reprocessing to run existing customers through the enrichment and risk-scoring engines, with a leaky-bucket rate limiter in front of the data-provider APIs that queues calls near each plan's quota: fast throughput without HTTP 429 errors.",
+        "Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.",
+        "Automated customer risk analysis in onboarding, cutting it from 1–2 days to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
+        "Implemented Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
+        "Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.",
+        "Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider's calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.",
         "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
-        "Process account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+        "Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
         "Proposed and built a working prototype of an engineering wiki for the team, now under evaluation: a semantic-search knowledge base on PostgreSQL and pgvector that ingests past ADRs, decisions from GitHub issues and Notion docs, so the reasoning behind technical decisions lives in one searchable place.",
         "Exposed it through an MCP server so AI coding agents can look up past decisions and record new ones, plus a Slack slash command to log small decisions that don't warrant a full ADR.",
         "Designed it to also hold incidents and production bugs with their root cause, fix and references, so agents can debug faster by recalling what was done before, how and why."

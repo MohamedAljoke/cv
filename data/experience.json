@@ -12,22 +12,22 @@
       "title": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
       "start": "2025-11",
       "end": null,
-      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, providers, latency. Engineering wiki: how many ADRs/decisions it holds, how many engineers or AI agents use it.",
+      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day. Engineering wiki: how many ADRs/decisions it holds, how many engineers or AI agents use it.",
       "groups": [
         {
           "title": { "en": "KYC, compliance & regulatory", "pt": "KYC, compliance e regulatório" },
           "bullets": [
             {
-              "en": "Implement Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
-              "pt": "Implemento requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma."
+              "en": "Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.",
+              "pt": "Liderei o domínio de avaliação de risco de KYC em um time de 4 engenheiros, traduzindo requisitos de compliance em um motor de score de risco baseado em regras, com pontuação ponderada e checagens de elegibilidade."
             },
             {
-              "en": "Built a rules-based KYC risk-scoring engine with weighted scoring and eligibility checks, turning compliance requirements into domain rules together with the compliance team.",
-              "pt": "Desenvolvi um motor de score de risco de KYC baseado em regras, com pontuação ponderada e checagens de elegibilidade, traduzindo requisitos de compliance em regras de domínio junto ao time de compliance."
+              "en": "Automated customer risk analysis in onboarding, cutting it from 1–2 days to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
+              "pt": "Automatizei a análise de risco de clientes no onboarding, reduzindo-a de 1–2 dias para menos de um minuto, integrando 2 provedores externos de dados de KYC, PLD/AML e antifraude."
             },
             {
-              "en": "Integrated multiple external KYC, AML and antifraud data providers into the automated customer onboarding flow.",
-              "pt": "Integrei múltiplos provedores externos de dados de KYC, PLD/AML e antifraude ao fluxo automatizado de onboarding de clientes."
+              "en": "Implemented Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
+              "pt": "Implementei requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma."
             }
           ]
         },
@@ -35,12 +35,12 @@
           "title": { "en": "Enrichment engine", "pt": "Motor de enriquecimento" },
           "bullets": [
             {
-              "en": "Designed a client-data enrichment engine that runs synchronous and asynchronous steps in parallel, reuses previous results, matches async provider callbacks by correlation ID, and orchestrates child steps until a terminal state.",
-              "pt": "Projetei um motor de enriquecimento de dados com etapas síncronas e assíncronas em paralelo, reaproveitamento de resultados, callbacks correlacionados por correlation ID e orquestração de etapas filhas até o estado final."
+              "en": "Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.",
+              "pt": "Projetei um motor de enriquecimento de dados que escolhe etapas síncronas e assíncronas por cliente, executa-as em paralelo, reaproveita resultados anteriores e correlaciona callbacks dos provedores por correlation ID até o estado final."
             },
             {
-              "en": "Built bulk reprocessing to run existing customers through the enrichment and risk-scoring engines, with a leaky-bucket rate limiter in front of the data-provider APIs that queues calls near each plan's quota: fast throughput without HTTP 429 errors.",
-              "pt": "Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e score de risco, com um rate limiter (leaky bucket) antes das APIs dos provedores que enfileira chamadas perto do limite do plano: alto throughput sem erros HTTP 429."
+              "en": "Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider's calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.",
+              "pt": "Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e risco, com um rate limiter (leaky bucket) que mantém as chamadas a um provedor abaixo do limite de requisições por segundo, eliminando as falhas por HTTP 429 ao custo de execuções um pouco mais lentas."
             }
           ]
         },
@@ -52,8 +52,8 @@
               "pt": "Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços."
             },
             {
-              "en": "Process account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
-              "pt": "Processo eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
+              "en": "Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
+              "pt": "Processei eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
             }
           ]
         },
