@@ -2,6 +2,23 @@
   "$schema": "./schema/projects.schema.json",
   "items": [
     {
+      "id": "cka-sim",
+      "name": "CKA Sim",
+      "summary": {
+        "en": "Practice for the hands-on CKA exam on real kubeadm clusters you can break and fix, reached by ssh from an exam-like host: 203 auto-graded tasks and a timed exam. One command on Docker, or on GKE with a lab per student.",
+        "pt": "Prática para a prova CKA em clusters kubeadm reais para quebrar e consertar, via ssh de um host como o do exame: 203 tarefas com correção automática e prova cronometrada. Roda no Docker ou no GKE, um lab por aluno."
+      },
+      "highlights": [
+        { "en": "Breaks real control planes and nodes (kubelet, etcd, apiserver, CNI), which managed clusters and quizzes can't", "pt": "Quebra control planes e nós reais (kubelet, etcd, apiserver, CNI), o que clusters gerenciados e quizzes não fazem" },
+        { "en": "Each task is setup, check, solution and reset scripts; a selftest proves every check scores 0 before the solution and full after", "pt": "Tarefas são scripts de setup, verificação, solução e reset; um selftest prova que cada uma vale 0 antes da solução e nota máxima depois" },
+        { "en": "Go platform talks to each lab only through a Connect agent API, so the same lab image runs as a local container or a GKE pod", "pt": "Plataforma em Go fala com cada lab só por uma API de agente em Connect, então a mesma imagem roda como contêiner local ou pod no GKE" },
+        { "en": "On GKE, a lab pod per student on its own node, from a pool that scales from zero, isolated by RBAC and NetworkPolicy", "pt": "No GKE, um pod de lab por aluno em nó próprio, de um pool que escala do zero, isolado por RBAC e NetworkPolicy" },
+        { "en": "Browser terminal (xterm.js, WebSocket to an HTTP/2 stream to a pty) and a timed exam drawn by CKA domain weights", "pt": "Terminal no navegador (xterm.js, WebSocket para um stream HTTP/2 até um pty) e prova cronometrada sorteada pelos pesos dos domínios do CKA" }
+      ],
+      "stack": ["Go", "Kubernetes", "GKE", "kind", "Docker", "Terraform", "Connect", "TypeScript", "xterm.js", "Bash"],
+      "repo": "https://github.com/MohamedAljoke/cka-sim"
+    },
+    {
       "id": "dyosmos",
       "name": "Dyosmos",
       "summary": {
@@ -17,23 +34,6 @@
       "stack": ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "SQS", "S3", "Docker", "Terraform", "Google Cloud"],
       "demo": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
-    },
-    {
-      "id": "cka-sim",
-      "name": "CKA Sim",
-      "summary": {
-        "en": "Kubernetes CKA exam simulator: a real 3-node cluster with a browser terminal and auto-graded hands-on tasks. Runs locally on Docker or hosted on GKE, one isolated lab per user.",
-        "pt": "Simulador do exame CKA de Kubernetes: um cluster real de 3 nós com terminal no navegador e tarefas práticas corrigidas automaticamente. Roda local no Docker ou hospedado no GKE, um lab isolado por usuário."
-      },
-      "highlights": [
-        { "en": "Go platform reaches each lab only through an agent API, so the same lab image runs locally or as a GKE pod on its own VM", "pt": "Plataforma em Go acessa cada lab só por uma API de agente, então a mesma imagem roda local ou como pod no GKE em uma VM própria" },
-        { "en": "GKE hosting with warm lab pools (agent-sandbox), NetworkPolicy and a VPC firewall isolating each user", "pt": "Hospedagem no GKE com pools de labs pré-aquecidos (agent-sandbox), NetworkPolicy e firewall de VPC isolando cada usuário" },
-        { "en": "Browser terminal (xterm.js over WebSockets) into the lab's base host, like the real exam", "pt": "Terminal no navegador (xterm.js via WebSockets) no host base do lab, como no exame real" },
-        { "en": "Tasks are setup, check and solution scripts; a selftest proves each scores 0 before its solution and full after", "pt": "Tarefas são scripts de setup, verificação e solução; um selftest prova que cada uma vale 0 antes da solução e nota máxima depois" },
-        { "en": "Timed exam drawn by CKA domain weights and scored against the 66% pass mark", "pt": "Prova cronometrada sorteada pelos pesos dos domínios do CKA e corrigida contra a nota de corte de 66%" }
-      ],
-      "stack": ["Go", "Kubernetes", "GKE", "kind", "Docker", "TypeScript", "Vite", "xterm.js", "WebSockets", "Bash"],
-      "repo": "https://github.com/MohamedAljoke/cka-sim"
     },
     {
       "id": "social-deduction-game",
