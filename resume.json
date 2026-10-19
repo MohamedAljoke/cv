@@ -257,7 +257,7 @@
     {
       "endDate": "2025-11",
       "highlights": [
-        "Migrated a B2B credit-granting platform from a monolith to microservices on AWS ECS and Lambda, integrating CAF antifraud, Parcelex and Vindi, with API-to-API authentication through Amazon Cognito and Secrets Manager.",
+        "Led the migration of a B2B credit platform from a monolith prone to regressions to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit (Parcelex) behind an integration layer, so adding Banco BV as a provider needed no domain changes; service auth via Cognito and Secrets Manager.",
         "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
         "Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.",
         "Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.",

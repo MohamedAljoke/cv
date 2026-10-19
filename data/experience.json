@@ -106,8 +106,8 @@
       "end": "2025-11",
       "bullets": [
         {
-          "en": "Migrated a B2B credit-granting platform from a monolith to microservices on AWS ECS and Lambda, integrating CAF antifraud, Parcelex and Vindi, with API-to-API authentication through Amazon Cognito and Secrets Manager.",
-          "pt": "Migrei uma plataforma B2B de concessão de crédito de um monólito para microsserviços em AWS ECS e Lambda, integrando CAF antifraude, Parcelex e Vindi, com autenticação API-a-API via Amazon Cognito e Secrets Manager."
+          "en": "Led the migration of a B2B credit platform from a monolith prone to regressions to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit (Parcelex) behind an integration layer, so adding Banco BV as a provider needed no domain changes; service auth via Cognito and Secrets Manager.",
+          "pt": "Liderei a migração de uma plataforma B2B de crédito de monólito para microsserviços em TypeScript e Python (AWS ECS e Lambda), separando onboarding (CAF, Vindi) e crédito (Parcelex) com uma camada de integração: adicionar o Banco BV não exigiu mudanças no domínio."
         },
         {
           "en": "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
