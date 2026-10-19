@@ -6,17 +6,18 @@
       "name": "CKA Sim",
       "featured": true,
       "summary": {
-        "en": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks and a timed exam, on Docker or on GKE.",
-        "pt": "Plataforma de prática para a prova CKA: um cluster Kubernetes multinó real (kind) por aluno para quebrar e consertar num terminal no navegador, com 203 tarefas de correção automática e prova cronometrada, no Docker ou no GKE."
+        "en": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks, a timed exam and an AI tutor, on Docker or on GKE.",
+        "pt": "Plataforma de prática para a prova CKA: um cluster Kubernetes multinó real (kind) por aluno para quebrar e consertar no navegador, com 203 tarefas corrigidas, prova cronometrada e tutor de IA, no Docker ou no GKE."
       },
       "highlights": [
         { "en": "Go lab agent runs Docker and kind in a privileged container, builds a 3-node cluster and serves a Connect API, so the same image runs locally or as a GKE pod", "pt": "Agente do lab em Go roda Docker e kind num contêiner privilegiado, cria um cluster de 3 nós e serve uma API Connect, então a mesma imagem roda local ou como pod no GKE" },
         { "en": "On GKE, the platform creates a lab pod per student with client-go, each on its own node from a pool that scales from zero; a NetworkPolicy isolates the labs (tested live)", "pt": "No GKE, a plataforma cria um pod de lab por aluno com client-go, cada um em nó próprio de um pool que escala do zero; uma NetworkPolicy isola os labs (testado ao vivo)" },
+        { "en": "AI tutor: a Gemini tool loop (Vertex AI) over its own MCP server reads the task, grader and cluster to hint, not solve; RAG over the Kubernetes docs (Ollama, vector + BM25) and LLM-judged evals", "pt": "Tutor de IA: loop Gemini (Vertex AI) sobre servidor MCP próprio lê tarefa, corretor e cluster para dar dicas, não respostas; RAG na documentação do Kubernetes e evals com LLM juiz" },
         { "text": { "en": "Students are identified by token; each one's lab, task state and timed exam are kept apart, and an exam in progress survives a server restart", "pt": "Alunos identificados por token; lab, estado das tarefas e prova de cada um ficam separados, e uma prova em andamento sobrevive a um restart do servidor" }, "pdf": false },
         { "en": "Browser terminal: xterm.js over a WebSocket, bridged to a Connect HTTP/2 stream into a pty on the cluster node", "pt": "Terminal no navegador: xterm.js por WebSocket, ligado a um stream HTTP/2 Connect até um pty no nó do cluster" },
         { "text": { "en": "Task engine runs setup, check and solution scripts on the lab's nodes and repairs what a task left broken; a selftest grades each check before and after its solution. GKE in Terraform; e2e tests run the real server binary", "pt": "Motor de tarefas roda scripts de setup, verificação e solução nos nós do lab e repara o que uma tarefa deixou quebrado; um selftest avalia cada verificação antes e depois da solução. GKE em Terraform; testes e2e rodam o binário real do servidor" }, "pdf": false }
       ],
-      "stack": ["Go", "Kubernetes", "GKE", "kind", "Docker", "Terraform", "Connect", "TypeScript", "xterm.js", "Bash"],
+      "stack": ["Go", "Kubernetes", "GKE", "kind", "Docker", "Terraform", "Connect", "TypeScript", "xterm.js", "Bash", "MCP", "Gemini", "RAG"],
       "repo": "https://github.com/MohamedAljoke/cka-sim"
     },
     {

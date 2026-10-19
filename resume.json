@@ -61,10 +61,11 @@
   },
   "projects": [
     {
-      "description": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks and a timed exam, on Docker or on GKE.",
+      "description": "Practice platform for the hands-on CKA exam: a real multi-node Kubernetes cluster (kind) per student to break and fix from a browser terminal, with 203 auto-graded tasks, a timed exam and an AI tutor, on Docker or on GKE.",
       "highlights": [
         "Go lab agent runs Docker and kind in a privileged container, builds a 3-node cluster and serves a Connect API, so the same image runs locally or as a GKE pod",
         "On GKE, the platform creates a lab pod per student with client-go, each on its own node from a pool that scales from zero; a NetworkPolicy isolates the labs (tested live)",
+        "AI tutor: a Gemini tool loop (Vertex AI) over its own MCP server reads the task, grader and cluster to hint, not solve; RAG over the Kubernetes docs (Ollama, vector + BM25) and LLM-judged evals",
         "Students are identified by token; each one's lab, task state and timed exam are kept apart, and an exam in progress survives a server restart",
         "Browser terminal: xterm.js over a WebSocket, bridged to a Connect HTTP/2 stream into a pty on the cluster node",
         "Task engine runs setup, check and solution scripts on the lab's nodes and repairs what a task left broken; a selftest grades each check before and after its solution. GKE in Terraform; e2e tests run the real server binary"
@@ -79,7 +80,10 @@
         "Connect",
         "TypeScript",
         "xterm.js",
-        "Bash"
+        "Bash",
+        "MCP",
+        "Gemini",
+        "RAG"
       ],
       "name": "CKA Sim",
       "url": "https://github.com/MohamedAljoke/cka-sim"
