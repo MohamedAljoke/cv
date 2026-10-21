@@ -24,16 +24,17 @@
       "id": "dyosmos",
       "name": "Dyosmos",
       "summary": {
-        "en": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, Terraform on Google Cloud and AWS. Private codebase, shown in a video walkthrough.",
-        "pt": "Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, Terraform no Google Cloud e na AWS. Código privado, apresentado em vídeo."
+        "en": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, containers on Fly.io and AWS provisioned with Terraform. Private codebase, shown in a video walkthrough.",
+        "pt": "Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, contêineres no Fly.io e AWS provisionada com Terraform. Código privado, apresentado em vídeo."
       },
       "highlights": [
         { "en": "Transactional outbox, idempotent at-least-once consumers and one schema per service", "pt": "Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço" },
         { "en": "Multi-tenant authorization, Redis rate limiting and optimistic locking", "pt": "Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista" },
         { "en": "Offline mutation queue with conflict resolution and AI-assisted voice ordering", "pt": "Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA" },
-        { "en": "Containers on a Google Cloud VM with Cloud SQL, provisioned with Terraform", "pt": "Contêineres em uma VM no Google Cloud com Cloud SQL, provisionados com Terraform" }
+        { "en": "Containers on Fly.io, with Postgres on its own machine and volume, and SQS and S3 on AWS provisioned with Terraform", "pt": "Contêineres no Fly.io, com o Postgres em máquina e volume próprios, e SQS e S3 na AWS provisionados com Terraform" },
+        { "en": "Point-in-time recovery with WAL-G to S3, losing at most 5 minutes, behind a no-delete IAM user; zero-filled WAL shrinks each 16 MB segment to ~2 KB, so off-site backups cost cents a month", "pt": "Recuperação point-in-time com WAL-G no S3, perdendo no máximo 5 minutos, com um usuário IAM sem permissão de exclusão; WAL preenchido com zeros reduz cada segmento de 16 MB a ~2 KB, e os backups externos custam centavos por mês" }
       ],
-      "stack": ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "SQS", "S3", "Docker", "Terraform", "Google Cloud"],
+      "stack": ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "SQS", "S3", "Docker", "Terraform", "Fly.io"],
       "demo": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd",
       "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
     },

@@ -264,7 +264,7 @@
         </article>
         <article class="card project" id="project-dyosmos">
           <h3>Dyosmos</h3>
-          <p>Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, Terraform no Google Cloud e na AWS. Código privado, apresentado em vídeo.</p><ul class="bullets bullets-sm"><li>Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço</li><li>Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista</li><li>Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA</li><li>Contêineres em uma VM no Google Cloud com Cloud SQL, provisionados com Terraform</li></ul><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>SQS</li><li>S3</li><li>Docker</li><li>Terraform</li><li>Google Cloud</li></ul>
+          <p>Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, contêineres no Fly.io e AWS provisionada com Terraform. Código privado, apresentado em vídeo.</p><ul class="bullets bullets-sm"><li>Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço</li><li>Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista</li><li>Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA</li><li>Contêineres no Fly.io, com o Postgres em máquina e volume próprios, e SQS e S3 na AWS provisionados com Terraform</li><li>Recuperação point-in-time com WAL-G no S3, perdendo no máximo 5 minutos, com um usuário IAM sem permissão de exclusão; WAL preenchido com zeros reduz cada segmento de 16 MB a ~2 KB, e os backups externos custam centavos por mês</li></ul><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>SQS</li><li>S3</li><li>Docker</li><li>Terraform</li><li>Fly.io</li></ul>
           <p class="card-links"><a href="https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg><span>Vídeo explicativo</span></a>
           </p>
         </article>
@@ -368,7 +368,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p>© 2026 Mohamed Ibrahim Aljoke</p>
-    <p>Atualizado em: <time datetime="2026-10-18">out 2026</time></p>
+    <p>Atualizado em: <time datetime="2026-10-19">out 2026</time></p>
   </div>
 </footer>
 

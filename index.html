@@ -264,7 +264,7 @@
         </article>
         <article class="card project" id="project-dyosmos">
           <h3>Dyosmos</h3>
-          <p>Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, Terraform on Google Cloud and AWS. Private codebase, shown in a video walkthrough.</p><ul class="bullets bullets-sm"><li>Transactional outbox, idempotent at-least-once consumers and one schema per service</li><li>Multi-tenant authorization, Redis rate limiting and optimistic locking</li><li>Offline mutation queue with conflict resolution and AI-assisted voice ordering</li><li>Containers on a Google Cloud VM with Cloud SQL, provisioned with Terraform</li></ul><ul class="chips" aria-label="Tech"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>SQS</li><li>S3</li><li>Docker</li><li>Terraform</li><li>Google Cloud</li></ul>
+          <p>Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, containers on Fly.io and AWS provisioned with Terraform. Private codebase, shown in a video walkthrough.</p><ul class="bullets bullets-sm"><li>Transactional outbox, idempotent at-least-once consumers and one schema per service</li><li>Multi-tenant authorization, Redis rate limiting and optimistic locking</li><li>Offline mutation queue with conflict resolution and AI-assisted voice ordering</li><li>Containers on Fly.io, with Postgres on its own machine and volume, and SQS and S3 on AWS provisioned with Terraform</li><li>Point-in-time recovery with WAL-G to S3, losing at most 5 minutes, behind a no-delete IAM user; zero-filled WAL shrinks each 16 MB segment to ~2 KB, so off-site backups cost cents a month</li></ul><ul class="chips" aria-label="Tech"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>SQS</li><li>S3</li><li>Docker</li><li>Terraform</li><li>Fly.io</li></ul>
           <p class="card-links"><a href="https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg><span>Video walkthrough</span></a>
           </p>
         </article>
@@ -368,7 +368,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p>© 2026 Mohamed Ibrahim Aljoke</p>
-    <p>Last updated: <time datetime="2026-10-18">Oct 2026</time></p>
+    <p>Last updated: <time datetime="2026-10-19">Oct 2026</time></p>
   </div>
 </footer>
 

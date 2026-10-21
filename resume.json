@@ -57,7 +57,7 @@
   ],
   "meta": {
     "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
-    "lastModified": "2026-10-18"
+    "lastModified": "2026-10-19"
   },
   "projects": [
     {
@@ -89,12 +89,13 @@
       "url": "https://github.com/MohamedAljoke/cka-sim"
     },
     {
-      "description": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, Terraform on Google Cloud and AWS. Private codebase, shown in a video walkthrough.",
+      "description": "Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, containers on Fly.io and AWS provisioned with Terraform. Private codebase, shown in a video walkthrough.",
       "highlights": [
         "Transactional outbox, idempotent at-least-once consumers and one schema per service",
         "Multi-tenant authorization, Redis rate limiting and optimistic locking",
         "Offline mutation queue with conflict resolution and AI-assisted voice ordering",
-        "Containers on a Google Cloud VM with Cloud SQL, provisioned with Terraform"
+        "Containers on Fly.io, with Postgres on its own machine and volume, and SQS and S3 on AWS provisioned with Terraform",
+        "Point-in-time recovery with WAL-G to S3, losing at most 5 minutes, behind a no-delete IAM user; zero-filled WAL shrinks each 16 MB segment to ~2 KB, so off-site backups cost cents a month"
       ],
       "keywords": [
         "Go",
@@ -106,7 +107,7 @@
         "S3",
         "Docker",
         "Terraform",
-        "Google Cloud"
+        "Fly.io"
       ],
       "name": "Dyosmos",
       "url": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd"
