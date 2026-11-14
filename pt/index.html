@@ -36,7 +36,7 @@
       "name": "UDF Centro Universitário"
     }
   ],
-  "description": "Engenheiro de software backend com mais de 5 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance e onboarding de clientes para Banking as a Service (BaaS). Trabalho principalmente com Go, Node.js, TypeScript e AWS, projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate.",
+  "description": "Engenheiro de software backend com 5 anos em sistemas de fintech regulada com Go, Node.js, TypeScript e AWS. Assumo domínios de ponta a ponta: liderei o risco de KYC em uma fintech regulada pelo Banco Central (análise de compliance de novos clientes de 1–2 dias para menos de um minuto) e a migração de uma plataforma de crédito para microsserviços, e atuei no reforço de segurança da plataforma (SSRF, vazamento de tokens, dados, infraestrutura). Eventos, mentoria e decisões documentadas. Certificado AWS Solutions Architect – Associate.",
   "email": "mailto:mohammed.maljoke@gmail.com",
   "hasCredential": [
     {
@@ -61,6 +61,8 @@
     "Eventos de domínio",
     "Transactional outbox",
     "Processamento assíncrono",
+    "Idempotência",
+    "Prevenção de SSRF",
     "Rate limiting",
     "Fiber",
     "NestJS",
@@ -101,9 +103,16 @@
     "Onboarding de clientes",
     "Banking as a Service (BaaS)",
     "Integrações de pagamento",
+    "MCP",
+    "Claude Code",
+    "pgvector",
+    "Busca híbrida",
+    "RAG",
+    "Avaliação de LLMs",
     "Go testing",
     "Jest",
     "Vitest",
+    "Playwright",
     "Testcontainers",
     "Grafana",
     "Sentry",
@@ -158,7 +167,7 @@
       <div class="hero-copy">
         <h1 id="name">Mohamed Ibrahim Aljoke</h1>
         <p class="headline">Engenheiro de Software Backend | Go · Node.js · TypeScript · AWS</p>
-        <p class="lead">Engenheiro de software backend com mais de 5 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance e onboarding de clientes para Banking as a Service (BaaS). Trabalho principalmente com Go, Node.js, TypeScript e AWS, projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate.</p>
+        <p class="lead">Engenheiro de software backend com 5 anos em sistemas de fintech regulada com Go, Node.js, TypeScript e AWS. Assumo domínios de ponta a ponta: liderei o risco de KYC em uma fintech regulada pelo Banco Central (análise de compliance de novos clientes de 1–2 dias para menos de um minuto) e a migração de uma plataforma de crédito para microsserviços, e atuei no reforço de segurança da plataforma (SSRF, vazamento de tokens, dados, infraestrutura). Eventos, mentoria e decisões documentadas. Certificado AWS Solutions Architect – Associate.</p>
         <div class="actions">
           <a class="btn btn-primary" href="../files/Mohamed_Aljoke_Engenheiro_Backend_PT.pdf" download="Mohamed_Aljoke_Engenheiro_Backend_PT.pdf"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="m7 10 5 5 5-5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg><span>Currículo em português (PDF)</span></a>
           <a class="btn btn-secondary" href="../files/Mohamed_Aljoke_Backend_Engineer_EN.pdf" download="Mohamed_Aljoke_Backend_Engineer_EN.pdf"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="m7 10 5 5 5-5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg><span>Resume (English, PDF)</span></a>
@@ -174,10 +183,10 @@
       <aside class="glance card" aria-label="Sobre">
         <div class="glance-row">
           <p class="glance-label"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>nov 2025 – atual</span></p>
-          <p class="glance-value"><strong>Engenheiro de Software</strong> · Transfeera</p><p class="glance-sub">Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service</p>
+          <p class="glance-value"><strong>Engenheiro de Software Backend</strong> · Transfeera</p><p class="glance-sub">Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service</p>
         </div>
         <div class="glance-row">
-          <ul class="chips chips-accent"><li>KYC e compliance</li><li>Regulatório do Banco Central (BCB)</li><li>Banking as a Service</li><li>Sistemas orientados a eventos</li></ul>
+          <ul class="chips chips-accent"><li>KYC e compliance</li><li>Regulatório do Banco Central (BCB)</li><li>Banking as a Service</li><li>Sistemas orientados a eventos</li><li>Segurança de aplicações</li></ul>
         </div>
         <div class="glance-row">
           <ul class="chips"><li>Go</li><li>Node.js</li><li>TypeScript</li><li>AWS</li><li>Terraform</li><li>PostgreSQL</li></ul>
@@ -195,7 +204,7 @@
         <li class="job" id="job-transfeera">
           <div class="job-head">
             <div>
-              <h3>Engenheiro de Software</h3>
+              <h3>Engenheiro de Software Backend</h3>
               <p class="job-org"><a href="https://transfeera.com" target="_blank" rel="noopener">Transfeera</a> <span class="muted">· Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service</span></p>
             </div>
             <p class="job-when"><time datetime="2025-11">nov 2025 – atual</time><span class="muted">1 ano</span></p>
@@ -203,21 +212,25 @@
           <div class="groups">
             <div class="group">
               <h4>KYC, compliance e regulatório</h4>
-              <ul class="bullets"><li>Liderei o domínio de avaliação de risco de KYC em um time de 4 engenheiros, traduzindo requisitos de compliance em um motor de score de risco baseado em regras, com pontuação ponderada e checagens de elegibilidade.</li><li>Automatizei a análise de risco de clientes no onboarding, reduzindo-a de 1–2 dias para menos de um minuto, integrando 2 provedores externos de dados de KYC, PLD/AML e antifraude.</li><li>Implementei requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma.</li></ul>
+              <ul class="bullets"><li>Liderei o domínio de avaliação de risco de KYC em um time de 4 engenheiros, traduzindo requisitos de compliance em um motor de score de risco baseado em regras, com pontuação ponderada e checagens de elegibilidade.</li><li>Automatizei a análise de risco que o time de compliance fazia para cada novo cliente no onboarding, de 1–2 dias de revisão manual para menos de um minuto, integrando 2 provedores externos de dados de KYC, PLD/AML e antifraude.</li><li>Traduzi normas do Banco Central do Brasil (BCB) em mudanças de produto e plataforma; a Transfeera é regulada diretamente, então cada nova norma vira entrega de engenharia.</li></ul>
             </div>
             <div class="group">
               <h4>Motor de enriquecimento</h4>
-              <ul class="bullets"><li>Projetei um motor de enriquecimento de dados que escolhe etapas síncronas e assíncronas por cliente, executa-as em paralelo, reaproveita resultados anteriores e correlaciona callbacks dos provedores por correlation ID até o estado final.</li><li>Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e risco, com um rate limiter (leaky bucket) que mantém as chamadas a um provedor abaixo do limite de requisições por segundo, eliminando as falhas por HTTP 429 ao custo de execuções um pouco mais lentas.</li></ul>
+              <ul class="bullets"><li>Projetei um motor de enriquecimento de dados que escolhe etapas síncronas e assíncronas por cliente, executa-as em paralelo, reaproveita resultados anteriores e correlaciona callbacks dos provedores por correlation ID até o estado final.</li><li>Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e risco, com um rate limiter (leaky bucket) que mantém as chamadas a um provedor abaixo do limite de requisições por segundo, eliminando as falhas por HTTP 429 ao custo de execuções um pouco mais lentas.</li><li>Reproduzi e corrigi um panic de concorrência num proxy interno em Go (buffers de header do fasthttp reaproveitados) exposto sob carga no lote, acompanhando backpressure e memória no Grafana.</li></ul>
             </div>
             <div class="group">
               <h4>Onboarding de Banking as a Service (BaaS)</h4>
-              <ul class="bullets"><li>Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processei eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li></ul>
+              <ul class="bullets"><li>Construí fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços.</li><li>Processei eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput.</li><li>Projetei a API de upload de documentos do onboarding em Go: uma só requisição multipart para o cliente, arquivos de até 20 MiB em streaming para o S3, SHA-256 na mesma passada e chaves de idempotência contra duplicatas.</li></ul>
             </div>
             <div class="group">
-              <h4>Base de conhecimento de engenharia para agentes de IA (proposta)</h4>
-              <ul class="bullets"><li>Propus e construí um protótipo funcional de wiki de engenharia para o time, hoje em avaliação: uma base de conhecimento com busca semântica em PostgreSQL e pgvector que ingere ADRs, decisões registradas em issues do GitHub e documentos do Notion, reunindo o histórico de decisões técnicas em um só lugar pesquisável.</li><li>Disponibilizei a base por um servidor MCP para que agentes de IA consultem decisões anteriores e registrem novas, além de um slash command no Slack para registrar pequenas decisões que não justificam um ADR completo.</li><li>Projetei a base para também guardar incidentes e bugs de produção com causa raiz, correção e referências, para que os agentes ajudem a depurar mais rápido lembrando o que já foi feito, como e por quê.</li></ul>
+              <h4>Segurança e plataforma compartilhada</h4>
+              <ul class="bullets"><li>Participei da auditoria e do reforço de segurança da plataforma (SSRF, vazamento de tokens, proteção de dados, infraestrutura) e escrevi o relatório de achados do time.</li><li>Reforcei a proteção contra SSRF na biblioteca HTTP compartilhada pelos microsserviços, cobrindo envio e consumo de webhooks (para clientes e de provedores), reverse proxy, proxy interno e o download de anexos a partir de links de clientes; corrigi também um risco de SQL injection na biblioteca.</li></ul>
             </div>
-          </div><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>Kubernetes</li><li>AWS</li><li>PostgreSQL</li><li>pgvector</li><li>MCP</li><li>Grafana</li><li>hoop.dev</li><li>Sentry</li></ul>
+            <div class="group">
+              <h4>Fluxo de entrega assistido por IA (proposta)</h4>
+              <ul class="bullets"><li>Propus e construí um fluxo de entrega assistido por IA no Claude Code (skills, hooks, um git worktree por repositório por tarefa): o agente implementa a tarefa e precisa passar por testes e2e, execução local com provedores mockados, verificação da tela no Chrome real via MCP do Playwright e deploy em homologação antes de reportar; faz no máximo 3 perguntas, só sobre negócio, dinheiro, compliance ou decisões irreversíveis.</li><li>Construí um servidor MCP de registro de decisões em Go com PostgreSQL e pgvector e busca híbrida (semântica &#43; palavra-chave): agentes consultam decisões anteriores antes de alterar código e registram novas só com aprovação do desenvolvedor; decisões são substituídas, nunca apagadas, e o time de produto as consulta numa página web.</li></ul>
+            </div>
+          </div><ul class="chips" aria-label="Tecnologias"><li>Go</li><li>Kubernetes</li><li>AWS</li><li>SNS/SQS</li><li>PostgreSQL</li><li>pgvector</li><li>MCP</li><li>Claude Code</li><li>Playwright</li><li>Grafana</li><li>Sentry</li></ul>
         </li>
         <li class="job" id="job-idip">
           <div class="job-head">
@@ -226,7 +239,7 @@
               <p class="job-org">IDIP Tecnologia <span class="muted">· Software house com produtos para clientes de fintech, saúde e indústria</span></p>
             </div>
             <p class="job-when"><time datetime="2022-10">out 2022 – nov 2025</time><span class="muted">3 anos 2 meses</span></p>
-          </div><ul class="bullets"><li>Liderei a migração de uma plataforma B2B de crédito de monólito para microsserviços em TypeScript e Python (AWS ECS e Lambda), separando onboarding (CAF, Vindi) e crédito (Parcelex) com uma camada de integração: adicionar o Banco BV não exigiu mudanças no domínio.</li><li>Construí uma plataforma B2B de envio de documentos via WhatsApp com AWS Lambda, eventos do S3 e SQS (contornando limites do API Gateway), com chatbot e dashboard administrativo em React.</li><li>Coordenei 4 desenvolvedores juniores em 2–3 projetos simultâneos: orientação técnica, code review e planejamento de arquitetura de microsserviços.</li><li>Provisionei infraestrutura como código com Terraform, Serverless Framework e CloudFormation e criei pipelines de CI/CD no GitHub Actions, GitLab CI e AWS CodePipeline, com testes de integração usando Jest, Vitest e Testcontainers.</li><li>Integrei provedores de pagamento (Stripe, Asaas, Cielo, Itaú, Mercado Livre) e migrei dados do Firebase para PostgreSQL e MongoDB sem downtime.</li><li>Reduzi custos de AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack.</li><li>Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache.</li><li>Desenvolvi um cliente de notificações com sistema de webhooks para comunicação assíncrona entre serviços, melhorando confiabilidade e rastreabilidade.</li><li>Contribuí na migração de uma plataforma de gestão de saúde de Ruby on Rails para React e Java.</li><li>Criei landing pages otimizadas para SEO com Next.js, dashboards em tempo real alimentados por webhooks e uma camada GraphQL com Hasura.</li></ul><ul class="chips" aria-label="Tecnologias"><li>Node.js</li><li>TypeScript</li><li>Python</li><li>Java</li><li>React</li><li>Next.js</li><li>AWS Lambda</li><li>AWS ECS</li><li>SQS</li><li>SNS</li><li>S3</li><li>DynamoDB</li><li>Cognito</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Terraform</li><li>Serverless Framework</li><li>Docker</li><li>GraphQL</li><li>Hasura</li><li>Jest</li><li>Testcontainers</li></ul>
+          </div><ul class="bullets"><li>Liderei a migração de uma plataforma B2B de crédito de monólito para microsserviços em TypeScript e Python (AWS ECS e Lambda), separando onboarding (CAF, Vindi) e crédito; Parcelex e Banco BV ficam atrás de uma mesma camada de integração de crédito com fallback: se um provedor não consegue aprovar, a solicitação vai para o outro.</li><li>Projetei e construí uma plataforma B2B de envio de documentos via WhatsApp em AWS serverless, escolhida porque o tráfego era baixo na maior parte do tempo mas chegava em picos repentinos (ex.: 23 mil arquivos de uma vez): os arquivos vão direto ao S3 por presigned URLs, sem passar pela memória da API, os eventos do S3 caem no SQS para nenhum arquivo se perder e um debounce curto suaviza cada pico para não esbarrar no throttling da AWS (HTTP 429).</li><li>Lambdas de envio entregam no WhatsApp com retry; os arquivos têm domínio próprio, separado dos envios, então os mesmos documentos atendem os envios por WhatsApp, um chatbot e a entrada por e-mail, FTP e plataforma web, geridos por um dashboard administrativo em React.</li><li>Coordenei 4 desenvolvedores juniores em 2–3 projetos simultâneos: orientação técnica, code review e planejamento de arquitetura de microsserviços.</li><li>Provisionei infraestrutura como código (Terraform, Serverless Framework, CloudFormation) e pipelines de CI/CD (GitHub Actions, GitLab CI, AWS CodePipeline), com testes de integração em Jest, Vitest e Testcontainers.</li><li>Integrei provedores de pagamento (Stripe, Asaas, Cielo, Itaú, Mercado Livre) e migrei dados do Firebase para PostgreSQL e MongoDB sem downtime.</li><li>Reduzi custos de computação ociosa na AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack.</li><li>Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache.</li><li>Desenvolvi um cliente de notificações com sistema de webhooks para comunicação assíncrona entre serviços, melhorando confiabilidade e rastreabilidade.</li><li>Contribuí na migração de uma plataforma de gestão de saúde de Ruby on Rails para React e Java.</li><li>Criei landing pages otimizadas para SEO com Next.js, dashboards em tempo real alimentados por webhooks e uma camada GraphQL com Hasura.</li></ul><ul class="chips" aria-label="Tecnologias"><li>Node.js</li><li>TypeScript</li><li>Python</li><li>Java</li><li>React</li><li>Next.js</li><li>AWS Lambda</li><li>AWS ECS</li><li>SQS</li><li>SNS</li><li>S3</li><li>DynamoDB</li><li>Cognito</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Terraform</li><li>Serverless Framework</li><li>Docker</li><li>GraphQL</li><li>Hasura</li><li>Jest</li><li>Testcontainers</li></ul>
         </li>
         <li class="job" id="job-skule">
           <div class="job-head">
@@ -287,7 +300,7 @@
         </div>
         <div class="skill-group">
           <h3>Backend e arquitetura</h3>
-          <ul class="chips"><li>REST APIs</li><li>GraphQL</li><li>Microsserviços</li><li>Arquitetura orientada a eventos</li><li>Eventos de domínio</li><li>Transactional outbox</li><li>Processamento assíncrono</li><li>Rate limiting</li><li>Fiber</li><li>NestJS</li><li>Express</li><li>Fastify</li></ul>
+          <ul class="chips"><li>REST APIs</li><li>GraphQL</li><li>Microsserviços</li><li>Arquitetura orientada a eventos</li><li>Eventos de domínio</li><li>Transactional outbox</li><li>Processamento assíncrono</li><li>Idempotência</li><li>Prevenção de SSRF</li><li>Rate limiting</li><li>Fiber</li><li>NestJS</li><li>Express</li><li>Fastify</li></ul>
         </div>
         <div class="skill-group">
           <h3>Cloud (AWS)</h3>
@@ -306,8 +319,12 @@
           <ul class="chips"><li>KYC</li><li>PLD/AML e listas de sanções</li><li>Score de risco</li><li>Antifraude</li><li>Onboarding de clientes</li><li>Banking as a Service (BaaS)</li><li>Integrações de pagamento</li></ul>
         </div>
         <div class="skill-group">
+          <h3>Engenharia de IA</h3>
+          <ul class="chips"><li>MCP</li><li>Claude Code</li><li>pgvector</li><li>Busca híbrida</li><li>RAG</li><li>Avaliação de LLMs</li></ul>
+        </div>
+        <div class="skill-group">
           <h3>Testes e observabilidade</h3>
-          <ul class="chips"><li>Go testing</li><li>Jest</li><li>Vitest</li><li>Testcontainers</li><li>Grafana</li><li>Sentry</li></ul>
+          <ul class="chips"><li>Go testing</li><li>Jest</li><li>Vitest</li><li>Playwright</li><li>Testcontainers</li><li>Grafana</li><li>Sentry</li></ul>
         </div>
         <div class="skill-group">
           <h3>Frontend</h3>
@@ -368,7 +385,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p>© 2026 Mohamed Ibrahim Aljoke</p>
-    <p>Atualizado em: <time datetime="2026-10-19">out 2026</time></p>
+    <p>Atualizado em: <time datetime="2026-10-21">out 2026</time></p>
   </div>
 </footer>
 

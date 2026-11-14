@@ -29,54 +29,50 @@
 
   <section class="section">
     <h2>Summary</h2>
-    <p class="summary">Backend software engineer with 5&#43; years of experience building distributed systems for fintech: KYC and compliance engines and customer onboarding for Banking as a Service (BaaS). I work mainly with Go, Node.js, TypeScript and AWS, designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate.</p>
+    <p class="summary">Backend software engineer with 5 years building regulated fintech systems in Go, Node.js, TypeScript and AWS. I own domains end to end: led KYC risk assessment at a Central Bank–regulated fintech (compliance review of new clients from 1–2 days to under a minute) and a credit platform&#39;s move to microservices, and took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure). Event-driven design, mentoring, written decisions. AWS Certified Solutions Architect – Associate.</p>
   </section>
   <section class="section">
     <h2>Work Experience</h2>
     <article class="job">
       <div class="role">
-        <h3><span class="title">Software Engineer</span> <span class="sep">·</span> <span class="org">Transfeera</span></h3>
+        <h3><span class="title">Backend Software Engineer</span> <span class="sep">·</span> <span class="org">Transfeera</span></h3>
         <p class="when">Nov 2025 – Present</p>
       </div><p class="blurb">Brazilian fintech regulated by the Central Bank: payments and Banking as a Service</p>
       <p class="group">KYC, compliance &amp; regulatory</p>
-      <ul><li>Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.</li><li>Automated customer risk analysis in onboarding, cutting it from 1–2 days to under a minute, by integrating 2 external KYC, AML and antifraud data providers.</li><li>Implemented Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.</li></ul>
+      <ul><li>Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.</li><li>Automated the compliance team&#39;s risk analysis of new clients in onboarding, from 1–2 days of manual review to under a minute, by integrating 2 external KYC, AML and antifraud data providers.</li></ul>
       <p class="group">Enrichment engine</p>
-      <ul><li>Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.</li><li>Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider&#39;s calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.</li></ul>
+      <ul><li>Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.</li><li>Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider&#39;s calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.</li><li>Reproduced and fixed a concurrency panic in an internal Go proxy (reused fasthttp header buffers) that the bulk run exposed under load, watching queue backpressure and memory in Grafana.</li></ul>
       <p class="group">Banking as a Service (BaaS) onboarding</p>
-      <ul><li>Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.</li><li>Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.</li></ul>
-      <p class="group">Engineering knowledge base for AI agents (proposal)</p>
-      <ul><li>Proposed and prototyped an engineering wiki on pgvector (ADRs, decisions, incidents and production bugs) that AI agents query and update through an MCP server to debug faster, plus a Slack command; under team evaluation.</li></ul><p class="tech"><strong>Tech:</strong> Go, Kubernetes, AWS, PostgreSQL, pgvector, MCP, Grafana, hoop.dev, Sentry</p>
+      <ul><li>Built automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.</li><li>Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.</li><li>Designed the onboarding document-upload API in Go: one multipart request for clients, files up to 20 MiB streamed to S3 without buffering, SHA-256 in the same pass and idempotency keys so retries never duplicate.</li></ul>
+      <p class="group">Security &amp; shared platform</p>
+      <ul><li>Took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure) and wrote the team&#39;s findings report.</li><li>Hardened SSRF protection in the shared HTTP library used by the microservices, covering webhook delivery and intake (to clients and from providers), the reverse proxy, the internal proxy and the downloader for attachments from client links; also fixed a SQL injection risk in the shared library.</li></ul>
+      <p class="group">AI-assisted delivery workflow (proposal)</p>
+      <ul><li>Proposed and built an AI-assisted delivery workflow on Claude Code (skills, hooks, worktrees) that gates each task on e2e, local, browser (Playwright MCP, real Chrome) and homolog tests, plus a Go MCP server on pgvector that keeps the reasoning behind decisions searchable for agents and product; under team evaluation.</li></ul><p class="tech"><strong>Tech:</strong> Go, Kubernetes, AWS, SNS/SQS, PostgreSQL, pgvector, MCP, Claude Code, Playwright, Grafana, Sentry</p>
     </article>
     <article class="job">
       <div class="role">
         <h3><span class="title">Full Stack Developer</span> <span class="sep">·</span> <span class="org">IDIP Tecnologia</span></h3>
         <p class="when">Oct 2022 – Nov 2025 <span class="sep">·</span> Brasília, Brazil · Remote</p>
-      </div><p class="blurb">Software house building products for fintech, healthcare and industry clients</p><ul><li>Led the migration of a B2B credit platform from a monolith prone to regressions to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit (Parcelex) behind an integration layer, so adding Banco BV as a provider needed no domain changes; service auth via Cognito and Secrets Manager.</li><li>Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.</li><li>Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.</li><li>Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.</li><li>Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.</li><li>Reduced AWS costs by automating EC2 start/stop schedules with Lambda and Slack commands.</li><li>Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.</li></ul><p class="tech"><strong>Tech:</strong> Node.js, TypeScript, Python, Java, React, Next.js, AWS Lambda, AWS ECS, SQS, SNS, S3, DynamoDB, Cognito, PostgreSQL, MongoDB, Redis, Terraform, Serverless Framework, Docker, GraphQL, Hasura, Jest, Testcontainers</p>
-    </article>
-    <article class="job">
-      <div class="role">
-        <h3><span class="title">Education Mentor</span> <span class="sep">·</span> <span class="org">Skule Tecnologia</span></h3>
-        <p class="when">Mar 2023 – Jul 2023 <span class="sep">·</span> Remote</p>
-      </div><ul><li>Mentored 6 programming interns on Node.js, Next.js and React projects: reviewed pull requests, resolved merge conflicts and guided code improvements.</li><li>Ran technical sessions in English on clean architecture and coding best practices.</li></ul>
+      </div><p class="blurb">Software house building products for fintech, healthcare and industry clients</p><ul><li>Led the migration of a B2B credit platform from a regression-prone monolith to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit; Parcelex and Banco BV sit behind one credit integration layer with fallback, so if one provider can&#39;t approve, the request goes to the other.</li><li>Designed a serverless B2B document-delivery platform over WhatsApp for low traffic with sudden bursts (e.g. 23k files): presigned S3 uploads, S3 events into SQS with a short debounce to avoid 429s, Lambda senders with retries, and a file domain separate from deliveries that also serves a chatbot and email, FTP and web intake.</li><li>Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.</li><li>Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.</li><li>Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.</li></ul><p class="tech"><strong>Tech:</strong> Node.js, TypeScript, Python, Java, React, Next.js, AWS Lambda, AWS ECS, SQS, SNS, S3, DynamoDB, Cognito, PostgreSQL, MongoDB, Redis, Terraform, Serverless Framework, Docker, GraphQL, Hasura, Jest, Testcontainers</p>
     </article>
     <article class="job">
       <div class="role">
         <h3><span class="title">Frontend Developer</span> <span class="sep">·</span> <span class="org">Advanced Digital</span></h3>
         <p class="when">Feb 2022 – Oct 2022 <span class="sep">·</span> Brasília, Brazil</p>
-      </div><ul><li>Maintained and extended a React and Redux e-commerce app with a Node.js backend, and migrated a ticket-selling UI from PHP to React.</li><li>Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.</li><li>Helped launch two mobile MVPs in Flutter (Dart, GetX).</li></ul><p class="tech"><strong>Tech:</strong> React, Redux, Node.js, Flutter, Dart, SCSS</p>
+      </div><ul><li>Maintained and extended a React and Redux e-commerce app with a Node.js backend, and migrated a ticket-selling UI from PHP to React.</li></ul><p class="tech"><strong>Tech:</strong> React, Redux, Node.js, Flutter, Dart, SCSS</p>
     </article>
   </section>
   <section class="section">
     <h2>Technical Skills</h2>
     <div class="skills">
       <p><strong>Languages:</strong> Go (Golang), TypeScript, JavaScript, Node.js, Java, Python, SQL</p>
-      <p><strong>Backend &amp; architecture:</strong> REST APIs, GraphQL, Microservices, Event-driven architecture, Domain events, Transactional outbox, Asynchronous processing, Rate limiting, Fiber, NestJS, Express, Fastify</p>
+      <p><strong>Backend &amp; architecture:</strong> REST APIs, GraphQL, Microservices, Event-driven architecture, Domain events, Transactional outbox, Asynchronous processing, Idempotency, SSRF prevention, Rate limiting, Fiber, NestJS, Express, Fastify</p>
       <p><strong>Cloud (AWS):</strong> Lambda, ECS Fargate, EKS, SNS, SQS, S3, DynamoDB, Cognito, Secrets Manager, API Gateway, CloudFront, VPC, CloudFormation</p>
       <p><strong>Infrastructure &amp; DevOps:</strong> Kubernetes, Terraform, Serverless Framework, Docker, GitHub Actions, GitLab CI, AWS CodePipeline, CI/CD</p>
       <p><strong>Databases &amp; messaging:</strong> PostgreSQL, MongoDB, DynamoDB, Redis, Kafka, RabbitMQ, SNS/SQS</p>
       <p><strong>Fintech &amp; compliance:</strong> KYC, AML / sanctions screening, Risk scoring, Antifraud, Customer onboarding, Banking as a Service (BaaS), Payment integrations</p>
-      <p><strong>Testing &amp; observability:</strong> Go testing, Jest, Vitest, Testcontainers, Grafana, Sentry</p>
-      <p><strong>Frontend:</strong> React, Next.js, Redux, PWA</p>
+      <p><strong>AI engineering:</strong> MCP, Claude Code, pgvector, Hybrid search, RAG, LLM evals</p>
+      <p><strong>Testing &amp; observability:</strong> Go testing, Jest, Vitest, Playwright, Testcontainers, Grafana, Sentry</p>
     </div>
   </section>
   <section class="section">
@@ -92,12 +88,6 @@
         <h3>Dyosmos</h3><p class="when"><a class="link" href="https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd" target="_blank" rel="noopener">Video walkthrough</a></p>
       </div>
       <p>Restaurant operations platform built end to end for a real restaurant: offline-first React PWA, Go services and SQS workers, iFood and 99Food integrations, containers on Fly.io and AWS provisioned with Terraform. Private codebase, shown in a video walkthrough.</p><p class="tech"><strong>Tech:</strong> Go, React, TypeScript, PostgreSQL, Redis, SQS, S3, Docker, Terraform, Fly.io</p>
-    </article>
-    <article class="project">
-      <div class="role">
-        <h3>Social Deduction Game</h3><p class="when"><a class="link" href="https://github.com/MohamedAljoke/social-deduction-game" target="_blank" rel="noopener">GitHub</a></p>
-      </div>
-      <p>Real-time multiplayer game built as a Domain-Driven Design study: rich entities, domain events and SOLID.</p><p class="tech"><strong>Tech:</strong> TypeScript, Node.js, WebSockets, React, DDD, Vitest, Playwright</p>
     </article>
   </section>
   <section class="section">

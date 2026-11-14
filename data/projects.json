@@ -10,14 +10,52 @@
         "pt": "Plataforma de prática para a prova CKA: um cluster Kubernetes multinó real (kind) por aluno para quebrar e consertar no navegador, com 203 tarefas corrigidas, prova cronometrada e tutor de IA, no Docker ou no GKE."
       },
       "highlights": [
-        { "en": "Go lab agent runs Docker and kind in a privileged container, builds a 3-node cluster and serves a Connect API, so the same image runs locally or as a GKE pod", "pt": "Agente do lab em Go roda Docker e kind num contêiner privilegiado, cria um cluster de 3 nós e serve uma API Connect, então a mesma imagem roda local ou como pod no GKE" },
-        { "en": "On GKE, the platform creates a lab pod per student with client-go, each on its own node from a pool that scales from zero; a NetworkPolicy isolates the labs (tested live)", "pt": "No GKE, a plataforma cria um pod de lab por aluno com client-go, cada um em nó próprio de um pool que escala do zero; uma NetworkPolicy isola os labs (testado ao vivo)" },
-        { "en": "AI tutor: a Gemini tool loop (Vertex AI) over its own MCP server reads the task, grader and cluster to hint, not solve; RAG over the Kubernetes docs (Ollama, vector + BM25) and LLM-judged evals", "pt": "Tutor de IA: loop Gemini (Vertex AI) sobre servidor MCP próprio lê tarefa, corretor e cluster para dar dicas, não respostas; RAG na documentação do Kubernetes e evals com LLM juiz" },
-        { "text": { "en": "Students are identified by token; each one's lab, task state and timed exam are kept apart, and an exam in progress survives a server restart", "pt": "Alunos identificados por token; lab, estado das tarefas e prova de cada um ficam separados, e uma prova em andamento sobrevive a um restart do servidor" }, "pdf": false },
-        { "en": "Browser terminal: xterm.js over a WebSocket, bridged to a Connect HTTP/2 stream into a pty on the cluster node", "pt": "Terminal no navegador: xterm.js por WebSocket, ligado a um stream HTTP/2 Connect até um pty no nó do cluster" },
-        { "text": { "en": "Task engine runs setup, check and solution scripts on the lab's nodes and repairs what a task left broken; a selftest grades each check before and after its solution. GKE in Terraform; e2e tests run the real server binary", "pt": "Motor de tarefas roda scripts de setup, verificação e solução nos nós do lab e repara o que uma tarefa deixou quebrado; um selftest avalia cada verificação antes e depois da solução. GKE em Terraform; testes e2e rodam o binário real do servidor" }, "pdf": false }
+        {
+          "en": "Go lab agent runs Docker and kind in a privileged container, builds a 3-node cluster and serves a Connect API, so the same image runs locally or as a GKE pod",
+          "pt": "Agente do lab em Go roda Docker e kind num contêiner privilegiado, cria um cluster de 3 nós e serve uma API Connect, então a mesma imagem roda local ou como pod no GKE"
+        },
+        {
+          "en": "On GKE, the platform creates a lab pod per student with client-go, each on its own node from a pool that scales from zero; a NetworkPolicy isolates the labs (tested live)",
+          "pt": "No GKE, a plataforma cria um pod de lab por aluno com client-go, cada um em nó próprio de um pool que escala do zero; uma NetworkPolicy isola os labs (testado ao vivo)"
+        },
+        {
+          "en": "AI tutor: a Gemini tool loop (Vertex AI) over its own MCP server reads the task, grader and cluster to hint, not solve; RAG over the Kubernetes docs (Ollama, vector + BM25) and LLM-judged evals",
+          "pt": "Tutor de IA: loop Gemini (Vertex AI) sobre servidor MCP próprio lê tarefa, corretor e cluster para dar dicas, não respostas; RAG na documentação do Kubernetes e evals com LLM juiz"
+        },
+        {
+          "text": {
+            "en": "Students are identified by token; each one's lab, task state and timed exam are kept apart, and an exam in progress survives a server restart",
+            "pt": "Alunos identificados por token; lab, estado das tarefas e prova de cada um ficam separados, e uma prova em andamento sobrevive a um restart do servidor"
+          },
+          "pdf": false
+        },
+        {
+          "en": "Browser terminal: xterm.js over a WebSocket, bridged to a Connect HTTP/2 stream into a pty on the cluster node",
+          "pt": "Terminal no navegador: xterm.js por WebSocket, ligado a um stream HTTP/2 Connect até um pty no nó do cluster"
+        },
+        {
+          "text": {
+            "en": "Task engine runs setup, check and solution scripts on the lab's nodes and repairs what a task left broken; a selftest grades each check before and after its solution. GKE in Terraform; e2e tests run the real server binary",
+            "pt": "Motor de tarefas roda scripts de setup, verificação e solução nos nós do lab e repara o que uma tarefa deixou quebrado; um selftest avalia cada verificação antes e depois da solução. GKE em Terraform; testes e2e rodam o binário real do servidor"
+          },
+          "pdf": false
+        }
       ],
-      "stack": ["Go", "Kubernetes", "GKE", "kind", "Docker", "Terraform", "Connect", "TypeScript", "xterm.js", "Bash", "MCP", "Gemini", "RAG"],
+      "stack": [
+        "Go",
+        "Kubernetes",
+        "GKE",
+        "kind",
+        "Docker",
+        "Terraform",
+        "Connect",
+        "TypeScript",
+        "xterm.js",
+        "Bash",
+        "MCP",
+        "Gemini",
+        "RAG"
+      ],
       "repo": "https://github.com/MohamedAljoke/cka-sim"
     },
     {
@@ -28,15 +66,44 @@
         "pt": "Plataforma de operações para restaurantes construída de ponta a ponta para um restaurante real: PWA em React offline-first, serviços em Go e workers com SQS, integrações com iFood e 99Food, contêineres no Fly.io e AWS provisionada com Terraform. Código privado, apresentado em vídeo."
       },
       "highlights": [
-        { "en": "Transactional outbox, idempotent at-least-once consumers and one schema per service", "pt": "Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço" },
-        { "en": "Multi-tenant authorization, Redis rate limiting and optimistic locking", "pt": "Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista" },
-        { "en": "Offline mutation queue with conflict resolution and AI-assisted voice ordering", "pt": "Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA" },
-        { "en": "Containers on Fly.io, with Postgres on its own machine and volume, and SQS and S3 on AWS provisioned with Terraform", "pt": "Contêineres no Fly.io, com o Postgres em máquina e volume próprios, e SQS e S3 na AWS provisionados com Terraform" },
-        { "en": "Point-in-time recovery with WAL-G to S3, losing at most 5 minutes, behind a no-delete IAM user; zero-filled WAL shrinks each 16 MB segment to ~2 KB, so off-site backups cost cents a month", "pt": "Recuperação point-in-time com WAL-G no S3, perdendo no máximo 5 minutos, com um usuário IAM sem permissão de exclusão; WAL preenchido com zeros reduz cada segmento de 16 MB a ~2 KB, e os backups externos custam centavos por mês" }
+        {
+          "en": "Transactional outbox, idempotent at-least-once consumers and one schema per service",
+          "pt": "Outbox transacional, consumidores idempotentes com entrega at-least-once e um schema por serviço"
+        },
+        {
+          "en": "Multi-tenant authorization, Redis rate limiting and optimistic locking",
+          "pt": "Autorização multi-tenant, rate limiting com Redis e controle de concorrência otimista"
+        },
+        {
+          "en": "Offline mutation queue with conflict resolution and AI-assisted voice ordering",
+          "pt": "Fila de alterações offline com resolução de conflitos e pedidos por voz assistidos por IA"
+        },
+        {
+          "en": "Containers on Fly.io, with Postgres on its own machine and volume, and SQS and S3 on AWS provisioned with Terraform",
+          "pt": "Contêineres no Fly.io, com o Postgres em máquina e volume próprios, e SQS e S3 na AWS provisionados com Terraform"
+        },
+        {
+          "en": "Point-in-time recovery with WAL-G to S3, losing at most 5 minutes, behind a no-delete IAM user; zero-filled WAL shrinks each 16 MB segment to ~2 KB, so off-site backups cost cents a month",
+          "pt": "Recuperação point-in-time com WAL-G no S3, perdendo no máximo 5 minutos, com um usuário IAM sem permissão de exclusão; WAL preenchido com zeros reduz cada segmento de 16 MB a ~2 KB, e os backups externos custam centavos por mês"
+        }
       ],
-      "stack": ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "SQS", "S3", "Docker", "Terraform", "Fly.io"],
+      "stack": [
+        "Go",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "SQS",
+        "S3",
+        "Docker",
+        "Terraform",
+        "Fly.io"
+      ],
       "demo": "https://www.loom.com/share/de9903a0543c41bd8c31bdd7ec3032cd",
-      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+      "demoLabel": {
+        "en": "Video walkthrough",
+        "pt": "Vídeo explicativo"
+      }
     },
     {
       "id": "social-deduction-game",
@@ -46,15 +113,39 @@
         "pt": "Jogo multiplayer em tempo real, um estudo de Domain-Driven Design: entidades ricas, eventos de domínio e SOLID."
       },
       "highlights": [
-        { "en": "Rich entities and value objects with invariants in the domain, raising typed domain errors and domain events", "pt": "Entidades ricas e value objects com invariantes no domínio, lançando erros de domínio tipados e eventos de domínio" },
-        { "en": "SOLID: one handler per ability (open/closed), ports and adapters, swappable Express/Hono HTTP layer", "pt": "SOLID: um handler por habilidade (aberto/fechado), ports and adapters, camada HTTP intercambiável entre Express e Hono" },
-        { "en": "Architecture fitness tests keep the domain free of infrastructure; Vitest and Playwright E2E in CI", "pt": "Testes de fitness de arquitetura mantêm o domínio livre de infraestrutura; Vitest e Playwright E2E no CI" },
-        { "en": "Optional AI game master on Gemini/OpenRouter with provider failover", "pt": "Mestre de jogo com IA opcional via Gemini/OpenRouter, com failover entre provedores" }
+        {
+          "en": "Rich entities and value objects with invariants in the domain, raising typed domain errors and domain events",
+          "pt": "Entidades ricas e value objects com invariantes no domínio, lançando erros de domínio tipados e eventos de domínio"
+        },
+        {
+          "en": "SOLID: one handler per ability (open/closed), ports and adapters, swappable Express/Hono HTTP layer",
+          "pt": "SOLID: um handler por habilidade (aberto/fechado), ports and adapters, camada HTTP intercambiável entre Express e Hono"
+        },
+        {
+          "en": "Architecture fitness tests keep the domain free of infrastructure; Vitest and Playwright E2E in CI",
+          "pt": "Testes de fitness de arquitetura mantêm o domínio livre de infraestrutura; Vitest e Playwright E2E no CI"
+        },
+        {
+          "en": "Optional AI game master on Gemini/OpenRouter with provider failover",
+          "pt": "Mestre de jogo com IA opcional via Gemini/OpenRouter, com failover entre provedores"
+        }
       ],
-      "stack": ["TypeScript", "Node.js", "WebSockets", "React", "DDD", "Vitest", "Playwright"],
+      "stack": [
+        "TypeScript",
+        "Node.js",
+        "WebSockets",
+        "React",
+        "DDD",
+        "Vitest",
+        "Playwright"
+      ],
       "repo": "https://github.com/MohamedAljoke/social-deduction-game",
       "demo": "https://social-deduction-game-tvek.onrender.com/",
-      "demoLabel": { "en": "Live demo", "pt": "Demo ao vivo" }
+      "demoLabel": {
+        "en": "Live demo",
+        "pt": "Demo ao vivo"
+      },
+      "pdf": false
     },
     {
       "id": "travel-journal",
@@ -64,15 +155,38 @@
         "pt": "Diário de imagens serverless na AWS: uploads direto para o S3 via pre-signed URLs, autenticação com Cognito, APIs REST em Node.js no Lambda e um Lambda em Go para processar imagens."
       },
       "highlights": [
-        { "en": "Monorepo deployed with Serverless Framework v4", "pt": "Monorepo com deploy via Serverless Framework v4" },
-        { "en": "DynamoDB metadata store and SQS error handling", "pt": "Metadados no DynamoDB e tratamento de erros com SQS" },
-        { "en": "React frontend served through CloudFront", "pt": "Frontend em React distribuído via CloudFront" }
+        {
+          "en": "Monorepo deployed with Serverless Framework v4",
+          "pt": "Monorepo com deploy via Serverless Framework v4"
+        },
+        {
+          "en": "DynamoDB metadata store and SQS error handling",
+          "pt": "Metadados no DynamoDB e tratamento de erros com SQS"
+        },
+        {
+          "en": "React frontend served through CloudFront",
+          "pt": "Frontend em React distribuído via CloudFront"
+        }
       ],
-      "stack": ["Go", "Node.js", "React", "AWS Lambda", "S3", "DynamoDB", "Cognito", "CloudFront", "SQS", "Serverless Framework"],
+      "stack": [
+        "Go",
+        "Node.js",
+        "React",
+        "AWS Lambda",
+        "S3",
+        "DynamoDB",
+        "Cognito",
+        "CloudFront",
+        "SQS",
+        "Serverless Framework"
+      ],
       "repo": "https://github.com/MohamedAljoke/travel-journal-v2",
       "hidden": true,
       "demo": "https://www.loom.com/share/1f6a4cbaf4ad457bb44ab347971a0df2",
-      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+      "demoLabel": {
+        "en": "Video walkthrough",
+        "pt": "Vídeo explicativo"
+      }
     },
     {
       "id": "mail-sender",
@@ -82,14 +196,32 @@
         "pt": "Microsserviços no AWS ECS Fargate: uma API em Node.js publica jobs no RabbitMQ e um worker em Go envia os e-mails, em uma VPC multicamada (subnets privadas, NAT Gateway, ALB) provisionada com Terraform."
       },
       "highlights": [
-        { "en": "Infrastructure as code with Terraform", "pt": "Infraestrutura como código com Terraform" },
-        { "en": "Asynchronous processing with RabbitMQ", "pt": "Processamento assíncrono com RabbitMQ" }
+        {
+          "en": "Infrastructure as code with Terraform",
+          "pt": "Infraestrutura como código com Terraform"
+        },
+        {
+          "en": "Asynchronous processing with RabbitMQ",
+          "pt": "Processamento assíncrono com RabbitMQ"
+        }
       ],
-      "stack": ["Go", "Node.js", "RabbitMQ", "AWS ECS Fargate", "VPC", "ALB", "Terraform", "Docker"],
+      "stack": [
+        "Go",
+        "Node.js",
+        "RabbitMQ",
+        "AWS ECS Fargate",
+        "VPC",
+        "ALB",
+        "Terraform",
+        "Docker"
+      ],
       "repo": "https://github.com/MohamedAljoke/mail-sender",
       "hidden": true,
       "demo": "https://www.loom.com/share/f9ab6f55084540c5a0ad010af3fbef89",
-      "demoLabel": { "en": "Video walkthrough", "pt": "Vídeo explicativo" }
+      "demoLabel": {
+        "en": "Video walkthrough",
+        "pt": "Vídeo explicativo"
+      }
     },
     {
       "id": "scrap-ifix-go",
@@ -99,10 +231,21 @@
         "pt": "Scraper em Go dos fundos imobiliários do índice IFIX: busca a lista na API da B3, coleta dividendos e preços em goroutines paralelas, agrega os resultados por channel e exporta métricas em CSV."
       },
       "highlights": [
-        { "en": "Fan-out with goroutines, fan-in through a channel", "pt": "Fan-out com goroutines e fan-in por channel" },
-        { "en": "Unit tests with coverage", "pt": "Testes unitários com cobertura" }
+        {
+          "en": "Fan-out with goroutines, fan-in through a channel",
+          "pt": "Fan-out com goroutines e fan-in por channel"
+        },
+        {
+          "en": "Unit tests with coverage",
+          "pt": "Testes unitários com cobertura"
+        }
       ],
-      "stack": ["Go", "Goroutines", "Channels", "CSV"],
+      "stack": [
+        "Go",
+        "Goroutines",
+        "Channels",
+        "CSV"
+      ],
       "repo": "https://github.com/MohamedAljoke/scrap_ifix_go",
       "hidden": true,
       "pdf": false

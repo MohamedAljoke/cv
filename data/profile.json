@@ -10,24 +10,67 @@
     "pt": "Brasília, DF · Aberto a remoto"
   },
   "email": "mohammed.maljoke@gmail.com",
-  "phone": { "value": "+55 61 98170-0760", "web": false },
+  "phone": {
+    "value": "+55 61 98170-0760",
+    "web": false
+  },
   "links": [
-    { "kind": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/mohamed-aljoke-a23217186/" },
-    { "kind": "github", "label": "GitHub", "url": "https://github.com/MohamedAljoke" },
-    { "kind": "website", "label": { "en": "Portfolio", "pt": "Portfólio" }, "url": "https://mohamedaljoke.github.io/cv/" },
-    { "kind": "credly", "label": "Credly", "url": "https://www.credly.com/users/mohamed-aljoke", "pdf": false }
+    {
+      "kind": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mohamed-aljoke-a23217186/"
+    },
+    {
+      "kind": "github",
+      "label": "GitHub",
+      "url": "https://github.com/MohamedAljoke"
+    },
+    {
+      "kind": "website",
+      "label": {
+        "en": "Portfolio",
+        "pt": "Portfólio"
+      },
+      "url": "https://mohamedaljoke.github.io/cv/"
+    },
+    {
+      "kind": "credly",
+      "label": "Credly",
+      "url": "https://www.credly.com/users/mohamed-aljoke",
+      "pdf": false
+    }
   ],
   "summary": {
-    "en": "Backend software engineer with 5+ years of experience building distributed systems for fintech: KYC and compliance engines and customer onboarding for Banking as a Service (BaaS). I work mainly with Go, Node.js, TypeScript and AWS, designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate.",
-    "pt": "Engenheiro de software backend com mais de 5 anos de experiência construindo sistemas distribuídos para fintechs: motores de KYC e compliance e onboarding de clientes para Banking as a Service (BaaS). Trabalho principalmente com Go, Node.js, TypeScript e AWS, projetando arquiteturas orientadas a eventos com processamento assíncrono, padrão outbox e infraestrutura como código (Terraform). Certificado AWS Solutions Architect – Associate."
+    "en": "Backend software engineer with 5 years building regulated fintech systems in Go, Node.js, TypeScript and AWS. I own domains end to end: led KYC risk assessment at a Central Bank–regulated fintech (compliance review of new clients from 1–2 days to under a minute) and a credit platform's move to microservices, and took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure). Event-driven design, mentoring, written decisions. AWS Certified Solutions Architect – Associate.",
+    "pt": "Engenheiro de software backend com 5 anos em sistemas de fintech regulada com Go, Node.js, TypeScript e AWS. Assumo domínios de ponta a ponta: liderei o risco de KYC em uma fintech regulada pelo Banco Central (análise de compliance de novos clientes de 1–2 dias para menos de um minuto) e a migração de uma plataforma de crédito para microsserviços, e atuei no reforço de segurança da plataforma (SSRF, vazamento de tokens, dados, infraestrutura). Eventos, mentoria e decisões documentadas. Certificado AWS Solutions Architect – Associate."
   },
   "focus": [
-    { "en": "KYC & compliance", "pt": "KYC e compliance" },
-    { "en": "Central Bank (BCB) regulations", "pt": "Regulatório do Banco Central (BCB)" },
+    {
+      "en": "KYC & compliance",
+      "pt": "KYC e compliance"
+    },
+    {
+      "en": "Central Bank (BCB) regulations",
+      "pt": "Regulatório do Banco Central (BCB)"
+    },
     "Banking as a Service",
-    { "en": "Event-driven systems", "pt": "Sistemas orientados a eventos" }
+    {
+      "en": "Event-driven systems",
+      "pt": "Sistemas orientados a eventos"
+    },
+    {
+      "en": "Application security",
+      "pt": "Segurança de aplicações"
+    }
   ],
-  "coreStack": ["Go", "Node.js", "TypeScript", "AWS", "Terraform", "PostgreSQL"],
+  "coreStack": [
+    "Go",
+    "Node.js",
+    "TypeScript",
+    "AWS",
+    "Terraform",
+    "PostgreSQL"
+  ],
   "education": [
     {
       "id": "udf-mechanical-engineering",
@@ -36,7 +79,10 @@
         "en": "Bachelor of Engineering (B.Eng.), Mechanical Engineering",
         "pt": "Bacharelado em Engenharia Mecânica"
       },
-      "location": { "en": "Brasília, Brazil", "pt": "Brasília, DF" },
+      "location": {
+        "en": "Brasília, Brazil",
+        "pt": "Brasília, DF"
+      },
       "startYear": 2017,
       "endYear": 2022,
       "detail": {
@@ -57,12 +103,45 @@
     }
   ],
   "languages": [
-    { "name": { "en": "Portuguese", "pt": "Português" }, "level": { "en": "Native", "pt": "Nativo" } },
-    { "name": { "en": "English", "pt": "Inglês" }, "level": { "en": "Fluent", "pt": "Fluente" } },
-    { "name": { "en": "Arabic", "pt": "Árabe" }, "level": { "en": "Native", "pt": "Nativo" } },
     {
-      "name": { "en": "Japanese", "pt": "Japonês" },
-      "level": { "en": "Basic, JLPT N4", "pt": "Básico, JLPT N4" },
+      "name": {
+        "en": "Portuguese",
+        "pt": "Português"
+      },
+      "level": {
+        "en": "Native",
+        "pt": "Nativo"
+      }
+    },
+    {
+      "name": {
+        "en": "English",
+        "pt": "Inglês"
+      },
+      "level": {
+        "en": "Fluent",
+        "pt": "Fluente"
+      }
+    },
+    {
+      "name": {
+        "en": "Arabic",
+        "pt": "Árabe"
+      },
+      "level": {
+        "en": "Native",
+        "pt": "Nativo"
+      }
+    },
+    {
+      "name": {
+        "en": "Japanese",
+        "pt": "Japonês"
+      },
+      "level": {
+        "en": "Basic, JLPT N4",
+        "pt": "Básico, JLPT N4"
+      },
       "url": "https://mohamedaljoke.github.io/cv/files/Mohamed_Aljoke_JLPT_N4.pdf"
     }
   ]

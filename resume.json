@@ -18,7 +18,7 @@
         "url": "https://www.credly.com/users/mohamed-aljoke"
       }
     ],
-    "summary": "Backend software engineer with 5+ years of experience building distributed systems for fintech: KYC and compliance engines and customer onboarding for Banking as a Service (BaaS). I work mainly with Go, Node.js, TypeScript and AWS, designing event-driven architectures with asynchronous processing, the outbox pattern and infrastructure as code (Terraform). AWS Certified Solutions Architect – Associate.",
+    "summary": "Backend software engineer with 5 years building regulated fintech systems in Go, Node.js, TypeScript and AWS. I own domains end to end: led KYC risk assessment at a Central Bank–regulated fintech (compliance review of new clients from 1–2 days to under a minute) and a credit platform's move to microservices, and took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure). Event-driven design, mentoring, written decisions. AWS Certified Solutions Architect – Associate.",
     "url": "https://mohamedaljoke.github.io/cv/"
   },
   "certificates": [
@@ -57,7 +57,7 @@
   ],
   "meta": {
     "canonical": "https://mohamedaljoke.github.io/cv/resume.json",
-    "lastModified": "2026-10-19"
+    "lastModified": "2026-10-21"
   },
   "projects": [
     {
@@ -155,6 +155,8 @@
         "Domain events",
         "Transactional outbox",
         "Asynchronous processing",
+        "Idempotency",
+        "SSRF prevention",
         "Rate limiting",
         "Fiber",
         "NestJS",
@@ -220,9 +222,21 @@
     },
     {
       "keywords": [
+        "MCP",
+        "Claude Code",
+        "pgvector",
+        "Hybrid search",
+        "RAG",
+        "LLM evals"
+      ],
+      "name": "AI engineering"
+    },
+    {
+      "keywords": [
         "Go testing",
         "Jest",
         "Vitest",
+        "Playwright",
         "Testcontainers",
         "Grafana",
         "Sentry"
@@ -243,18 +257,21 @@
     {
       "highlights": [
         "Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.",
-        "Automated customer risk analysis in onboarding, cutting it from 1–2 days to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
-        "Implemented Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
+        "Automated the compliance team's risk analysis of new clients in onboarding, from 1–2 days of manual review to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
+        "Translated Central Bank of Brazil (BCB) regulations into product and platform changes; Transfeera is directly regulated, so each new rule ships as engineering work.",
         "Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.",
         "Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider's calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.",
-        "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
+        "Reproduced and fixed a concurrency panic in an internal Go proxy (reused fasthttp header buffers) that the bulk run exposed under load, watching queue backpressure and memory in Grafana.",
+        "Built automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
         "Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
-        "Proposed and built a working prototype of an engineering wiki for the team, now under evaluation: a semantic-search knowledge base on PostgreSQL and pgvector that ingests past ADRs, decisions from GitHub issues and Notion docs, so the reasoning behind technical decisions lives in one searchable place.",
-        "Exposed it through an MCP server so AI coding agents can look up past decisions and record new ones, plus a Slack slash command to log small decisions that don't warrant a full ADR.",
-        "Designed it to also hold incidents and production bugs with their root cause, fix and references, so agents can debug faster by recalling what was done before, how and why."
+        "Designed the onboarding document-upload API in Go: one multipart request for clients, files up to 20 MiB streamed to S3 without buffering, SHA-256 in the same pass and idempotency keys so retries never duplicate.",
+        "Took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure) and wrote the team's findings report.",
+        "Hardened SSRF protection in the shared HTTP library used by the microservices, covering webhook delivery and intake (to clients and from providers), the reverse proxy, the internal proxy and the downloader for attachments from client links; also fixed a SQL injection risk in the shared library.",
+        "Proposed and built an AI-assisted delivery workflow on Claude Code (skills, hooks, one git worktree per repo per task): the agent implements a task, then must pass e2e tests, a local run against mocked providers, a browser check of the screen in real Chrome through the Playwright MCP and a homolog deploy before reporting; it asks at most 3 questions, only on business, money, compliance or irreversible choices.",
+        "Built a decision-record MCP server in Go on PostgreSQL and pgvector with hybrid (semantic + keyword) search: agents look up past decisions before changing code and record new ones only with the developer's approval; decisions are superseded, never deleted, and product owners browse them on a web page."
       ],
       "name": "Transfeera",
-      "position": "Software Engineer",
+      "position": "Backend Software Engineer",
       "startDate": "2025-11",
       "summary": "Brazilian fintech regulated by the Central Bank: payments and Banking as a Service",
       "url": "https://transfeera.com"
@@ -262,12 +279,13 @@
     {
       "endDate": "2025-11",
       "highlights": [
-        "Led the migration of a B2B credit platform from a monolith prone to regressions to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit (Parcelex) behind an integration layer, so adding Banco BV as a provider needed no domain changes; service auth via Cognito and Secrets Manager.",
-        "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
+        "Led the migration of a B2B credit platform from a regression-prone monolith to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit; Parcelex and Banco BV sit behind one credit integration layer with fallback, so if one provider can't approve, the request goes to the other.",
+        "Designed and built a B2B document-delivery platform over WhatsApp on serverless AWS, chosen because traffic was low most of the time but arrived in sudden bursts (e.g. 23k files at once): files go straight to S3 through presigned URLs so they never pass through API memory, S3 events land in SQS so no file is lost, and a short debounce smooths each burst so it doesn't hit AWS throttling (HTTP 429).",
+        "Lambda senders deliver to WhatsApp with retries; files live in their own domain, separate from deliveries, so the same documents serve WhatsApp sends, a chatbot and intake by email, FTP and the web platform, managed from a React admin dashboard.",
         "Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.",
         "Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.",
         "Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.",
-        "Reduced AWS costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
+        "Cut idle AWS compute costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
         "Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.",
         "Built a notification client with a webhook system for asynchronous communication between services, improving reliability and traceability.",
         "Contributed to migrating a healthcare management platform from Ruby on Rails to React and Java.",

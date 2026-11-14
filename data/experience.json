@@ -9,30 +9,42 @@
         "en": "Brazilian fintech regulated by the Central Bank: payments and Banking as a Service",
         "pt": "Fintech brasileira regulada pelo Banco Central: pagamentos e Banking as a Service"
       },
-      "title": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
+      "title": {
+        "en": "Backend Software Engineer",
+        "pt": "Engenheiro de Software Backend"
+      },
       "start": "2025-11",
       "end": null,
-      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day. Engineering wiki: how many ADRs/decisions it holds, how many engineers or AI agents use it.",
+      "note": "TODO: add a location (e.g. Remote), and numbers where you have them: customers onboarded, events/day, accounts reprocessed. Keep LinkedIn in sync with this CV.",
       "groups": [
         {
-          "title": { "en": "KYC, compliance & regulatory", "pt": "KYC, compliance e regulatório" },
+          "title": {
+            "en": "KYC, compliance & regulatory",
+            "pt": "KYC, compliance e regulatório"
+          },
           "bullets": [
             {
               "en": "Led the KYC risk-assessment domain in a team of 4 engineers, turning compliance requirements into a rules-based risk-scoring engine with weighted scoring and eligibility checks.",
               "pt": "Liderei o domínio de avaliação de risco de KYC em um time de 4 engenheiros, traduzindo requisitos de compliance em um motor de score de risco baseado em regras, com pontuação ponderada e checagens de elegibilidade."
             },
             {
-              "en": "Automated customer risk analysis in onboarding, cutting it from 1–2 days to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
-              "pt": "Automatizei a análise de risco de clientes no onboarding, reduzindo-a de 1–2 dias para menos de um minuto, integrando 2 provedores externos de dados de KYC, PLD/AML e antifraude."
+              "en": "Automated the compliance team's risk analysis of new clients in onboarding, from 1–2 days of manual review to under a minute, by integrating 2 external KYC, AML and antifraud data providers.",
+              "pt": "Automatizei a análise de risco que o time de compliance fazia para cada novo cliente no onboarding, de 1–2 dias de revisão manual para menos de um minuto, integrando 2 provedores externos de dados de KYC, PLD/AML e antifraude."
             },
             {
-              "en": "Implemented Central Bank of Brazil (BCB) regulatory requirements: Transfeera is directly regulated, so new rules become changes to our products and platform.",
-              "pt": "Implementei requisitos regulatórios do Banco Central do Brasil (BCB): a Transfeera é regulada diretamente, então novas normas viram mudanças em produtos e plataforma."
+              "text": {
+                "en": "Translated Central Bank of Brazil (BCB) regulations into product and platform changes; Transfeera is directly regulated, so each new rule ships as engineering work.",
+                "pt": "Traduzi normas do Banco Central do Brasil (BCB) em mudanças de produto e plataforma; a Transfeera é regulada diretamente, então cada nova norma vira entrega de engenharia."
+              },
+              "pdf": false
             }
           ]
         },
         {
-          "title": { "en": "Enrichment engine", "pt": "Motor de enriquecimento" },
+          "title": {
+            "en": "Enrichment engine",
+            "pt": "Motor de enriquecimento"
+          },
           "bullets": [
             {
               "en": "Designed a data enrichment engine that picks synchronous and asynchronous steps per client, runs them in parallel, reuses previous results and matches async provider callbacks by correlation ID until a terminal state.",
@@ -41,57 +53,92 @@
             {
               "en": "Built bulk reprocessing of existing customers through the enrichment and risk engines, with a leaky-bucket rate limiter that keeps one provider's calls under its requests-per-second limit, ending the HTTP 429 failures at the cost of slightly slower runs.",
               "pt": "Construí o reprocessamento em lote da base de clientes pelos motores de enriquecimento e risco, com um rate limiter (leaky bucket) que mantém as chamadas a um provedor abaixo do limite de requisições por segundo, eliminando as falhas por HTTP 429 ao custo de execuções um pouco mais lentas."
+            },
+            {
+              "en": "Reproduced and fixed a concurrency panic in an internal Go proxy (reused fasthttp header buffers) that the bulk run exposed under load, watching queue backpressure and memory in Grafana.",
+              "pt": "Reproduzi e corrigi um panic de concorrência num proxy interno em Go (buffers de header do fasthttp reaproveitados) exposto sob carga no lote, acompanhando backpressure e memória no Grafana."
             }
           ]
         },
         {
-          "title": { "en": "Banking as a Service (BaaS) onboarding", "pt": "Onboarding de Banking as a Service (BaaS)" },
+          "title": {
+            "en": "Banking as a Service (BaaS) onboarding",
+            "pt": "Onboarding de Banking as a Service (BaaS)"
+          },
           "bullets": [
             {
-              "en": "Building automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
-              "pt": "Construo fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços."
+              "en": "Built automated onboarding and eligibility flows for the BaaS product with domain events, the transactional outbox pattern and asynchronous integrations between services.",
+              "pt": "Construí fluxos automatizados de onboarding e elegibilidade para o produto de BaaS com eventos de domínio, padrão transactional outbox e integrações assíncronas entre serviços."
             },
             {
               "en": "Processed account and customer events with AWS SNS and SQS queues, using subscription filtering, deduplication and message groups for ordered, high-throughput delivery.",
               "pt": "Processei eventos de contas e clientes com AWS SNS e filas SQS, usando filtros de assinatura, deduplicação e message groups para entrega ordenada com alto throughput."
+            },
+            {
+              "en": "Designed the onboarding document-upload API in Go: one multipart request for clients, files up to 20 MiB streamed to S3 without buffering, SHA-256 in the same pass and idempotency keys so retries never duplicate.",
+              "pt": "Projetei a API de upload de documentos do onboarding em Go: uma só requisição multipart para o cliente, arquivos de até 20 MiB em streaming para o S3, SHA-256 na mesma passada e chaves de idempotência contra duplicatas."
             }
           ]
         },
         {
-          "title": { "en": "Engineering knowledge base for AI agents (proposal)", "pt": "Base de conhecimento de engenharia para agentes de IA (proposta)" },
+          "title": {
+            "en": "Security & shared platform",
+            "pt": "Segurança e plataforma compartilhada"
+          },
+          "bullets": [
+            {
+              "en": "Took part in the platform-wide security audit and hardening (SSRF, token leaks, data protection, infrastructure) and wrote the team's findings report.",
+              "pt": "Participei da auditoria e do reforço de segurança da plataforma (SSRF, vazamento de tokens, proteção de dados, infraestrutura) e escrevi o relatório de achados do time."
+            },
+            {
+              "en": "Hardened SSRF protection in the shared HTTP library used by the microservices, covering webhook delivery and intake (to clients and from providers), the reverse proxy, the internal proxy and the downloader for attachments from client links; also fixed a SQL injection risk in the shared library.",
+              "pt": "Reforcei a proteção contra SSRF na biblioteca HTTP compartilhada pelos microsserviços, cobrindo envio e consumo de webhooks (para clientes e de provedores), reverse proxy, proxy interno e o download de anexos a partir de links de clientes; corrigi também um risco de SQL injection na biblioteca."
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "AI-assisted delivery workflow (proposal)",
+            "pt": "Fluxo de entrega assistido por IA (proposta)"
+          },
           "bullets": [
             {
               "text": {
-                "en": "Proposed and built a working prototype of an engineering wiki for the team, now under evaluation: a semantic-search knowledge base on PostgreSQL and pgvector that ingests past ADRs, decisions from GitHub issues and Notion docs, so the reasoning behind technical decisions lives in one searchable place.",
-                "pt": "Propus e construí um protótipo funcional de wiki de engenharia para o time, hoje em avaliação: uma base de conhecimento com busca semântica em PostgreSQL e pgvector que ingere ADRs, decisões registradas em issues do GitHub e documentos do Notion, reunindo o histórico de decisões técnicas em um só lugar pesquisável."
+                "en": "Proposed and built an AI-assisted delivery workflow on Claude Code (skills, hooks, one git worktree per repo per task): the agent implements a task, then must pass e2e tests, a local run against mocked providers, a browser check of the screen in real Chrome through the Playwright MCP and a homolog deploy before reporting; it asks at most 3 questions, only on business, money, compliance or irreversible choices.",
+                "pt": "Propus e construí um fluxo de entrega assistido por IA no Claude Code (skills, hooks, um git worktree por repositório por tarefa): o agente implementa a tarefa e precisa passar por testes e2e, execução local com provedores mockados, verificação da tela no Chrome real via MCP do Playwright e deploy em homologação antes de reportar; faz no máximo 3 perguntas, só sobre negócio, dinheiro, compliance ou decisões irreversíveis."
               },
               "pdf": false
             },
             {
               "text": {
-                "en": "Exposed it through an MCP server so AI coding agents can look up past decisions and record new ones, plus a Slack slash command to log small decisions that don't warrant a full ADR.",
-                "pt": "Disponibilizei a base por um servidor MCP para que agentes de IA consultem decisões anteriores e registrem novas, além de um slash command no Slack para registrar pequenas decisões que não justificam um ADR completo."
+                "en": "Built a decision-record MCP server in Go on PostgreSQL and pgvector with hybrid (semantic + keyword) search: agents look up past decisions before changing code and record new ones only with the developer's approval; decisions are superseded, never deleted, and product owners browse them on a web page.",
+                "pt": "Construí um servidor MCP de registro de decisões em Go com PostgreSQL e pgvector e busca híbrida (semântica + palavra-chave): agentes consultam decisões anteriores antes de alterar código e registram novas só com aprovação do desenvolvedor; decisões são substituídas, nunca apagadas, e o time de produto as consulta numa página web."
               },
               "pdf": false
             },
             {
               "text": {
-                "en": "Designed it to also hold incidents and production bugs with their root cause, fix and references, so agents can debug faster by recalling what was done before, how and why.",
-                "pt": "Projetei a base para também guardar incidentes e bugs de produção com causa raiz, correção e referências, para que os agentes ajudem a depurar mais rápido lembrando o que já foi feito, como e por quê."
-              },
-              "pdf": false
-            },
-            {
-              "text": {
-                "en": "Proposed and prototyped an engineering wiki on pgvector (ADRs, decisions, incidents and production bugs) that AI agents query and update through an MCP server to debug faster, plus a Slack command; under team evaluation.",
-                "pt": "Propus e prototipei uma wiki de engenharia em pgvector (ADRs, decisões, incidentes e bugs de produção) que agentes de IA consultam e atualizam via servidor MCP para depurar mais rápido, além de um comando no Slack; em avaliação pelo time."
+                "en": "Proposed and built an AI-assisted delivery workflow on Claude Code (skills, hooks, worktrees) that gates each task on e2e, local, browser (Playwright MCP, real Chrome) and homolog tests, plus a Go MCP server on pgvector that keeps the reasoning behind decisions searchable for agents and product; under team evaluation.",
+                "pt": "Propus e construí um fluxo de entrega com IA no Claude Code (skills, hooks, worktrees) que exige testes e2e, locais, de navegador (MCP do Playwright) e em homologação, além de um servidor MCP em Go sobre pgvector que deixa o porquê das decisões pesquisável; em avaliação pelo time."
               },
               "web": false
             }
           ]
         }
       ],
-      "stack": ["Go", "Kubernetes", "AWS", "PostgreSQL", "pgvector", "MCP", "Grafana", "hoop.dev", "Sentry"]
+      "stack": [
+        "Go",
+        "Kubernetes",
+        "AWS",
+        "SNS/SQS",
+        "PostgreSQL",
+        "pgvector",
+        "MCP",
+        "Claude Code",
+        "Playwright",
+        "Grafana",
+        "Sentry"
+      ]
     },
     {
       "id": "idip",
@@ -100,18 +147,41 @@
         "en": "Software house building products for fintech, healthcare and industry clients",
         "pt": "Software house com produtos para clientes de fintech, saúde e indústria"
       },
-      "title": { "en": "Full Stack Developer", "pt": "Desenvolvedor Full Stack" },
-      "location": { "en": "Brasília, Brazil · Remote", "pt": "Brasília, DF · Remoto" },
+      "title": {
+        "en": "Full Stack Developer",
+        "pt": "Desenvolvedor Full Stack"
+      },
+      "location": {
+        "en": "Brasília, Brazil · Remote",
+        "pt": "Brasília, DF · Remoto"
+      },
       "start": "2022-10",
       "end": "2025-11",
       "bullets": [
         {
-          "en": "Led the migration of a B2B credit platform from a monolith prone to regressions to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit (Parcelex) behind an integration layer, so adding Banco BV as a provider needed no domain changes; service auth via Cognito and Secrets Manager.",
-          "pt": "Liderei a migração de uma plataforma B2B de crédito de monólito para microsserviços em TypeScript e Python (AWS ECS e Lambda), separando onboarding (CAF, Vindi) e crédito (Parcelex) com uma camada de integração: adicionar o Banco BV não exigiu mudanças no domínio."
+          "en": "Led the migration of a B2B credit platform from a regression-prone monolith to TypeScript and Python microservices on AWS ECS and Lambda, splitting onboarding (CAF antifraud, Vindi) from credit; Parcelex and Banco BV sit behind one credit integration layer with fallback, so if one provider can't approve, the request goes to the other.",
+          "pt": "Liderei a migração de uma plataforma B2B de crédito de monólito para microsserviços em TypeScript e Python (AWS ECS e Lambda), separando onboarding (CAF, Vindi) e crédito; Parcelex e Banco BV ficam atrás de uma mesma camada de integração de crédito com fallback: se um provedor não consegue aprovar, a solicitação vai para o outro."
         },
         {
-          "en": "Built a B2B document-delivery platform over WhatsApp with AWS Lambda, S3 events and SQS (working around API Gateway limits), with a chatbot and a React admin dashboard.",
-          "pt": "Construí uma plataforma B2B de envio de documentos via WhatsApp com AWS Lambda, eventos do S3 e SQS (contornando limites do API Gateway), com chatbot e dashboard administrativo em React."
+          "text": {
+            "en": "Designed and built a B2B document-delivery platform over WhatsApp on serverless AWS, chosen because traffic was low most of the time but arrived in sudden bursts (e.g. 23k files at once): files go straight to S3 through presigned URLs so they never pass through API memory, S3 events land in SQS so no file is lost, and a short debounce smooths each burst so it doesn't hit AWS throttling (HTTP 429).",
+            "pt": "Projetei e construí uma plataforma B2B de envio de documentos via WhatsApp em AWS serverless, escolhida porque o tráfego era baixo na maior parte do tempo mas chegava em picos repentinos (ex.: 23 mil arquivos de uma vez): os arquivos vão direto ao S3 por presigned URLs, sem passar pela memória da API, os eventos do S3 caem no SQS para nenhum arquivo se perder e um debounce curto suaviza cada pico para não esbarrar no throttling da AWS (HTTP 429)."
+          },
+          "pdf": false
+        },
+        {
+          "text": {
+            "en": "Lambda senders deliver to WhatsApp with retries; files live in their own domain, separate from deliveries, so the same documents serve WhatsApp sends, a chatbot and intake by email, FTP and the web platform, managed from a React admin dashboard.",
+            "pt": "Lambdas de envio entregam no WhatsApp com retry; os arquivos têm domínio próprio, separado dos envios, então os mesmos documentos atendem os envios por WhatsApp, um chatbot e a entrada por e-mail, FTP e plataforma web, geridos por um dashboard administrativo em React."
+          },
+          "pdf": false
+        },
+        {
+          "text": {
+            "en": "Designed a serverless B2B document-delivery platform over WhatsApp for low traffic with sudden bursts (e.g. 23k files): presigned S3 uploads, S3 events into SQS with a short debounce to avoid 429s, Lambda senders with retries, and a file domain separate from deliveries that also serves a chatbot and email, FTP and web intake.",
+            "pt": "Projetei uma plataforma B2B serverless de envio de documentos via WhatsApp para tráfego baixo com picos repentinos (ex.: 23 mil arquivos): upload ao S3 por presigned URL, eventos do S3 no SQS com debounce curto contra 429, Lambdas de envio com retry e domínio de arquivos separado dos envios, que atende chatbot e entrada por e-mail, FTP e web."
+          },
+          "web": false
         },
         {
           "en": "Coordinated 4 junior developers across 2–3 concurrent projects: technical guidance, code reviews and architecture planning for microservices.",
@@ -119,19 +189,25 @@
         },
         {
           "en": "Provisioned infrastructure as code with Terraform, Serverless Framework and CloudFormation, and built CI/CD pipelines in GitHub Actions, GitLab CI and AWS CodePipeline, with integration tests using Jest, Vitest and Testcontainers.",
-          "pt": "Provisionei infraestrutura como código com Terraform, Serverless Framework e CloudFormation e criei pipelines de CI/CD no GitHub Actions, GitLab CI e AWS CodePipeline, com testes de integração usando Jest, Vitest e Testcontainers."
+          "pt": "Provisionei infraestrutura como código (Terraform, Serverless Framework, CloudFormation) e pipelines de CI/CD (GitHub Actions, GitLab CI, AWS CodePipeline), com testes de integração em Jest, Vitest e Testcontainers."
         },
         {
           "en": "Integrated payment providers (Stripe, Asaas, Cielo, Itaú, Mercado Livre) and migrated data from Firebase to PostgreSQL and MongoDB with zero downtime.",
           "pt": "Integrei provedores de pagamento (Stripe, Asaas, Cielo, Itaú, Mercado Livre) e migrei dados do Firebase para PostgreSQL e MongoDB sem downtime."
         },
         {
-          "en": "Reduced AWS costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
-          "pt": "Reduzi custos de AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack."
+          "text": {
+            "en": "Cut idle AWS compute costs by automating EC2 start/stop schedules with Lambda and Slack commands.",
+            "pt": "Reduzi custos de computação ociosa na AWS automatizando o liga/desliga de instâncias EC2 com Lambda e comandos no Slack."
+          },
+          "pdf": false
         },
         {
-          "en": "Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.",
-          "pt": "Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache."
+          "text": {
+            "en": "Modernized an on-premises delivery PWA in React and Node.js, and built Java APIs integrated with factory conveyor systems, using Redis for caching.",
+            "pt": "Modernizei uma PWA on-premises para entregadores em React e Node.js e criei APIs em Java integradas a esteiras de fábrica, usando Redis como cache."
+          },
+          "pdf": false
         },
         {
           "text": {
@@ -155,13 +231,44 @@
           "pdf": false
         }
       ],
-      "stack": ["Node.js", "TypeScript", "Python", "Java", "React", "Next.js", "AWS Lambda", "AWS ECS", "SQS", "SNS", "S3", "DynamoDB", "Cognito", "PostgreSQL", "MongoDB", "Redis", "Terraform", "Serverless Framework", "Docker", "GraphQL", "Hasura", "Jest", "Testcontainers"]
+      "stack": [
+        "Node.js",
+        "TypeScript",
+        "Python",
+        "Java",
+        "React",
+        "Next.js",
+        "AWS Lambda",
+        "AWS ECS",
+        "SQS",
+        "SNS",
+        "S3",
+        "DynamoDB",
+        "Cognito",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Terraform",
+        "Serverless Framework",
+        "Docker",
+        "GraphQL",
+        "Hasura",
+        "Jest",
+        "Testcontainers"
+      ],
+      "note": "TODO: put a number on the EC2 savings (% or R$/month) and on the WhatsApp platform (documents/month, clients)."
     },
     {
       "id": "skule",
       "company": "Skule Tecnologia",
-      "title": { "en": "Education Mentor", "pt": "Mentor Educacional" },
-      "location": { "en": "Remote", "pt": "Remoto" },
+      "title": {
+        "en": "Education Mentor",
+        "pt": "Mentor Educacional"
+      },
+      "location": {
+        "en": "Remote",
+        "pt": "Remoto"
+      },
       "start": "2023-03",
       "end": "2023-07",
       "bullets": [
@@ -170,16 +277,26 @@
           "pt": "Mentorei 6 estagiários de programação em projetos Node.js, Next.js e React: revisão de pull requests, resolução de conflitos de merge e orientação para melhorias de código."
         },
         {
-          "en": "Ran technical sessions in English on clean architecture and coding best practices.",
-          "pt": "Conduzi sessões técnicas em inglês sobre clean architecture e boas práticas de código."
+          "text": {
+            "en": "Ran technical sessions in English on clean architecture and coding best practices.",
+            "pt": "Conduzi sessões técnicas em inglês sobre clean architecture e boas práticas de código."
+          },
+          "pdf": false
         }
-      ]
+      ],
+      "pdf": false
     },
     {
       "id": "advanced-digital",
       "company": "Advanced Digital",
-      "title": { "en": "Frontend Developer", "pt": "Desenvolvedor Frontend" },
-      "location": { "en": "Brasília, Brazil", "pt": "Brasília, DF" },
+      "title": {
+        "en": "Frontend Developer",
+        "pt": "Desenvolvedor Frontend"
+      },
+      "location": {
+        "en": "Brasília, Brazil",
+        "pt": "Brasília, DF"
+      },
       "start": "2022-02",
       "end": "2022-10",
       "bullets": [
@@ -188,21 +305,40 @@
           "pt": "Mantive e evoluí um e-commerce em React e Redux com backend em Node.js e migrei uma interface de venda de ingressos de PHP para React."
         },
         {
-          "en": "Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.",
-          "pt": "Integrei as APIs da Cielo e do Mercado Livre com hooks React customizados e criei web scrapers em Node.js."
+          "text": {
+            "en": "Integrated the Cielo and Mercado Livre APIs through custom React hooks, and built web scrapers in Node.js.",
+            "pt": "Integrei as APIs da Cielo e do Mercado Livre com hooks React customizados e criei web scrapers em Node.js."
+          },
+          "pdf": false
         },
         {
-          "en": "Helped launch two mobile MVPs in Flutter (Dart, GetX).",
-          "pt": "Ajudei a lançar dois MVPs mobile em Flutter (Dart, GetX)."
+          "text": {
+            "en": "Helped launch two mobile MVPs in Flutter (Dart, GetX).",
+            "pt": "Ajudei a lançar dois MVPs mobile em Flutter (Dart, GetX)."
+          },
+          "pdf": false
         }
       ],
-      "stack": ["React", "Redux", "Node.js", "Flutter", "Dart", "SCSS"]
+      "stack": [
+        "React",
+        "Redux",
+        "Node.js",
+        "Flutter",
+        "Dart",
+        "SCSS"
+      ]
     },
     {
       "id": "rco-engenharia",
       "company": "RCO Engenharia",
-      "title": { "en": "Engineering Assistant", "pt": "Assistente de Engenharia" },
-      "location": { "en": "Brazil", "pt": "Brasil" },
+      "title": {
+        "en": "Engineering Assistant",
+        "pt": "Assistente de Engenharia"
+      },
+      "location": {
+        "en": "Brazil",
+        "pt": "Brasil"
+      },
       "start": "2021-04",
       "end": "2021-12",
       "hidden": true,
